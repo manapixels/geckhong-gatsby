@@ -1,0 +1,55 @@
+[
+    
+    {
+        "name": "React.js",
+        "image_src": "skill_react",
+        "mastery_percentage": "90"
+    },
+    {
+        "name": "Redux",
+        "image_src": "skill_redux",
+        "mastery_percentage": "80"
+    },
+    {
+        "name": "Gatsby",
+        "image_src": "skill_gatsby",
+        "mastery_percentage": "80"
+    },
+    {
+        "name": "HTML",
+        "image_src": "skill_html",
+        "mastery_percentage": "90"
+    },
+    {
+        "name": "(S)CSS",
+        "image_src": "skill_css",
+        "mastery_percentage": "90"
+    },
+    {
+        "name": "Photoshop",
+        "image_src": "skill_photoshop",
+        "mastery_percentage": "70"
+    },
+    {
+        "name": "Illustrator",
+        "image_src": "skill_illustrator",
+        "mastery_percentage": "60"
+    },
+    {
+        "name": "XD",
+        "image_src": "skill_xd",
+        "mastery_percentage": "100"
+    },
+    {
+        "name": "Branding",
+        "image_src": "skill_react",
+        "mastery_percentage": "25",
+        "is_learning": true
+    },
+    {
+        "name": "Data Viz",
+        "image_src": "skill_html",
+        "mastery_percentage": "20",
+        "is_learning": true
+    }
+]

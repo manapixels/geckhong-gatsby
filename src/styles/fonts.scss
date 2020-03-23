@@ -1,0 +1,103 @@
+/* =--==--==--==--==--==--==--==--==--=
+
+
+    Fonts & Icons
+
+
+ =--==--==--==--==--==--==--==--==--=*/
+
+ @import url('https://fonts.googleapis.com/css?family=Inter:400,700&display=swap');
+
+@font-face {
+  font-family: "fontello";
+  src: url("../fonts/fontello.eot?16765264");
+  src: url("../fonts/fontello.eot?16765264#iefix") format("embedded-opentype"),
+    url("../fonts/fontello.woff2?16765264") format("woff2"),
+    url("../fonts/fontello.woff?16765264") format("woff"),
+    url("../fonts/fontello.ttf?16765264") format("truetype"),
+    url("../fonts/fontello.svg?16765264#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: 0.2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow-left:before {
+  content: "\e800";
+}
+.icon-arrow-down:before {
+  content: "\e801";
+}
+.icon-arrow-up2:before {
+  content: "\e802";
+}
+.icon-arrow-right:before {
+  content: "\e803";
+}
+.icon-star-full:before {
+  content: "\e804";
+}
+.icon-star-empty:before {
+  content: "\e805";
+}
+.icon-star-half:before {
+  content: "\e806";
+}
+.icon-close:before {
+  content: "\e807";
+}
+.icon-person:before {
+  content: "\e808";
+}
+.icon-star-half-alt:before {
+  content: "\f123";
+}
+
+.icon-left {
+  position: fixed;
+  z-index: 998;
+  top: 20px;
+  left: 0;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  padding: .9rem;
+  background-color: var(--black);
+  color: #fff;
+  border-left: 1rem solid #fff;
+  border-top: .5rem solid #fff;
+  border-bottom: .5rem solid #fff;
+  border-right: none;
+  transform: translate(0, -50px);
+  font-size: 1rem;
+
+  &:hover {
+    transform: translate(-5px, 0);
+  }
+}
+
+.icon-on {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(0, 0);
+  transition: all 0.35s 0s ease;
+}

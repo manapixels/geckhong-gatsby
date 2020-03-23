@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Angular",
+        "image_src": "skill_angular",
+        "mastery_percentage": "15"
+    },
+    {
+        "name": ".Net",
+        "image_src": "skill_dotnet",
+        "mastery_percentage": "45"
+    },
+    {
+        "name": "Ruby",
+        "image_src": "skill_ruby",
+        "mastery_percentage": "15"
+    },
+    {
+        "name": "Unity",
+        "image_src": "skill_unity",
+        "mastery_percentage": "30"
+    },
+    {
+        "name": "Java",
+        "image_src": "skill_java",
+        "mastery_percentage": "60"
+    },
+    {
+        "name": "Python",
+        "image_src": "skill_python",
+        "mastery_percentage": "50"
+    }
+]
