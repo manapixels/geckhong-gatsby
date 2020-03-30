@@ -100,11 +100,12 @@ const Projects = () => {
                 {currOpenProject === 'sutdgradnight' && <SUTDGradNightProject />}
                 {currOpenProject === 'time' && <TimeProject />}
             </article>
-            <button
-                className={`icon-left icon-arrow-left ${currOpenProject !== null ? 'icon-on' : ''}`}
+
+            <button 
+                className={`btn-square icon-left ${currOpenProject !== null ? 'icon-on' : ''}`}
                 onClick={
                     () => setCurrOpenProject(null)}>
-                Go back to projects
+                <span className="icon-arrow-left"></span>
             </button>
 
 
@@ -136,7 +137,9 @@ const Projects = () => {
                     <div className="description" >
                         <p>Selfi is a self-discovery platform built for everyone, no matter age, race, culture or religion. Users answer personality questions and they get traits for each quiz completed.</p>
                     </div>
-                    <button className="btn-primary cardButton" onClick={() => setCurrOpenProject("selfi")}>View</button>
+                    <button className="btn-square" onClick={() => setCurrOpenProject("selfi")}>
+                        <span className="icon-arrow-right"></span>
+                    </button>
                 </article>
             </section>
 

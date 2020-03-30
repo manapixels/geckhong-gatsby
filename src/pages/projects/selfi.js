@@ -43,7 +43,7 @@ const SelfiProject = () => {
             </section>
 
             <section className="popupBody">
-                <h1>Objective</h1>
+                <h1>What is Selfi</h1>
                 <p>We aim to consolidate the fragmented personality tests market by combining it into an all-in-one platform where people can use their personality data to achieve many things in life - understand themselves, find love, friends, work that they love and things they want to do. And the process of answering quizzes each about 1 to 2 mins would be a vastly different experience, considering that current personality tests take an average of half to 1 hour long to complete. </p>
                 <p>We are in the initial stage currently, building quizzes that cover different parts of domains relating to the self, relationships with others, and work life. Creating value is not enough for a business. Capturing some of that value back will allow us to transform scale up our offerings to bring more value to our users. With that in mind, we aim to integrate connectors to existing platforms, such as job listing and recruitment systems to leverage on the power of personality data held by users.</p>
 

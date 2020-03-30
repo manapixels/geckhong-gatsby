@@ -71,33 +71,3 @@
 .icon-star-half-alt:before {
   content: "\f123";
 }
-
-.icon-left {
-  position: fixed;
-  z-index: 998;
-  top: 20px;
-  left: 0;
-  cursor: pointer;
-  opacity: 0;
-  pointer-events: none;
-  padding: .9rem;
-  background-color: var(--black);
-  color: #fff;
-  border-left: 1rem solid #fff;
-  border-top: .5rem solid #fff;
-  border-bottom: .5rem solid #fff;
-  border-right: none;
-  transform: translate(0, -50px);
-  font-size: 1rem;
-
-  &:hover {
-    transform: translate(-5px, 0);
-  }
-}
-
-.icon-on {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translate(0, 0);
-  transition: all 0.35s 0s ease;
-}

@@ -1,37 +1,24 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useState } from "react"
-import Image from "gatsby-image"
-import { useStaticQuery, graphql } from "gatsby"
 
 import "./sidebar.scss"
 
-const Sidebar = ({ siteTitle }) => {
+
+const Sidebar = () => {
 
 	const [isMobileNavOpen, setIsMobileNavOpen] = useState(false)
 
-	const data = useStaticQuery(graphql`
-		query {
-			logo: file(relativePath: { eq: "logov6.png" }) {
-				childImageSharp {
-					fixed(width: 56, height: 70, quality: 100) {
-						...GatsbyImageSharpFixed
-					}
-				}
-			}
-		}
-		`)
-
 	React.useEffect(() => {
+
 		return () => {
 			document.body.style.overflow = "unset"
 		}
 	}, [])
 
-
 	const toggleMobileNav = () => {
 		setIsMobileNavOpen(!isMobileNavOpen)
-		if (isMobileNavOpen)
+		if (!isMobileNavOpen)
 			document.body.style.overflow = "hidden"
 		else
 			document.body.style.overflow = "unset"
@@ -39,11 +26,11 @@ const Sidebar = ({ siteTitle }) => {
 
 	const menuLinks = (
 		<>
-			<Link to="/" activeClassName="active">Home</Link>
-			<Link to="/about" activeClassName="active">About</Link>
-			<Link to="/design" activeClassName="active">Design</Link>
-			<Link to="/graphics" activeClassName="active">Graphics</Link>
-			<Link to="/blog" activeClassName="active">Blog</Link>
+			<Link to="/" activeClassName="active" onClick={toggleMobileNav}>Home</Link>
+			<Link to="/about" activeClassName="active" onClick={toggleMobileNav}>About</Link>
+			<Link to="/design" activeClassName="active" onClick={toggleMobileNav}>Design</Link>
+			<Link to="/graphics" activeClassName="active" onClick={toggleMobileNav}>Graphics</Link>
+			<Link to="/blog" activeClassName="active" onClick={toggleMobileNav}>Blog</Link>
 		</>
 	)
 
@@ -60,17 +47,29 @@ const Sidebar = ({ siteTitle }) => {
 							<use xlinkHref="#icon-logo" />
 						</svg>
 					</Link>
-					<menu>
+					<menu className="desktop">
 						{menuLinks}
 					</menu>
 					{/* Navigation for Mobile */}
-					<div id={`bg-black ${isMobileNavOpen ? 'active' : ''}`}></div>
-					<div id="toggle"><span>MENU</span><span className="icon-arrow-up2"></span></div>
-					<nav id="menu-mobile">
-						{menuLinks}
-						<a className="resumeLink" href="../documents/resume.pdf" target="_blank" title="Download Résumé" rel="noopener">Résumé</a>
-					</nav>
-					<a className="go-back-up invisible"><span className="icon-arrow-up2 invisible"></span></a>
+					<div className={`bg-black ${isMobileNavOpen ? 'active' : ''}`}></div>
+					<button className={`toggle ${isMobileNavOpen ? 'active' : ''}`} onClick={toggleMobileNav}>
+						<div className="text">
+							{isMobileNavOpen ? 'Close Menu' : 'Menu'}
+						</div>
+						<div className="icon icon-arrow-up2"></div>
+					</button>
+					<menu className={`mobile ${isMobileNavOpen ? 'active' : ''}`}>
+						<div className="internal-links">
+							{menuLinks}
+						</div>
+						<div className="social-container">
+							<a className="resume" href="documents/resume.pdf" target="_blank" title="Download Résumé">Résumé</a>
+							<a href="mailto:zhenyangg@outlook.com" target="_blank" rel="noopener" role="button">Email</a>
+							<a href="https://t.me/manapixels" target="_blank" rel="noopener" role="button">Telegram</a>
+							<a href="https://github.com/zhenyangg" target="_blank" rel="noopener" role="button">Github</a>
+							<a href="https://sg.linkedin.com/in/zhenyanglim" target="_blank" rel="noopener" role="button">LinkedIn</a>
+						</div>
+					</menu>
 				</header>
 
 

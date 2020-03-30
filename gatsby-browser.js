@@ -1,12 +1,8 @@
-import React from "react"
-import Layout from "./src/components/layout"
 import './node_modules/svgxuse/svgxuse.js'
+import smoothscroll from 'smoothscroll-polyfill'
 
+smoothscroll.polyfill()
 const transitionDelay = 500
-
-// export const wrapPageElement = ({ element, props }) => {
-//   return <Layout {...props}>{element}</Layout>
-// }
 
 export const shouldUpdateScroll = ({
   routerProps: { location },

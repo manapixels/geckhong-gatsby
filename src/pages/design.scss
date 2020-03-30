@@ -1,8 +1,32 @@
+@import "../styles/variables.scss";
+
 .projects-page {
     .cardButton {
         cursor: inherit;
         padding: 1rem 3rem;
     }
+
+    .icon-left {
+        position: fixed;
+        z-index: var(--zindex-popover);
+        top: 1rem;
+        left: 1rem;
+        cursor: pointer;
+        opacity: 0;
+        pointer-events: none;
+        padding: .9rem;
+        background-color: var(--black);
+        color: #fff;
+        border: .2rem solid var(--white);
+        transform: translate(0, -50px);
+      }
+      
+      .icon-on {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translate(0, 0);
+        transition: all 0.35s 0s ease;
+      }
 
     .project-item {
         display: flex;
@@ -113,11 +137,6 @@
             }
         }
 
-        &>article {
-            max-width: 50%;
-            padding: 80px 50px 50px 25px;
-        }
-
         &>div img {
             width: 100%;
         }
@@ -127,6 +146,8 @@
             transform: translate(30px, 0);
             transition: opacity 0.1s 0.3s ease-in, transform 0.3s 0.3s;
             position: relative;
+            max-width: 50%;
+            padding: 80px 50px 50px 25px;
 
             .title {
                 font-size: 2em;
@@ -253,7 +274,7 @@
         position: fixed;
         top: 0;
         left: 0;
-        z-index: 997;
+        z-index: var(--zindex-modal);
         opacity: 0;
         pointer-events: none;
         transition: all 0.2s ease-out;
@@ -390,7 +411,6 @@
             p {
                 padding: 0.8em 1.8em;
                 max-width: 650px;
-                line-height: 1.5em;
                 text-align: justify;
             }
     
@@ -424,6 +444,36 @@
             }
             
     
+        }
+    }
+}
+
+@media screen and #{$mq-small} {
+    .projects-page {
+        .project-item {
+            margin: .6rem;
+
+            .project-item-image {
+                width: 100%;
+                padding: 1rem;
+
+                button {
+                    padding: 0;
+                }
+
+                img {
+                    border: none;
+                    padding: 0;
+                }
+            }
+            .project-item-content {
+                max-width: 100%;
+                padding: 1rem;
+
+                .title {
+                    margin: 0;
+                }
+            }
         }
     }
 }

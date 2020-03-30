@@ -1,22 +1,18 @@
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { motion, AnimatePresence } from 'framer-motion'
 
 import Sidebar from "./sidebar"
 import Preloader from "./preloader"
-
-import "../styles/normalize.css"
-import "../styles/bootstrap-grid.min.css"
-import "../styles/fonts.scss"
-import "../styles/responsive.scss"
-import "../styles/global.scss"
-import "../styles/animation.scss"
-import "../styles/gifplayer.scss"
+import debounce from "../helpers/debounce"
 import "./layout.scss"
 
 
 const Layout = ({ children, location }) => {
+
+	const [showScrollToTopBtn, setShowScrollToTopBtn] = useState(false)
+
 	const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -26,6 +22,18 @@ const Layout = ({ children, location }) => {
       }
     }
   `)
+
+	React.useEffect(() => {
+		window.addEventListener('scroll', handleScroll)
+		return () => window.removeEventListener('scroll', handleScroll)
+	}, [])
+
+	const handleScroll = debounce(() => {
+		if ((window.scrollY > window.innerHeight * 0.3) && !showScrollToTopBtn)
+			setShowScrollToTopBtn(true)
+		else if ((window.scrollY < window.innerHeight * 0.3) && showScrollToTopBtn)
+			setShowScrollToTopBtn(false)
+	}, 250)
 
 	return (
 		<div className="layout-wrapper">
@@ -45,6 +53,14 @@ const Layout = ({ children, location }) => {
 			</AnimatePresence>
 
 			<Sidebar siteTitle={data.site.siteMetadata.title} />
+			<button 
+				className={`go-back-up ${showScrollToTopBtn ? '' : 'invisible'}`} 
+				onClick={() => window.scroll({
+					top: 0,
+					behavior: 'smooth'
+				})}>
+				<span className="icon-arrow-up2"></span>
+			</button>
 		</div>
 	)
 }

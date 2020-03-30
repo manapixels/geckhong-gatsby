@@ -4,7 +4,7 @@ Progress Bar adapted from http://codepen.io/thathurtabit/pen/ymECf
 -------------------------------------------------------------- */
 
 #loader-wrapper {
-    z-index: 999;
+    z-index: var(--zindex-modal-backdrop);
     position: fixed;
     display: table;
     width: 100%;
@@ -16,7 +16,7 @@ Progress Bar adapted from http://codepen.io/thathurtabit/pen/ymECf
     pointer-events: none;
 
     #shapes {       
-        z-index: 1000;
+        z-index: var(--zindex-modal);
         position: relative;
         display: table-cell;
         vertical-align: middle;
@@ -33,7 +33,7 @@ Progress Bar adapted from http://codepen.io/thathurtabit/pen/ymECf
             overflow: hidden;
             position: relative;
             display: block;
-            z-index: 1000;
+            z-index: var(--zindex-modal);
             border-radius: 5px;
             transform: scaleX(1);
             transition: transform 0.5s 0.2s;
@@ -66,7 +66,7 @@ Progress Bar adapted from http://codepen.io/thathurtabit/pen/ymECf
         bottom: 0;
         width: 100%;
         background: #FFF;
-        z-index: 999;
+        z-index: var(--zindex-modal-backdrop);
 
         &.section-left,
         &.section-right {

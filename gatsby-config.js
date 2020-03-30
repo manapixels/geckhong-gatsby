@@ -16,17 +16,17 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-transition-link`,
-      options: {
-        layout: require.resolve(`./src/components/layout.js`)
-      }
-    },
-    {
       resolve: `gatsby-plugin-sass`,
       options: {
         implementation: require("sass"),
         postCssPlugins: [require("autoprefixer")()],
       },
+    },
+    {
+      resolve: `gatsby-plugin-transition-link`,
+      options: {
+        layout: require.resolve(`./src/components/layout.js`)
+      }
     },
     {
       resolve: `gatsby-plugin-manifest`,

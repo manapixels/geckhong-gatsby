@@ -1,29 +1,44 @@
+// Utilities
+@import "../styles/normalize.scss";
+
+// Base Rules
+@import "../styles/bootstrap-grid.min.scss";
+@import "../styles/fonts.scss";
+@import "../styles/variables.scss";
+@import "../styles/global.scss";
+
+// External
+@import "../styles/animation.scss";
+@import "../styles/gifplayer.scss";
+
+
 .layout-wrapper {
     display: grid;
     grid-gap: 1.5rem;
     grid-template-columns: auto 12rem;
     border-radius: .8rem;
     background-color: #fff;
-    max-width: 1536px;
+    max-width: 100vw;
     min-height: calc(100vh - 1.6rem);
     margin: 0 auto;
     overflow: hidden;
 
     .main-content {
-    
+        max-width: 100rem;
         transition: transform 0.3s ease-out;
-    
+
         a {
             color: #acc6ff;
             border-bottom: 1px solid #acc6ff;
             text-decoration: none;
         }
+
         a:hover {
             color: #93b4ff;
             border-bottom: 1px solid #93b4ff;
             text-decoration: none;
         }
-    
+
         .portfolio-section {
             position: relative;
             width: 80%;
@@ -33,21 +48,22 @@
             display: flex;
             flex-flow: row nowrap;
             align-items: center;
-    
+
             .portfolio-text-container {
                 width: 400px;
                 padding: 1rem;
                 background: rgba(255, 255, 255, 0.95);
                 border-radius: var(--border-radius);
-    
+
                 &.portfolio-text-container-left {
                     left: 0;
                 }
-                
+
                 &.portfolio-text-container-right {
                     right: 0;
                 }
             }
+
             .portfolio-text-header {
                 position: relative;
                 line-height: 56px;
@@ -59,7 +75,7 @@
                 flex-flow: row nowrap;
                 font-size: 2em;
                 font-weight: 600;
-        
+
                 .portfolio-text-header__title {
                     width: 60%;
                     font-weight: 600;
@@ -67,17 +83,18 @@
                     flex-flow: column nowrap;
                     justify-content: center;
                 }
-    
+
                 .portfolio-text-header-subtext {
                     display: block;
                     font-size: 14px;
                     line-height: 20px;
                 }
-        
+
                 .portfolio-text-header__image {
                     width: 40%;
                 }
             }
+
             .portfolio-text-body {
                 position: relative;
                 font-size: 94%;
@@ -87,7 +104,7 @@
                 opacity: 0;
                 transform: translateX(30px);
                 transition: transform 0.3s ease-in 1s, opacity 0.3s ease-in 1s;
-    
+
                 &::before,
                 &::after {
                     content: '';
@@ -95,12 +112,14 @@
                     width: 0;
                     height: 0;
                 }
+
                 &::before {
                     top: 0;
                     right: 0;
                     border-top: 10px solid var(--black);
                     border-left: 10px solid transparent;
                 }
+
                 &::after {
                     bottom: 0;
                     left: 0;
@@ -110,8 +129,39 @@
             }
         }
     }
+
+    .go-back-up {
+        color: var(--black);
+        text-decoration: none;
+        position: fixed;
+        font-size: 1.6rem;
+        bottom: 1rem;
+        right: 1rem;
+        background-color: #fff;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: .2rem;
+        border: none;
+        border-bottom: 0.1em solid var(--black);
+        transition: all 0.3s ease-out;
+        z-index: var(--zindex-sticky);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+        &:hover {
+            border-bottom: 1em solid var(--black);
+        }
+    }
 }
 
+@media screen and #{$mq-small} {
+    .layout-wrapper {
+        display: block;
+        border-radius: 0;
+
+        .main-content {
+            margin-top: 3.5rem;
+        }
+    }
+}
 
 
 body.loaded {
@@ -119,10 +169,12 @@ body.loaded {
         transform: translate(0, 0);
         opacity: 1;
     }
+
     .portfolio-text-header {
         opacity: 1;
         transform: translateX(0);
     }
+
     .portfolio-text-body {
         opacity: 1;
         transform: translateX(0);
