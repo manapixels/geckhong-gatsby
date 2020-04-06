@@ -3,7 +3,8 @@
     {
         "name": "React.js",
         "image_src": "skill_react",
-        "mastery_percentage": "90"
+        "mastery_percentage": "90",
+        "is_learning": true
     },
     {
         "name": "Redux",
@@ -41,14 +42,14 @@
         "mastery_percentage": "100"
     },
     {
-        "name": "Branding",
-        "image_src": "skill_react",
-        "mastery_percentage": "25",
+        "name": "Premiere",
+        "image_src": "skill_premier",
+        "mastery_percentage": "5",
         "is_learning": true
     },
     {
-        "name": "Data Viz",
-        "image_src": "skill_html",
+        "name": "D3.js",
+        "image_src": "skill_d3",
         "mastery_percentage": "20",
         "is_learning": true
     }

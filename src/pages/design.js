@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
+import { motion } from "framer-motion"
 
 import './design.scss'
+import FadeInSection from '../components/fadeInSection'
 import AskSimpleProject from "./projects/asksimple"
 import NimbusRunProject from "./projects/nimbusrun"
 import SelfiProject from "./projects/selfi"
@@ -101,12 +103,14 @@ const Projects = () => {
                 {currOpenProject === 'time' && <TimeProject />}
             </article>
 
-            <button 
+            <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
                 className={`btn-square icon-left ${currOpenProject !== null ? 'icon-on' : ''}`}
                 onClick={
                     () => setCurrOpenProject(null)}>
                 <span className="icon-arrow-left"></span>
-            </button>
+            </motion.button>
 
 
             {/* ******
@@ -115,34 +119,36 @@ const Projects = () => {
             **********
             ****** */}
 
-            <section className="project-item flexy detect-scroll-past" data-anchor="first">
+            <FadeInSection className="project-item">
                 <div className="project-item-image">
-                    <span className="moreinfo" role="button">7</span>
+                    <span className="moreinfo">7</span>
                     <button onClick={() => setCurrOpenProject("selfi")}>
                         <Image
-                            className="image"
-                            fluid={selfiCover.childImageSharp.fluid} 
+                            className="image wipeIn ani-1"
+                            fluid={selfiCover.childImageSharp.fluid}
                             alt="Selfi app" />
+                        <div className="moving-line"></div>
                     </button>
                 </div>
-                <article className="project-item-content visible">
-                    <h2 className="title">Selfi</h2>
-                    <div className="year">January 2020 and Ongoing</div>
-                    <section className="skills">
-                        <span>UI Design</span>
-                        <span>Emotion Design</span>
+                <article className="project-item-content">
+                    <h2 className="title wipeIn ani-2">Selfi</h2>
+                    <div className="year wipeIn ani-3">January 2020 and Ongoing</div>
+                    <section className="skills wipeIn ani-4">
+                        <span>User Experience</span>
+                        <span>Branding</span>
                         <span>Data Visualization</span>
                         <span>React</span>
                     </section>
-                    <div className="description" >
-                        <p>Selfi is a self-discovery platform built for everyone, no matter age, race, culture or religion. Users answer personality questions and they get traits for each quiz completed.</p>
+                    <div className="description wipeIn ani-5">
+                        <p>Selfi is a self-discovery platform built for students, job-seekers and people curious to know more about themselves. Users answer personality questions and get traits for each quiz completed. Traits transformed with additional quizzes completed.</p>
                     </div>
-                    <button className="btn-square" onClick={() => setCurrOpenProject("selfi")}>
-                        <span className="icon-arrow-right"></span>
+                    <button
+                        className="btn-square btn-hover-pulse wipeIn ani-5"
+                        onClick={() => setCurrOpenProject("selfi")}>
+                        <div className="icon-arrow-right"></div>
                     </button>
                 </article>
-            </section>
-
+            </FadeInSection>
 
 
             {/* ******
@@ -151,33 +157,32 @@ const Projects = () => {
             **********
             ****** */}
 
-            <section className="project-item flexy detect-scroll-past" data-anchor="first">
+            <FadeInSection className="project-item">
                 <div className="project-item-image">
                     <span className="moreinfo" role="button">6</span>
                     <button onClick={() => setCurrOpenProject("threadparadise")}>
                         <Image
-                            className="image"
-                            fluid={threadParadiseCover.childImageSharp.fluid} 
+                            className="image wipeIn ani-1"
+                            fluid={threadParadiseCover.childImageSharp.fluid}
                             alt="Thread Paradise app" />
                     </button>
                 </div>
-                <article className="project-item-content visible">
-                    <h2 className="title">Thread Paradise</h2>
-                    <div className="year">January to April 2017</div>
-                    <section className="skills">
+                <article className="project-item-content">
+                    <h2 className="title wipeIn ani-2">Thread Paradise</h2>
+                    <div className="year wipeIn ani-3">January to April 2017</div>
+                    <section className="skills wipeIn ani-4">
                         <span>User Interface</span>
                         <span>Adobe XD</span>
                         <span>Needsfinding</span>
                         <span>User testing</span>
                         <span className="icon-person" title="4 team members">4</span>
                     </section>
-                    <div className="description" >
+                    <div className="description wipeIn ani-5">
                         <p>Thread Paradise is an eCommerce shopping app concept that seeks to solve multiple issues related to size-fit based on the culture and behaviours of Singaporeans.</p>
                     </div>
-                    <button className="btn-primary cardButton" onClick={() => setCurrOpenProject("threadparadise")}>View</button>
+                    <button className="btn-primary cardButton wipeIn ani-6" onClick={() => setCurrOpenProject("threadparadise")}>View</button>
                 </article>
-            </section>
-
+            </FadeInSection>
 
             {/* ******
             **********
@@ -185,33 +190,32 @@ const Projects = () => {
             **********
             ****** */}
 
-            <section className="project-item flexy" data-anchor="first">
+            <FadeInSection className="project-item">
                 <div className="project-item-image">
                     <span className="moreinfo" role="button">5</span>
                     <button onClick={() => setCurrOpenProject("time")}>
                         <Image
-                            className="image"
-                            fluid={timeCover.childImageSharp.fluid} 
+                            className="image wipeIn ani-1"
+                            fluid={timeCover.childImageSharp.fluid}
                             alt="Time UI Homescreen" />
                     </button>
                 </div>
-                <article className="project-item-content visible">
-                    <h2 className="title">Time UI</h2>
-                    <div className="year">January to April 2017</div>
-                    <section className="skills">
+                <article className="project-item-content">
+                    <h2 className="title wipeIn ani-2">Time UI</h2>
+                    <div className="year wipeIn ani-3">January to April 2017</div>
+                    <section className="skills wipeIn ani-4">
                         <span>User Interface</span>
                         <span>Adobe XD</span>
                         <span>Proto.io</span>
                         <span>User testing</span>
                         <span className="icon-person" title="4 team members">4</span>
                     </section>
-                    <div className="description">
+                    <div className="description wipeIn ani-5">
                         <p>The challenge: To redesign the user experience of using a mobile OS interface through appropriate signifiers, while reducing the click distance to access apps. Aside from bringing in familiar elements from iOS and Android, new functions using the concepts of time and voice are brought in to the mix.</p>
                     </div>
-                    <button className="btn-primary cardButton" onClick={() => setCurrOpenProject("time")}>View</button>
+                    <button className="btn-primary cardButton wipeIn ani-6" onClick={() => setCurrOpenProject("time")}>View</button>
                 </article>
-            </section>
-
+            </FadeInSection>
 
 
             {/* ******
@@ -220,20 +224,20 @@ const Projects = () => {
             **********
             ****** */}
 
-            <section className="project-item flexy" data-anchor="first">
+            <FadeInSection className="project-item">
                 <div className="project-item-image">
                     <span className=" moreinfo" role="button">4</span>
                     <button onClick={() => setCurrOpenProject("asksimple")}>
                         <Image
-                            className="image"
-                            fluid={askSimpleCover.childImageSharp.fluid} 
+                            className="image wipeIn ani-1"
+                            fluid={askSimpleCover.childImageSharp.fluid}
                             alt="AskSimple app" />
                     </button>
                 </div>
-                <article className="project-item-content visible">
-                    <h2 className="title">Ask Simple</h2>
-                    <div className="year">September 2016 to January 2017</div>
-                    <section className="skills">
+                <article className="project-item-content">
+                    <h2 className="title wipeIn ani-2">Ask Simple</h2>
+                    <div className="year wipeIn ani-3">September 2016 to January 2017</div>
+                    <section className="skills wipeIn ani-4">
                         <span>Android</span>
                         <span>Proto.io</span>
                         <span>Paper Prototype</span>
@@ -241,35 +245,34 @@ const Projects = () => {
                         <span>Video</span>
                         <span className="icon-person" title="5 team members">5</span>
                     </section>
-                    <div className="description" >
+                    <div className="description wipeIn ani-5">
                         <p>AskSimple is a tool that helps learners participate in class anonymously and supports them in getting the answers they need as fast as possible. This app was designed in a Human-Computer Interaction Design <a href="http://mll.csie.ntu.edu.tw/course/hci_f16/" target="_blank" rel="noopener noreferrer">course</a> in National Taiwan University.</p>
                     </div>
-                    <button className="btn-primary cardButton" onClick={() => setCurrOpenProject("asksimple")}>View</button>
+                    <button className="btn-primary cardButton wipeIn ani-6" onClick={() => setCurrOpenProject("asksimple")}>View</button>
                 </article>
-            </section>
-
+            </FadeInSection>
 
 
             {/* ******
-    **********
-    SUTD GRADUATION NIGHT
-    **********
-    ****** */}
+            **********
+            SUTD GRADUATION NIGHT
+            **********
+            ****** */}
 
-            <section className="project-item flexy" data-anchor="second">
+            <FadeInSection className="project-item">
                 <div className="project-item-image">
                     <span className=" moreinfo" role="button">3</span>
                     <button onClick={() => setCurrOpenProject("sutdgradnight")}>
                         <Image
-                            className="image"
-                            fluid={sutdGradNightCover.childImageSharp.fluid} 
+                            className="image wipeIn ani-1"
+                            fluid={sutdGradNightCover.childImageSharp.fluid}
                             alt="SUTD Graduation Night 2016" />
                     </button>
                 </div>
-                <article className="project-item-content visible">
-                    <h2 className="title">SUTD Grad Night</h2>
-                    <div className="year">May to September 2016</div>
-                    <section className="skills">
+                <article className="project-item-content">
+                    <h2 className="title wipeIn ani-2">SUTD Grad Night</h2>
+                    <div className="year wipeIn ani-3">May to September 2016</div>
+                    <section className="skills wipeIn ani-4">
                         <span>Logo</span>
                         <span>Website</span>
                         <span>Character Design</span>
@@ -277,35 +280,34 @@ const Projects = () => {
                         <span>Card Design</span>
                         <span className="icon-person" title="8 team members">8</span>
                     </section>
-                    <div className="description">
+                    <div className="description wipeIn ani-5">
                         <p>SUTD Graduation Night is an annual event organised specially for graduating seniors. In this project, our team of 7 planned and distributed materials over 4 months to engage seniors through offline and online platforms.</p>
                     </div>
-                    <button className="btn-primary cardButton" onClick={() => setCurrOpenProject("sutdgradnight")}>View</button>
+                    <button className="btn-primary cardButton wipeIn ani-6" onClick={() => setCurrOpenProject("sutdgradnight")}>View</button>
                 </article>
-            </section>
-
+            </FadeInSection>
 
 
             {/* ******
-    **********
-    NIMBUS RUN
-    **********
-    ****** */}
+            **********
+            NIMBUS RUN
+            **********
+            ****** */}
 
-            <section className="project-item flexy" data-anchor="third">
+            <FadeInSection className="project-item">
                 <div className="project-item-image">
                     <span className=" moreinfo" role="button">2</span>
                     <button onClick={() => setCurrOpenProject("nimbusrun")}>
                         <Image
-                            className="image"
-                            fluid={nimbusRunCover.childImageSharp.fluid} 
+                            className="image wipeIn ani-1"
+                            fluid={nimbusRunCover.childImageSharp.fluid}
                             alt="Nimbus Run - Android game" />
                     </button>
                 </div>
-                <article className="project-item-content visible">
-                    <h2 className="title">Nimbus Run</h2>
-                    <div className="year">January to April 2016</div>
-                    <section className="skills">
+                <article className="project-item-content">
+                    <h2 className="title wipeIn ani-2">Nimbus Run</h2>
+                    <div className="year wipeIn ani-3">January to April 2016</div>
+                    <section className="skills wipeIn ani-4">
                         <span>libgdx</span>
                         <span>Android</span>
                         <span>Kryonet</span>
@@ -313,44 +315,45 @@ const Projects = () => {
                         <span>Illustrator</span>
                         <span className="icon-person" title="8 team members">8</span>
                     </section>
-                    <div className="description">
+                    <div className="description wipeIn ani-5">
                         <p>Nimbus Run is an Android-platform racing game inspired from Fun Run. Created by my group and I as part of our software construction <a href="https://istd.sutd.edu.sg/undergraduate/courses/50003-elements-of-software-construction">course</a>, the game logic was created from scratch in libgdx. We used KryoNet as our the network system, and Photoshop and Illustrator for character design and graphic assets.</p>
                     </div>
-                    <button className="btn-primary cardButton" onClick={() => setCurrOpenProject("nimbusrun")}>View</button>
+                    <button className="btn-primary cardButton wipeIn ani-6" onClick={() => setCurrOpenProject("nimbusrun")}>View</button>
                 </article>
-            </section>
+            </FadeInSection>
 
 
             {/* ******
-    **********
-    SUTD RING
-    **********
-    ****** */}
+            **********
+            SUTD RING
+            **********
+            ****** */}
 
-            <section className="project-item flexy" data-anchor="four">
-                <div className="project-item-image">
+            <FadeInSection className="project-item">
+                <div className="project-item-image wipeIn ani-1">
                     <span className="moreinfo" role="button">1</span>
                     <button onClick={() => setCurrOpenProject("sutdring")}>
                         <Image
-                            className="image"
-                            fluid={sutdRingCover.childImageSharp.fluid} 
+                            className="image wipeIn ani-1"
+                            fluid={sutdRingCover.childImageSharp.fluid}
                             alt="SUTD Ring 4th Production" />
                     </button>
                 </div>
-                <article className="project-item-content visible">
-                    <h2 className="title">SUTD Ring</h2>
-                    <div className="year">September 2015 to March 2016</div>
-                    <section className="skills">
+                <article className="project-item-content">
+                    <h2 className="title wipeIn ani-2">SUTD Ring</h2>
+                    <div className="year wipeIn ani-3">September 2015 to March 2016</div>
+                    <section className="skills wipeIn ani-4">
                         <span>Photoshop</span>
                         <span>Illustrator</span>
                         <span className="icon-person" title="7 team members">7</span>
                     </section>
-                    <div className="description">
+                    <div className="description wipeIn ani-5">
                         <p>Started by two SUTD pioneer students, the SUTD RingComm produces the 'SUTD Ring' for each batch of undergraduates on a yearly basis. I was the designer for the ring case, as well as publicity materials for the batch of 2017 students.</p>
                     </div>
-                    <button className="btn-primary cardButton" onClick={() => setCurrOpenProject("sutdring")}>View</button>
+                    <button className="btn-primary cardButton wipeIn ani-6" onClick={() => setCurrOpenProject("sutdring")}>View</button>
                 </article>
-            </section>
+            </FadeInSection>
+
         </div>
     )
 }

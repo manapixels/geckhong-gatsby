@@ -34,13 +34,22 @@ const IndexPage = () => {
 						</div>
 						<div className="p2">
 							I bridge the gap between design and development.
-					</div>
+						</div>
 					</div>
 					<div className="profile-photo">
 						<Image
 							fixed={data.profile_photo.childImageSharp.fixed}
 							alt="Profile photo" />
 					</div>
+
+
+					View resume
+					More about me
+
+					I write on Medium!
+					View my posts
+
+					
 
 				</section>
 			</div>

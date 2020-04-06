@@ -1,6 +1,8 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useState } from "react"
+import { isMobile } from "react-device-detect"
+import { motion } from "framer-motion"
 
 import "./sidebar.scss"
 
@@ -26,11 +28,11 @@ const Sidebar = () => {
 
 	const menuLinks = (
 		<>
-			<Link to="/" activeClassName="active" onClick={toggleMobileNav}>Home</Link>
-			<Link to="/about" activeClassName="active" onClick={toggleMobileNav}>About</Link>
-			<Link to="/design" activeClassName="active" onClick={toggleMobileNav}>Design</Link>
-			<Link to="/graphics" activeClassName="active" onClick={toggleMobileNav}>Graphics</Link>
-			<Link to="/blog" activeClassName="active" onClick={toggleMobileNav}>Blog</Link>
+			<Link to="/" activeClassName="active" onClick={() => isMobile ? toggleMobileNav() : {}}>Home</Link>
+			<Link to="/about" activeClassName="active" onClick={() => isMobile ? toggleMobileNav() : {}}>About</Link>
+			<Link to="/design" activeClassName="active" onClick={() => isMobile ? toggleMobileNav() : {}}>Design</Link>
+			<Link to="/graphics" activeClassName="active" onClick={() => isMobile ? toggleMobileNav() : {}}>Graphics</Link>
+			<Link to="/blog" activeClassName="active" onClick={() => isMobile ? toggleMobileNav() : {}}>Blog</Link>
 		</>
 	)
 
@@ -43,9 +45,12 @@ const Sidebar = () => {
 				<header>
 					{/* Navigation for Desktop */}
 					<Link to="/" alt="Homepage" className="logo">
-						<svg className="icon icon-logo">
+						<motion.svg 
+							whileHover={{ scale: 1.1, rotate: 3 }}
+							whileTap={{ scale: 0.9 }}
+							className="icon icon-logo">
 							<use xlinkHref="#icon-logo" />
-						</svg>
+						</motion.svg>
 					</Link>
 					<menu className="desktop">
 						{menuLinks}

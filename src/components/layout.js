@@ -65,13 +65,15 @@ const Layout = ({ children, location }) => {
 	)
 }
 
-const duration = 0.5
+const duration = 0.4
 
 const mainVariants = {
 	initial: {
+		y: 20,
 		opacity: 0,
 	},
 	enter: {
+		y: 0,
 		opacity: 1,
 		transition: {
 			duration: duration,
@@ -80,6 +82,7 @@ const mainVariants = {
 		},
 	},
 	exit: {
+		y: -20,
 		opacity: 0,
 		transition: { duration: duration },
 	},
