@@ -28,9 +28,8 @@ const Sidebar = () => {
 
 	const menuLinks = (
 		<>
-			<Link to="/" activeClassName="active" onClick={() => isMobile ? toggleMobileNav() : {}}>Home</Link>
+			<Link to="/" activeClassName="active" onClick={() => isMobile ? toggleMobileNav() : {}}>Portfolio</Link>
 			<Link to="/about" activeClassName="active" onClick={() => isMobile ? toggleMobileNav() : {}}>About</Link>
-			<Link to="/design" activeClassName="active" onClick={() => isMobile ? toggleMobileNav() : {}}>Design</Link>
 			<Link to="/graphics" activeClassName="active" onClick={() => isMobile ? toggleMobileNav() : {}}>Graphics</Link>
 			<Link to="/blog" activeClassName="active" onClick={() => isMobile ? toggleMobileNav() : {}}>Blog</Link>
 		</>

@@ -9,6 +9,7 @@ Global styles
 :root {
   --primary:                #f9c6ce;
   --primary-light:          #ffdce2;
+  --primary-medium:         #ffadb9;
 
   --beige:                  #f0c09c;
   --green:                  #81bd9b;
@@ -37,6 +38,10 @@ Global styles
   --zindex-popover:           1060;
   --zindex-tooltip:           1070;
 
+	--cursor-stroke:          #f9c6ce;
+	--cursor-fill:              none;
+	--cursor-stroke-width:      1px;
+
   --border-radius: 0.3rem;
   --animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important;
   --loader-fade-out-delay: 0.5s;
@@ -50,7 +55,7 @@ html {
 
 body {
   color: var(--black);
-  font-family: -apple-system, BlinkMacSystemFont, "Roboto Slab", serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Martel", serif;
   font-weight: 400;
   font-size: $base-font-size;
   line-height: $base-line-height;
@@ -64,8 +69,9 @@ body {
   padding: .8rem;
   scrollbar-width: thin;
   scrollbar-color: var(--gray-medium-1) var(--true-white);
-  cursor: url('../images/leaf-angled.png'), move;
+  // cursor: url('../images/leaf-angled.png'), move;
   -webkit-overflow-scrolling: touch; // fix for scroll hide for safari
+  /* Cursor styles */
 
   @media #{$mq-large} {
     font-size: $base-font-size * 1.05;
@@ -102,6 +108,23 @@ body {
     font-size: 1.1rem;
     background: var(--true-white);
   }
+}
+
+@media (any-pointer: fine) {
+	.cursor {
+		position: fixed;
+		top: 0;
+		left: 0;
+		display: block;
+		pointer-events: none;
+    opacity: 0;
+    z-index: 1000;
+	}
+	.cursor__inner {
+		fill: var(--cursor-fill);
+		stroke: var(--cursor-stroke);
+		stroke-width: var(--cursor-stroke-width);
+	}
 }
 
 .hideForCard {
@@ -240,7 +263,6 @@ u {
 a {
   color: var(--green);
   text-decoration: none;
-  cursor: inherit;
 }
 
 b {
@@ -596,7 +618,7 @@ a.box3:hover {
 .highlight {
   color: #342f54;
   padding: 0 5px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.12em;
   background: #ffdce2;
   /* Old browsers */

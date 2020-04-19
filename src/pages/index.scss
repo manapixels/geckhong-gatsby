@@ -1,42 +1,48 @@
 .index-page {
-  .resumeLink,
-  .resumeLink:visited {
-    text-align: center;
-    display: block;
-    background-color: #ffdce2;
-    color: var(--black);
-    overflow: hidden;
-    text-decoration: none;
-    transition: all 150ms ease-out;
-    margin-top: 3.4em;
-    padding: 1em 0;
-    width: 100%;
-  }
-
-  .resumeLink:hover {
-    background-color: #ffeaef;
-  }
 
   .landing-section {
     position: relative;
     padding: 4rem;
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
+
+    .wipeIn {
+      &.ani-1 {
+        animation-delay: .6s;
+        
+        &::before {
+          animation-delay: .6s;
+        }
+      }
+      &.ani-2 {
+        animation-delay: .9s;
+        
+        &::before {
+          animation-delay: .9s;
+        }
+      }
+      &.ani-3 {
+        animation-delay: 1.05s;
+        
+        &::before {
+          animation-delay: 1.05s;
+        }
+      }
+      &.ani-4 {
+        animation-delay: 1.2s;
+        
+        &::before {
+          animation-delay: 1.2s;
+        }
+      }
+    }
 
     .self-intro {
       position: relative;
-      flex: 0 1 40rem;
-      max-width: 40rem;
+      width: 43rem;
+      max-width: 100%;
       font-size: 2.2rem;
       font-weight: 700;
+      margin-bottom: 1rem;
       z-index: 2;
-
-      .p2 {
-        font-size: 1.4rem;
-        color: var(--gray-medium-1);
-        padding: 0.9rem 0;
-      }
 
       .selfi {
         color: var(--gray-medium-2);
@@ -48,10 +54,25 @@
         color: var(--black);
       }
     }
-    .profile-photo {
-      flex: 0 1 15rem;
-      max-width: 15rem;
-      margin-left: -3rem;
+    .link-highlight {
+      display: inline-block;
+      color: var(--primary-medium);
+      font-weight: 700;
+      border: none;
+      font-size: 95%;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translate3d(.4rem, 0, 0);
+        border: none;
+      }
+
+      .icon-arrow-right {
+        width: 1rem;
+        height: .8rem;
+        margin-left: .35rem;
+        fill: var(--primary-medium);
+      }
     }
   }
 }

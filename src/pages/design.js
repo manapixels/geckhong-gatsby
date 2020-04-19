@@ -121,7 +121,6 @@ const Projects = () => {
 
             <FadeInSection className="project-item">
                 <div className="project-item-image">
-                    <span className="moreinfo">7</span>
                     <button onClick={() => setCurrOpenProject("selfi")}>
                         <Image
                             className="image wipeIn ani-1"
@@ -131,6 +130,7 @@ const Projects = () => {
                     </button>
                 </div>
                 <article className="project-item-content">
+                    <div className="numbering wipeIn ani-2">01</div>
                     <h2 className="title wipeIn ani-2">Selfi</h2>
                     <div className="year wipeIn ani-3">January 2020 and Ongoing</div>
                     <section className="skills wipeIn ani-4">
@@ -142,11 +142,13 @@ const Projects = () => {
                     <div className="description wipeIn ani-5">
                         <p>Selfi is a self-discovery platform built for students, job-seekers and people curious to know more about themselves. Users answer personality questions and get traits for each quiz completed. Traits transformed with additional quizzes completed.</p>
                     </div>
-                    <button
-                        className="btn-square btn-hover-pulse wipeIn ani-5"
-                        onClick={() => setCurrOpenProject("selfi")}>
-                        <div className="icon-arrow-right"></div>
-                    </button>
+                    <div className="d-inline-block wipeIn ani-5">
+                        <button
+                            className="btn-square btn-hover-pulse"
+                            onClick={() => setCurrOpenProject("selfi")}>
+                            <div className="icon-arrow-right"></div>
+                        </button>
+                    </div>
                 </article>
             </FadeInSection>
 
@@ -159,7 +161,6 @@ const Projects = () => {
 
             <FadeInSection className="project-item">
                 <div className="project-item-image">
-                    <span className="moreinfo" role="button">6</span>
                     <button onClick={() => setCurrOpenProject("threadparadise")}>
                         <Image
                             className="image wipeIn ani-1"
@@ -168,6 +169,7 @@ const Projects = () => {
                     </button>
                 </div>
                 <article className="project-item-content">
+                <div className="numbering wipeIn ani-2">02</div>
                     <h2 className="title wipeIn ani-2">Thread Paradise</h2>
                     <div className="year wipeIn ani-3">January to April 2017</div>
                     <section className="skills wipeIn ani-4">
@@ -180,7 +182,13 @@ const Projects = () => {
                     <div className="description wipeIn ani-5">
                         <p>Thread Paradise is an eCommerce shopping app concept that seeks to solve multiple issues related to size-fit based on the culture and behaviours of Singaporeans.</p>
                     </div>
-                    <button className="btn-primary cardButton wipeIn ani-6" onClick={() => setCurrOpenProject("threadparadise")}>View</button>
+                    <div className="d-inline-block wipeIn ani-5">
+                        <button
+                            className="btn-square btn-hover-pulse"
+                            onClick={() => setCurrOpenProject("threadparadise")}>
+                            <div className="icon-arrow-right"></div>
+                        </button>
+                    </div>
                 </article>
             </FadeInSection>
 
@@ -192,7 +200,6 @@ const Projects = () => {
 
             <FadeInSection className="project-item">
                 <div className="project-item-image">
-                    <span className="moreinfo" role="button">5</span>
                     <button onClick={() => setCurrOpenProject("time")}>
                         <Image
                             className="image wipeIn ani-1"
@@ -201,6 +208,7 @@ const Projects = () => {
                     </button>
                 </div>
                 <article className="project-item-content">
+                <div className="numbering wipeIn ani-2">03</div>
                     <h2 className="title wipeIn ani-2">Time UI</h2>
                     <div className="year wipeIn ani-3">January to April 2017</div>
                     <section className="skills wipeIn ani-4">
@@ -213,7 +221,13 @@ const Projects = () => {
                     <div className="description wipeIn ani-5">
                         <p>The challenge: To redesign the user experience of using a mobile OS interface through appropriate signifiers, while reducing the click distance to access apps. Aside from bringing in familiar elements from iOS and Android, new functions using the concepts of time and voice are brought in to the mix.</p>
                     </div>
-                    <button className="btn-primary cardButton wipeIn ani-6" onClick={() => setCurrOpenProject("time")}>View</button>
+                    <div className="d-inline-block wipeIn ani-5">
+                        <button
+                            className="btn-square btn-hover-pulse"
+                            onClick={() => setCurrOpenProject("time")}>
+                            <div className="icon-arrow-right"></div>
+                        </button>
+                    </div>
                 </article>
             </FadeInSection>
 
@@ -226,7 +240,6 @@ const Projects = () => {
 
             <FadeInSection className="project-item">
                 <div className="project-item-image">
-                    <span className=" moreinfo" role="button">4</span>
                     <button onClick={() => setCurrOpenProject("asksimple")}>
                         <Image
                             className="image wipeIn ani-1"
@@ -235,6 +248,7 @@ const Projects = () => {
                     </button>
                 </div>
                 <article className="project-item-content">
+                <div className="numbering wipeIn ani-2">04</div>
                     <h2 className="title wipeIn ani-2">Ask Simple</h2>
                     <div className="year wipeIn ani-3">September 2016 to January 2017</div>
                     <section className="skills wipeIn ani-4">
@@ -248,7 +262,13 @@ const Projects = () => {
                     <div className="description wipeIn ani-5">
                         <p>AskSimple is a tool that helps learners participate in class anonymously and supports them in getting the answers they need as fast as possible. This app was designed in a Human-Computer Interaction Design <a href="http://mll.csie.ntu.edu.tw/course/hci_f16/" target="_blank" rel="noopener noreferrer">course</a> in National Taiwan University.</p>
                     </div>
-                    <button className="btn-primary cardButton wipeIn ani-6" onClick={() => setCurrOpenProject("asksimple")}>View</button>
+                    <div className="d-inline-block wipeIn ani-5">
+                        <button
+                            className="btn-square btn-hover-pulse"
+                            onClick={() => setCurrOpenProject("asksimple")}>
+                            <div className="icon-arrow-right"></div>
+                        </button>
+                    </div>
                 </article>
             </FadeInSection>
 
@@ -261,7 +281,6 @@ const Projects = () => {
 
             <FadeInSection className="project-item">
                 <div className="project-item-image">
-                    <span className=" moreinfo" role="button">3</span>
                     <button onClick={() => setCurrOpenProject("sutdgradnight")}>
                         <Image
                             className="image wipeIn ani-1"
@@ -270,6 +289,7 @@ const Projects = () => {
                     </button>
                 </div>
                 <article className="project-item-content">
+                <div className="numbering wipeIn ani-2">05</div>
                     <h2 className="title wipeIn ani-2">SUTD Grad Night</h2>
                     <div className="year wipeIn ani-3">May to September 2016</div>
                     <section className="skills wipeIn ani-4">
@@ -283,7 +303,13 @@ const Projects = () => {
                     <div className="description wipeIn ani-5">
                         <p>SUTD Graduation Night is an annual event organised specially for graduating seniors. In this project, our team of 7 planned and distributed materials over 4 months to engage seniors through offline and online platforms.</p>
                     </div>
-                    <button className="btn-primary cardButton wipeIn ani-6" onClick={() => setCurrOpenProject("sutdgradnight")}>View</button>
+                    <div className="d-inline-block wipeIn ani-5">
+                        <button
+                            className="btn-square btn-hover-pulse"
+                            onClick={() => setCurrOpenProject("sutdgradnight")}>
+                            <div className="icon-arrow-right"></div>
+                        </button>
+                    </div>
                 </article>
             </FadeInSection>
 
@@ -296,7 +322,6 @@ const Projects = () => {
 
             <FadeInSection className="project-item">
                 <div className="project-item-image">
-                    <span className=" moreinfo" role="button">2</span>
                     <button onClick={() => setCurrOpenProject("nimbusrun")}>
                         <Image
                             className="image wipeIn ani-1"
@@ -305,6 +330,7 @@ const Projects = () => {
                     </button>
                 </div>
                 <article className="project-item-content">
+                <div className="numbering wipeIn ani-2">06</div>
                     <h2 className="title wipeIn ani-2">Nimbus Run</h2>
                     <div className="year wipeIn ani-3">January to April 2016</div>
                     <section className="skills wipeIn ani-4">
@@ -318,7 +344,13 @@ const Projects = () => {
                     <div className="description wipeIn ani-5">
                         <p>Nimbus Run is an Android-platform racing game inspired from Fun Run. Created by my group and I as part of our software construction <a href="https://istd.sutd.edu.sg/undergraduate/courses/50003-elements-of-software-construction">course</a>, the game logic was created from scratch in libgdx. We used KryoNet as our the network system, and Photoshop and Illustrator for character design and graphic assets.</p>
                     </div>
-                    <button className="btn-primary cardButton wipeIn ani-6" onClick={() => setCurrOpenProject("nimbusrun")}>View</button>
+                    <div className="d-inline-block wipeIn ani-5">
+                        <button
+                            className="btn-square btn-hover-pulse"
+                            onClick={() => setCurrOpenProject("nimbusrun")}>
+                            <div className="icon-arrow-right"></div>
+                        </button>
+                    </div>
                 </article>
             </FadeInSection>
 
@@ -331,7 +363,6 @@ const Projects = () => {
 
             <FadeInSection className="project-item">
                 <div className="project-item-image wipeIn ani-1">
-                    <span className="moreinfo" role="button">1</span>
                     <button onClick={() => setCurrOpenProject("sutdring")}>
                         <Image
                             className="image wipeIn ani-1"
@@ -340,6 +371,7 @@ const Projects = () => {
                     </button>
                 </div>
                 <article className="project-item-content">
+                <div className="numbering wipeIn ani-2">07</div>
                     <h2 className="title wipeIn ani-2">SUTD Ring</h2>
                     <div className="year wipeIn ani-3">September 2015 to March 2016</div>
                     <section className="skills wipeIn ani-4">
@@ -350,7 +382,13 @@ const Projects = () => {
                     <div className="description wipeIn ani-5">
                         <p>Started by two SUTD pioneer students, the SUTD RingComm produces the 'SUTD Ring' for each batch of undergraduates on a yearly basis. I was the designer for the ring case, as well as publicity materials for the batch of 2017 students.</p>
                     </div>
-                    <button className="btn-primary cardButton wipeIn ani-6" onClick={() => setCurrOpenProject("sutdring")}>View</button>
+                    <div className="d-inline-block wipeIn ani-5">
+                        <button
+                            className="btn-square btn-hover-pulse"
+                            onClick={() => setCurrOpenProject("sutdring")}>
+                            <div className="icon-arrow-right"></div>
+                        </button>
+                    </div>
                 </article>
             </FadeInSection>
 
