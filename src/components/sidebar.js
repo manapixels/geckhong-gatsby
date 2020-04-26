@@ -28,8 +28,7 @@ const Sidebar = () => {
 
 	const menuLinks = (
 		<>
-			<Link to="/" activeClassName="active" onClick={() => isMobile ? toggleMobileNav() : {}}>Portfolio</Link>
-			<Link to="/about" activeClassName="active" onClick={() => isMobile ? toggleMobileNav() : {}}>About</Link>
+			<Link to="/" activeClassName="active" onClick={() => isMobile ? toggleMobileNav() : {}}>Work</Link>
 			<Link to="/graphics" activeClassName="active" onClick={() => isMobile ? toggleMobileNav() : {}}>Graphics</Link>
 			<Link to="/blog" activeClassName="active" onClick={() => isMobile ? toggleMobileNav() : {}}>Blog</Link>
 		</>
@@ -43,14 +42,15 @@ const Sidebar = () => {
 
 				<header>
 					{/* Navigation for Desktop */}
-					<Link to="/" alt="Homepage" className="logo">
-						<motion.svg 
-							whileHover={{ scale: 1.1, rotate: 3 }}
-							whileTap={{ scale: 0.9 }}
-							className="icon icon-logo">
-							<use xlinkHref="#icon-logo" />
-						</motion.svg>
-					</Link>
+					<div className="mt-3">
+						<Link to="/" alt="Homepage" className="logo">
+							<motion.svg 
+								whileTap={{ scale: 0.9 }}
+								className="icon icon-logo">
+								<use xlinkHref="#icon-logo" />
+							</motion.svg>
+						</Link>
+					</div>
 					<menu className="desktop">
 						{menuLinks}
 					</menu>

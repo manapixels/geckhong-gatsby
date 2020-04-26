@@ -22,7 +22,7 @@ const getMousePos = (e) => {
         posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop
     }
     
-    return { x : posx, y : posy }
+    return { x : e.pageX, y : e.pageY }
 }
 
 export { map, lerp, calcWinsize, getMousePos }

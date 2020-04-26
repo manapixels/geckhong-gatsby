@@ -1,38 +1,57 @@
 import { gsap } from 'gsap'
-import { map, lerp, calcWinsize, getMousePos } from '../helpers/utils'
-
+import React from 'react'
 import { EventEmitter } from 'events'
 
+import { map, lerp, calcWinsize, getMousePos } from '../helpers/utils'
+import { useEffect } from 'react'
+
 // Calculate the viewport size
-let winsize = calcWinsize()
-window.addEventListener('resize', () => {
-    winsize = calcWinsize()
-})
+let winsize
 
 // Track the mouse position
 let mouse = {x: 0, y: 0}
-window.addEventListener('mousemove', ev => mouse = getMousePos(ev))
 
-export default class Cursor extends EventEmitter {
+let cursorRef = React.createRef()
+
+const Cursor = () => {
+    useEffect(() => {
+		const cur = new CursorAnimation(cursorRef);
+
+		[...document.querySelectorAll('a'), ...document.querySelectorAll('button')].forEach(el => {
+			el.addEventListener('mouseenter', () => cur.emit('enter'));
+			el.addEventListener('mouseleave', () => cur.emit('leave'));
+        })
+        window.addEventListener('resize', () => {
+            winsize = calcWinsize()
+        })
+        window.addEventListener('mousemove', ev => mouse = getMousePos(ev))
+
+    }, [])
+
+    return (
+        <svg className="cursor" width="12" height="12" viewBox="0 0 24 24" ref={(ref) => cursorRef = ref}>
+            <circle className="cursor__inner" cx="12" cy="12" r="1" />
+        </svg>
+    )
+}
+
+export default Cursor
+
+class CursorAnimation extends EventEmitter {
     constructor(el) {
         super()
         this.DOM = {el: el}
         this.DOM.el.style.opacity = 0
         this.DOM.circleInner = this.DOM.el.querySelector('.cursor__inner')
         
-        this.filterId = '#filter-1'
-        this.DOM.feTurbulence = document.querySelector(`${this.filterId} > feTurbulence`)
-        
-        this.primitiveValues = {turbulence: 0}
-
-        this.createTimeline()
+        this.filterId = '#filter'
 
         this.bounds = this.DOM.el.getBoundingClientRect()
         
         this.renderedStyles = {
-            tx: {previous: 0, current: 0, amt: 0.25},
-            ty: {previous: 0, current: 0, amt: 0.25},
-            radius: {previous: 25, current: 25, amt: 0.05}
+            tx: {previous: 0, current: 0, amt: 0.12},
+            ty: {previous: 0, current: 0, amt: 0.12},
+            radius: {previous: 12, current: 12, amt: 0.24}
         }
 
         this.listen()
@@ -47,8 +66,8 @@ export default class Cursor extends EventEmitter {
         window.addEventListener('mousemove', this.onMouseMoveEv)
     }
     render() {
-        this.renderedStyles['tx'].current = mouse.x - this.bounds.width/4*3
-        this.renderedStyles['ty'].current = mouse.y - this.bounds.height/4*3
+        this.renderedStyles['tx'].current = mouse.x - this.bounds.width/2
+        this.renderedStyles['ty'].current = mouse.y - this.bounds.height/2
 
         for (const key in this.renderedStyles ) {
             this.renderedStyles[key].previous = lerp(this.renderedStyles[key].previous, this.renderedStyles[key].current, this.renderedStyles[key].amt)
@@ -59,34 +78,11 @@ export default class Cursor extends EventEmitter {
 
         requestAnimationFrame(() => this.render())
     }
-    createTimeline() {
-        // init timeline
-        this.tl = gsap.timeline({
-            paused: true,
-            onStart: () => {
-                this.DOM.circleInner.style.filter = `url(${this.filterId}`
-            },
-            onUpdate: () => {
-                this.DOM.feTurbulence.setAttribute('baseFrequency', this.primitiveValues.turbulence)
-            },
-            onComplete: () => {
-                this.DOM.circleInner.style.filter = 'none'
-            }
-        })
-        .to(this.primitiveValues, { 
-            duration: 0.3,
-            ease: 'Power3.easeOut',
-            startAt: {turbulence: 0},
-            turbulence: 0
-        });
-    }
     enter() {
-        this.renderedStyles['radius'].current = 60
-        this.tl.restart()
+        this.renderedStyles['radius'].current = 1
     }
     leave() {
-        this.renderedStyles['radius'].current = 25
-        this.tl.progress(1).kill()
+        this.renderedStyles['radius'].current = 12
     }
     listen() {
         this.on('enter', () => this.enter())

@@ -1,0 +1,46 @@
+.contact-form {
+    margin: 0 8rem;
+
+    .contact-form-container {
+        margin: 30vh auto;
+        max-width: 60rem;
+
+        .title {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+
+            label {
+                display: block;
+                font-weight: 700;
+                margin-bottom: .5rem;
+            }
+            input, textarea {
+                display: block;
+                background: var(--white-1);
+                display: block;
+                background: var(--white-1);
+                width: 100%;
+                padding: .7rem;
+                border: 1px solid var(--black);
+                border-radius: .2rem;
+            }
+            .asterisk {
+                color: #ff5151;
+                float: right;
+            }
+            .error {
+                font-size: 90%;
+                margin-top: .3rem;
+            }
+        }
+        .icon-spinner {
+            animation: rotation .7s linear infinite forwards;
+        }
+    }
+}

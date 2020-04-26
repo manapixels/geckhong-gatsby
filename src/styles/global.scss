@@ -38,8 +38,8 @@ Global styles
   --zindex-popover:           1060;
   --zindex-tooltip:           1070;
 
-	--cursor-stroke:          #f9c6ce;
-	--cursor-fill:              none;
+	--cursor-stroke:          none;
+	--cursor-fill:            #000000;
 	--cursor-stroke-width:      1px;
 
   --border-radius: 0.3rem;
@@ -66,7 +66,6 @@ body {
   background-color: var(--black);
   box-sizing: border-box;
   overflow: auto;
-  padding: .8rem;
   scrollbar-width: thin;
   scrollbar-color: var(--gray-medium-1) var(--true-white);
   // cursor: url('../images/leaf-angled.png'), move;
@@ -162,6 +161,10 @@ u {
     bottom: 0rem;
     z-index: -1;
   }
+
+  &.green::after {
+    background-color: var(--green);
+  }
 }
 
 .tooltip {
@@ -231,19 +234,15 @@ u {
   font-style: italic;
   font-weight: 900;
 }
-
 .text-primary {
   color: var(--primary) !important;
 }
-
 .text-green {
   color: var(--green);
 }
-
 .text-black {
   color: var(--black);
 }
-
 .text-gray-light {
   color: var(--primary-light);
 }
@@ -251,18 +250,40 @@ u {
 .text-left {
   text-align: left;
 }
-
 .text-center {
   text-align: center;
 }
-
 .text-right {
   text-align: right;
 }
 
+.font-size-120 {
+  font-size: 120%;
+}
+.position-relative {
+  position: relative;
+}
+
+.bg-gray-light {
+  background-color: var(--white-2);
+}
+.w-100 {
+  width: 100%;
+}
+.h-100 {
+  height: 100%;
+}
+
 a {
-  color: var(--green);
+  color: var(--black);
   text-decoration: none;
+  border-bottom: 1px solid #000;
+
+  &:hover {
+    color: var(--blue);
+    border-color: var(--blue);
+    text-decoration: none;
+}
 }
 
 b {
@@ -364,24 +385,35 @@ button {
 
 .btn-hover-pulse {
   
-  &::before {
+  &::before, &::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     z-index: -1;
-    background: var(--primary);
     width: 100%;
     height: 100%;
     pointer-events: none;
     border-radius: .4rem;
+    animation: rotation 3s linear infinite normal;
+    border: 1px solid var(--primary);
+    padding-top: 100%;
+    transition: background 0.3s linear;
+  }
+  &::after {
+    animation-delay: 0.4s;
   }
 
   &:hover {
 
-    &::before {
-      border-radius: 15%;
-      animation: pulse 1.5s ease infinite;
+    &::before{
+      background: var(--primary);
+      animation-duration: 1.5s;
+    }
+    &::after {
+      background: var(--primary-medium);
+      animation-duration: 1.5s;
+      animation-delay: 0.2s;
     }
   }
 
