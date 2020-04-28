@@ -1,27 +1,31 @@
 import React, { useState } from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import Image from "gatsby-image"
 import { motion } from "framer-motion"
 
 import './design.scss'
 import FadeInSection from '../../components/fadeInSection'
-import AskSimpleProject from "./projects/asksimple"
-import NimbusRunProject from "./projects/nimbusrun"
-import SelfiProject from "./projects/selfi"
-import SUTDRingProject from "./projects/sutdring"
-import SUTDGradNightProject from "./projects/sutdgradnight"
-import ThreadParadiseProject from "./projects/threadparadise"
-import TimeProject from "./projects/time"
+import AskSimpleProject from "../projects/asksimple"
+import NimbusRunProject from "../projects/nimbusrun"
+import SelfiProject from "../projects/selfi"
+import SUTDRingProject from "../projects/sutdring"
+import SUTDGradNightProject from "../projects/sutdgradnight"
+import ThreadParadiseProject from "../projects/threadparadise"
+import TimeProject from "../projects/time"
+
+const event = new Event("pagechange")
 
 const Projects = () => {
 
     const [currOpenProject, setCurrOpenProject] = useState(null)
 
     React.useEffect(() => {
-        if (currOpenProject)
-            document.body.style.overflow = 'hidden'
-        else
-            document.body.style.overflow = 'unset'
+        // if (currOpenProject)
+        //     document.body.style.overflow = 'hidden'
+        // else
+        //     document.body.style.overflow = 'unset'
+
+        window.dispatchEvent(event)
 
         return () => {
             document.body.style.overflow = "unset"
@@ -148,15 +152,18 @@ const Projects = () => {
                     </div>
                 </article>
                 <div className="project-item-image">
-                    <button onClick={() => setCurrOpenProject("selfi")}>
+                    <Link to="/sections/projects/selfi" onClick={() => window.dispatchEvent(event)}>
                         <Image
                             className="image wipeIn ani-1"
                             fluid={selfiCover.childImageSharp.fluid}
                             alt="Selfi app" />
                         <div className="moving-line"></div>
-                    </button>
+                    </Link>
                     <div className="hovering-object right">
                         <div className="three-ellipse">
+                            <div className="item"></div>
+                            <div className="item"></div>
+                            <div className="item"></div>
                             <div className="item"></div>
                             <div className="item"></div>
                             <div className="item"></div>
@@ -181,7 +188,11 @@ const Projects = () => {
                             alt="Thread Paradise app" />
                     </button>
                     <div className="hovering-object left">
-                        <div className="cross">
+                        <div className="diamond-cross">
+                            <div className="item"></div>
+                            <div className="item"></div>
+                            <div className="item"></div>
+                            <div className="item"></div>
                             <div className="item"></div>
                             <div className="item"></div>
                             <div className="item"></div>
@@ -290,6 +301,13 @@ const Projects = () => {
                             fluid={askSimpleCover.childImageSharp.fluid}
                             alt="AskSimple app" />
                     </button>
+                    <div className="hovering-object left">
+                        <div className="circle">
+                            <div className="item"></div>
+                            <div className="item"></div>
+                            <div className="item"></div>
+                        </div>
+                    </div>
                 </div>
                 <article className="project-item-content">
                     <div className="numbering wipeIn ani-2">04</div>
@@ -368,6 +386,15 @@ const Projects = () => {
                             fluid={sutdGradNightCover.childImageSharp.fluid}
                             alt="SUTD Graduation Night 2016" />
                     </button>
+                    <div className="hovering-object right">
+                        <div className="flower">
+                            <div className="item"></div>
+                            <div className="item"></div>
+                            <div className="item"></div>
+                            <div className="item"></div>
+                            <div className="item"></div>
+                        </div>
+                    </div>
                 </div>
             </FadeInSection>
 
@@ -386,6 +413,15 @@ const Projects = () => {
                             fluid={nimbusRunCover.childImageSharp.fluid}
                             alt="Nimbus Run - Android game" />
                     </button>
+                    <div className="hovering-object left">
+                        <div className="square">
+                            <div className="item"></div>
+                            <div className="item"></div>
+                            <div className="item"></div>
+                            <div className="item"></div>
+                            <div className="item"></div>
+                        </div>
+                    </div>
                 </div>
                 <article className="project-item-content">
                     <div className="numbering wipeIn ani-2">06</div>
@@ -464,6 +500,14 @@ const Projects = () => {
                             fluid={sutdRingCover.childImageSharp.fluid}
                             alt="SUTD Ring 4th Production" />
                     </button>
+                    <div className="hovering-object right">
+                        <div className="cross">
+                            <div className="item"></div>
+                            <div className="item"></div>
+                            <div className="item"></div>
+                            <div className="item"></div>
+                        </div>
+                    </div>
                 </div>
             </FadeInSection>
 

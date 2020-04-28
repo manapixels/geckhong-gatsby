@@ -25,8 +25,10 @@ const Layout = ({ children, location }) => {
     }
   `)
 
+	let smoothScroll
+
 	React.useEffect(() => {
-		new SmoothScroll()
+		smoothScroll = new SmoothScroll()
 		window.addEventListener('scroll', handleScroll)
 		return () => window.removeEventListener('scroll', handleScroll)
 	}, [])
@@ -59,7 +61,7 @@ const Layout = ({ children, location }) => {
 					</AnimatePresence>
 
 					<ContactForm />
-					
+
 				</div>
 				<Cursor />
 			</div>
@@ -72,7 +74,7 @@ const Layout = ({ children, location }) => {
 				})}>
 				<span className="icon-arrow-up2"></span>
 			</button>
-			
+
 		</div>
 	)
 }

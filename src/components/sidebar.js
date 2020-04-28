@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 
 import "./sidebar.scss"
 
+const event = new Event("pagechange")
 
 const Sidebar = () => {
 
@@ -28,7 +29,10 @@ const Sidebar = () => {
 
 	const menuLinks = (
 		<>
-			<Link to="/" activeClassName="active" onClick={() => isMobile ? toggleMobileNav() : {}}>Work</Link>
+			<Link to="/" activeClassName="active" onClick={() => {
+				window.dispatchEvent(event)
+				isMobile && toggleMobileNav()
+			}}>Work</Link>
 			<Link to="/graphics" activeClassName="active" onClick={() => isMobile ? toggleMobileNav() : {}}>Graphics</Link>
 			<Link to="/blog" activeClassName="active" onClick={() => isMobile ? toggleMobileNav() : {}}>Blog</Link>
 		</>

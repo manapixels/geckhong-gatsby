@@ -3,8 +3,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 import GifPlayer from "react-gif-player"
 
-import sizingGif from "../../../images/projects/threadparadise/sizing.gif"
-import sizingStill from "../../../images/projects/threadparadise/measurements.png"
+import sizingGif from "../../images/projects/threadparadise/sizing.gif"
+import sizingStill from "../../images/projects/threadparadise/measurements.png"
 
 const ThreadParadiseProject = () => {
     const data = useStaticQuery(graphql`

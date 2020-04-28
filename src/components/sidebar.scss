@@ -13,6 +13,7 @@
     text-align: left;
     position: relative;
     transition: all 0.3s ease-out;
+    z-index: var(--zindex-fixed);
 
     .sidebar-container {
         width: 8rem;
@@ -23,7 +24,6 @@
         flex-flow: column nowrap;
         justify-content: space-between;
         padding: 2rem 0 2rem 2rem;
-        z-index: var(--zindex-fixed);
     }
 }
 
