@@ -368,6 +368,7 @@ button {
   position: relative;
   padding: .7rem;
   font-size: 160%;
+  line-height: 1.2;
   color: var(--white);
   background-color: var(--black);
   border: none;
@@ -380,6 +381,10 @@ button {
   &:not(:disabled):not(.disabled):active:focus {
     color: var(--primary);
     background-color: var(--gray-dark);
+  }
+
+  &.small {
+    font-size: 100%;
   }
 }
 

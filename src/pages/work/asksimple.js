@@ -18,8 +18,8 @@ const AskSimpleProject = () => {
 
     return (
 
-        <>
-            <section className="popupHeader">
+        <div className="work">
+            <section className="header">
                 <div className="row">
                     <div className="col-12 col-md-6">
                         <div className="project-details">
@@ -42,8 +42,8 @@ const AskSimpleProject = () => {
                 </div>
             </section>
 
-            <section className="popupBody">
-                <a className="btn-primary" role="button" href="https://www.csie.ntu.edu.tw/~r04922001/hcid_edulearn/" target="_blank" rel="noopener">Website</a>
+            <section className="body">
+                <a className="btn-primary" role="button" href="https://www.csie.ntu.edu.tw/~r04922001/hcid_edulearn/" target="_blank" rel="noopener noreferrer">Website</a>
                 <h1>Needfinding</h1>
                 <p>We were given the task of finding problems faced in the education sector. Narrowing it down to frustrations faced by students, we decided that these frustrations should be similar across borders. We interviewed 8 students across 5 different countries, cultures, and course specializations.</p>
                 <p>Classes are not only taught in physical classrooms anymore, online alternatives also exist. One might even say that physical classrooms are starting to move towards classes exclusively taught online, due to scalability and convenience. These online classrooms are not fully mature yet and might bring even more frustrations to students and teachers, which is why we also want to explore this part of our studio theme using contextual inquiries.</p>
@@ -57,9 +57,9 @@ const AskSimpleProject = () => {
 
                 <h1>Initial POV</h1>
                 <p>Based on our interviews with students, we identified the following initial point of view:</p>
-                <img src="images/load.svg" data-src="images/projects/asksimple/AS-03.png" className="lazy" />
+                <img src="images/load.svg" data-src="images/projects/asksimple/AS-03.png" alt="" />
                 <p>We noticed that both students who took both types of classes or just one type have a common frustration. We conducted additional needfinding based on this point of view. We also focused our new interview questions on bringing online and offline classes together, since both types of students have more or less the same frustrations in a different context. To understand our findings, we translated the things mentioned by our users to an empathy map:</p>
-                <img src="images/load.svg" data-src="images/projects/asksimple/AS-01.png" className="lazy" />
+                <img src="images/load.svg" data-src="images/projects/asksimple/AS-01.png" alt="" />
 
                 <h1>Additional Needfinding</h1>
                 <p>We noticed that both students who took both types of classes or just one type have a common frustration. We conducted additional needfinding based on this point of view. We also focused our new interview questions on bringing online and offline classes together, since both types of students have more or less the same frustrations in a different context.</p>
@@ -67,15 +67,15 @@ const AskSimpleProject = () => {
                 <h1>Low-fi Prototype</h1>
 
                 <p><b>Enter a classroom:</b><br />If a user wants to enter a new course, the “+” button is clicked, scan the QR code provided in class or enter an ID and then the course will be added to the course list.</p>
-                <img src="images/load.svg" data-src="images/projects/asksimple/ss-enterclassroom.jpg" className="lazy" />
+                <img src="images/load.svg" data-src="images/projects/asksimple/ss-enterclassroom.jpg" alt="" />
                 <p><b>Navigation:</b><br />Users can navigate in the order: Choose a course -> choose a session -> choose a question.</p>
-                <img src="images/load.svg" data-src="images/projects/asksimple/ss-navigation.jpg" className="lazy" />
+                <img src="images/load.svg" data-src="images/projects/asksimple/ss-navigation.jpg" alt="" />
                 <p><b>Ask a question:</b><br />Click on the “Ask” button, enter a question in the pop-up text field and submit the question. A “Thanks for asking” message will appear and the question will appear in the question list.</p>
-                <img src="images/load.svg" data-src="images/projects/asksimple/ss-askquestion.jpg" className="lazy" />
+                <img src="images/load.svg" data-src="images/projects/asksimple/ss-askquestion.jpg" alt="" />
                 <p><b>Answer a question:</b><br />The arrow “v” below the question is clicked to open all answers to the question. Click on answer opens a pop-up text field, Click on submit adds the answer to the answer list.</p>
-                <img src="images/load.svg" data-src="images/projects/asksimple/ss-answerquestion.jpg" className="lazy" />
+                <img src="images/load.svg" data-src="images/projects/asksimple/ss-answerquestion.jpg" alt="" />
                 <p><b>Upvote a question:</b><br />To upvote a question, user clicks on the triangle sign. To redo the action, the triangle is clicked again.</p>
-                <img src="images/load.svg" data-src="images/projects/asksimple/ss-upvote.jpg" className="lazy" />
+                <img src="images/load.svg" data-src="images/projects/asksimple/ss-upvote.jpg" alt="" />
 
                 <h1>Concept Video</h1>
                 <p>To better illustrate the above actions, we created a video to show how the app can be used in a lecture theatre.</p>
@@ -101,7 +101,7 @@ const AskSimpleProject = () => {
 
 
             </section>
-        </>
+        </div>
     )
 }
 

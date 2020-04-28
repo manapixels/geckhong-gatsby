@@ -17,8 +17,8 @@ const SUTDGradNightProject = () => {
 		`)
 
     return (
-        <>
-            <section className="popupHeader">
+        <div className="work">
+            <section className="header">
                 <div className="row">
                     <div className="col-12 col-md-6">
                         <div className="project-details">
@@ -41,7 +41,7 @@ const SUTDGradNightProject = () => {
                 </div>
             </section>
 
-            <section className="popupBody">
+            <section className="body">
                 <h1>About Grad Night &amp; Deliverables</h1>
                 <p>Initiated by the Alumni of Singapore University of Technology and Design (SUTD) and planned by a student committee, the SUTD Graduation Night is an annual celebratory night for graduating students. There were ~250 seniors from the graduating batch and the aim of our publicity team, consisting of 7 members, was to attract as many people as possible to the event. After discussion, we decided to produce the following materials:</p>
                 <ul>
@@ -68,13 +68,13 @@ const SUTDGradNightProject = () => {
                 <img src="images/load.svg" data-src="images/projects/gradnight/poster.jpg" className="lazy" />
                 <div className="caption">Draft poster designs and final design (top centre)</div>
                 <h1>Website</h1>
-                <p>We required a platform for (1) purchasing of tickets, (2) title nominations, (3) message dedication, (4) submission of photographs, and (5) to post official updates of the event. We came up with a vertical-scroll website with the aid of patterns and specially-created graphics to enhance the theme feel of the website. Jotform and Google Forms were used for ticket purchase and message dedication. Dropbox was used for submission of photographs. After submission. the photographs get pulled to Flickr using IFTTT, which then gets pulled to the site gallery using Flickr's API. <i>Website has been archived to Github Pages as domain (sutdgradnight.com) as expired.</i> <a className="btn-primary" href="http://zhenyangg.github.io/sutdgradnight/" alt="SUTD Gradnight 2016 website" target="_blank" role="button" rel="noopener">Visit the website</a></p>
+                <p>We required a platform for (1) purchasing of tickets, (2) title nominations, (3) message dedication, (4) submission of photographs, and (5) to post official updates of the event. We came up with a vertical-scroll website with the aid of patterns and specially-created graphics to enhance the theme feel of the website. Jotform and Google Forms were used for ticket purchase and message dedication. Dropbox was used for submission of photographs. After submission. the photographs get pulled to Flickr using IFTTT, which then gets pulled to the site gallery using Flickr's API. <i>Website has been archived to Github Pages as domain (sutdgradnight.com) as expired.</i> <a className="btn-primary" href="http://zhenyangg.github.io/sutdgradnight/" alt="SUTD Gradnight 2016 website" target="_blank" role="button" rel="noopener noreferrer">Visit the website</a></p>
                 <h1>Afterthoughts</h1>
                 <p>Even though the colour palette and fonts used were pretty much uniform in all the materials we produced, they didn't looked as uniform as I hoped. For example, our dragons in the (1) header background of the website and (2) the poster were created by different artists within the team and had different styles. The ships in (1) the poster and (2) the event ticket had different styles to them too. The graphics created for the nominations were more cartoon-like than the other graphics.</p>
                 <h1>Artboard</h1>
                 <a className="bigimages" href="images/projects/gradnight/artboard.jpg" target="_blank" role="button"><img src="images/load.svg" data-src="images/projects/gradnight/artboard.jpg" className="lazy" /></a>
             </section>
-        </>
+        </div>
     )
 }
 

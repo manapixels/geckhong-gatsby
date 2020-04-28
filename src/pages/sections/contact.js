@@ -1,7 +1,7 @@
 import React, { useState, createRef } from "react"
 import Recaptcha from 'react-google-recaptcha'
 import "./contact.scss"
-import { encode } from "../helpers/encode"
+import { encode } from "../../helpers/encode"
 
 const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY
 if (typeof RECAPTCHA_KEY === 'undefined') {
@@ -90,7 +90,7 @@ const ContactForm = () => {
                     <div className="col-12 col-md-5">
                         <div className="title">Let's chit-chat and connect!</div>
                         <div className="description">
-                            I'm open to collaboration, or just simply talking about design and coding stuff. Find me on <a href="https://t.me/manapixels" target="_blank" rel="noopener">Telegram</a> or send me a message with this contact form.
+                            I'm open to collaboration, or just simply talking about design and coding stuff. Find me on <a href="https://t.me/manapixels" target="_blank" rel="noopener noreferrer">Telegram</a> or send me a message with this contact form.
                         </div>
                     </div>
                     <div className="col-12 col-md-6 offset-md-1">

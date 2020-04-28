@@ -9,14 +9,14 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 8rem;
+    width: 10rem;
     text-align: left;
     position: relative;
     transition: all 0.3s ease-out;
     z-index: var(--zindex-fixed);
 
     .sidebar-container {
-        width: 8rem;
+        width: 10rem;
         position: fixed;
         height: 100vh;
         text-align: left;
@@ -82,7 +82,8 @@ header {
 
     menu {
         margin: 1rem 0;
-        padding: 0;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
 
         &.mobile {
             display: none;
@@ -170,7 +171,8 @@ header {
         a {
             display: block;
             position: relative;
-            padding: 0.5rem;
+            padding-top: .5rem;
+            padding-bottom: .5rem;
             text-decoration: none;
             overflow: hidden;
             font-size: .9rem;
@@ -209,7 +211,7 @@ header {
         }
 
         &.desktop {
-            a {
+            a.link {
 
                 &:nth-child(1):hover,
                 &:nth-child(1):focus {
@@ -239,6 +241,15 @@ header {
                 &:nth-child(5):focus {
                     color: var(--black);
                     text-shadow: 0px -3px 2px rgba(255, 110, 110, 0.6), 0px -2px 0 #ffffff;
+                }
+            }
+
+            a.sublink {
+                font-size: 85%;
+                padding: .3rem 0 .3rem .3rem;
+
+                &:hover {
+                    font-weight: 700;
                 }
             }
         }

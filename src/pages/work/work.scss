@@ -1,0 +1,201 @@
+.work {
+
+    .wipeIn {
+        &.ani-1 {
+            animation-delay: .6s;
+
+            &::before {
+                animation-delay: .6s;
+            }
+        }
+
+        &.ani-2 {
+            animation-delay: .8s;
+
+            &::before {
+                animation-delay: .8s;
+            }
+        }
+
+        &.ani-3 {
+            animation-delay: 1s;
+
+            &::before {
+                animation-delay: 1s;
+            }
+        }
+
+        &.ani-4 {
+            animation-delay: 1.2s;
+
+            &::before {
+                animation-delay: 1.2s;
+            }
+        }
+
+        &.ani-5 {
+            animation-delay: 1.4s;
+
+            &::before {
+                animation-delay: 1.4s;
+            }
+        }
+    }
+
+    .header {
+        margin: 0 auto;
+        max-width: 100%;
+        box-sizing: border-box;
+        background: var(--white-2);
+        border-bottom-left-radius: .8rem;
+        border-bottom-right-radius: .8rem;
+
+        .project-details {
+            padding: 2rem 5rem;
+
+            h1 {
+                font-size: 400%;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            .description {
+                ul {
+                    max-width: 450px;
+                    padding: 0;
+
+                    li {
+                        display: inline-block;
+                        padding: 0.3rem;
+                        width: auto;
+                        margin-bottom: 1.5rem;
+                        margin-right: .5rem;
+                        list-style: none;
+                    }
+                }
+
+                p {
+
+                    &.name {
+                        font-weight: 700;
+                        letter-spacing: 0.08em;
+                        padding: 0;
+                        border-radius: 0.2em;
+                        margin: 0;
+                    }
+                }
+
+                .desc {
+                    color: var(--black);
+                    max-width: 400px;
+                    padding: 0.3rem 1rem;
+                    border-left: var(--primary) solid .4rem;
+                }
+            }
+        }
+
+        .image {
+            height: 100%;
+        }
+
+        .skills {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+            -webkit-box-pack: start;
+            -moz-box-pack: start;
+            -ms-box-pack: start;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+
+            span {
+                -webkit-box-flex: 0;
+                -ms-flex: 0 1 auto;
+                flex: 0 1 auto;
+                text-align: center;
+                padding: 0.3em 0.5em;
+                margin: 0.2em;
+                background: var(--black);
+                color: #fff;
+                text-transform: uppercase;
+                letter-spacing: 0.03em;
+                font-size: 90%;
+
+                &.year {
+                    background: #fff;
+                    color: var(--black);
+                    font-style: italic;
+                    font-weight: bold;
+                    border: var(--black) solid 1px;
+                }
+            }
+        }
+    }
+
+    .body {
+        background: var(--white);
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center;
+        padding: 2em;
+        margin: 0 auto;
+
+        &>h1 {
+            font: 2em Gotham, Helvetica, Arial, sans-serif;
+            padding: 5em 0 0;
+            padding: 15vh 0 0;
+
+            &::after {
+                content: "";
+                display: block;
+                width: 80px;
+                height: 5px;
+                background-color: #f9c6ce;
+                margin: 13px auto;
+            }
+        }
+
+        p {
+            font-size: 120%;
+            padding: 0.8em 1.8em;
+            max-width: 650px;
+            text-align: justify;
+        }
+
+        ul {
+            list-style-type: square;
+            padding: 1em 0;
+            margin-left: 1em;
+            line-height: 1.3em;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .mobile-screenshot {
+            margin: 0 auto;
+        }
+
+        .mobile-screenshot,
+        .gif_player {
+            border: .2rem solid var(--gray-light-1);
+            border-bottom-width: 1.2rem;
+            border-radius: .5rem;
+            max-width: 300px;
+            box-sizing: content-box;
+
+            .gif-image {
+                border-top-left-radius: .5rem;
+                border-top-right-radius: .5rem;
+                max-width: 300px;
+            }
+        }
+    }
+}

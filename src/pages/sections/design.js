@@ -1,37 +1,13 @@
-import React, { useState } from "react"
+import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Image from "gatsby-image"
-import { motion } from "framer-motion"
 
 import './design.scss'
 import FadeInSection from '../../components/fadeInSection'
-import AskSimpleProject from "../projects/asksimple"
-import NimbusRunProject from "../projects/nimbusrun"
-import SelfiProject from "../projects/selfi"
-import SUTDRingProject from "../projects/sutdring"
-import SUTDGradNightProject from "../projects/sutdgradnight"
-import ThreadParadiseProject from "../projects/threadparadise"
-import TimeProject from "../projects/time"
-
-const event = new Event("pagechange")
 
 const Projects = () => {
-
-    const [currOpenProject, setCurrOpenProject] = useState(null)
-
-    React.useEffect(() => {
-        // if (currOpenProject)
-        //     document.body.style.overflow = 'hidden'
-        // else
-        //     document.body.style.overflow = 'unset'
-
-        window.dispatchEvent(event)
-
-        return () => {
-            document.body.style.overflow = "unset"
-        }
-    }, [currOpenProject])
-
+    
+    // const event = new Event("pagechange")
 
     const data = useStaticQuery(
         graphql`
@@ -97,26 +73,6 @@ const Projects = () => {
     return (
         <div className="projects">
 
-            <article className={`popup ${currOpenProject !== null ? 'on' : ''}`}>
-                {currOpenProject === 'selfi' && <SelfiProject />}
-                {currOpenProject === 'threadparadise' && <ThreadParadiseProject />}
-                {currOpenProject === 'asksimple' && <AskSimpleProject />}
-                {currOpenProject === 'nimbusrun' && <NimbusRunProject />}
-                {currOpenProject === 'sutdring' && <SUTDRingProject />}
-                {currOpenProject === 'sutdgradnight' && <SUTDGradNightProject />}
-                {currOpenProject === 'time' && <TimeProject />}
-            </article>
-
-            <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                className={`btn-square icon-left ${currOpenProject !== null ? 'icon-on' : ''}`}
-                onClick={
-                    () => setCurrOpenProject(null)}>
-                <span className="icon-arrow-left"></span>
-            </motion.button>
-
-
             <div className="section-title" style={{marginTop: '8rem'}}><span>Projects</span></div>
 
             {/* ******
@@ -131,7 +87,7 @@ const Projects = () => {
                     <h2 className="title wipeIn ani-2">Selfi</h2>
                     <div className="year wipeIn ani-3">January 2020 and Ongoing</div>
                     <div className="description wipeIn ani-4">
-                        <p>Selfi is a self-discovery platform built for students, job-seekers and people curious to know more about themselves. Users answer personality questions and get traits for each quiz completed. Traits transformed with additional quizzes completed.<br/><br/><a href="https://www.selfi.ai" target="_blank" rel="noopener" role="button">Visit Website</a></p>
+                        <p>Selfi is a self-discovery platform built for students, job-seekers and people curious to know more about themselves. Users answer personality questions and get traits for each quiz completed. Traits transformed with additional quizzes completed.<br/><br/><a href="https://www.selfi.ai" target="_blank" rel="noopener noreferrer" role="button">Visit Website</a></p>
                     </div>
                     <div className="row wipeIn ani-4">
                         <div className="col-12 col-md-5 mb-3">
@@ -144,15 +100,13 @@ const Projects = () => {
                         </div>
                     </div>
                     <div className="d-inline-block wipeIn ani-5">
-                        <button
-                            className="btn-square btn-hover-pulse"
-                            onClick={() => setCurrOpenProject("selfi")}>
+                        <Link className="d-inline-block btn-square btn-hover-pulse" to="/work/selfi">
                             <div className="icon-arrow-right"></div>
-                        </button>
+                        </Link>
                     </div>
                 </article>
                 <div className="project-item-image">
-                    <Link to="/sections/projects/selfi" onClick={() => window.dispatchEvent(event)}>
+                    <Link to="/work/selfi">
                         <Image
                             className="image wipeIn ani-1"
                             fluid={selfiCover.childImageSharp.fluid}
@@ -181,12 +135,12 @@ const Projects = () => {
 
             <FadeInSection className="project-item">
                 <div className="project-item-image">
-                    <button onClick={() => setCurrOpenProject("threadparadise")}>
+                    <Link to="/work/threadparadise">
                         <Image
                             className="image wipeIn ani-1"
                             fluid={threadParadiseCover.childImageSharp.fluid}
                             alt="Thread Paradise app" />
-                    </button>
+                    </Link>
                     <div className="hovering-object left">
                         <div className="diamond-cross">
                             <div className="item"></div>
@@ -223,11 +177,9 @@ const Projects = () => {
                         </div>
                     </div>
                     <div className="d-inline-block wipeIn ani-5">
-                        <button
-                            className="btn-square btn-hover-pulse"
-                            onClick={() => setCurrOpenProject("threadparadise")}>
+                        <Link className="d-inline-block btn-square btn-hover-pulse" to="/work/threadparadise">
                             <div className="icon-arrow-right"></div>
-                        </button>
+                        </Link>
                     </div>
                 </article>
             </FadeInSection>
@@ -262,20 +214,18 @@ const Projects = () => {
                         </div>
                     </div>
                     <div className="d-inline-block wipeIn ani-5">
-                        <button
-                            className="btn-square btn-hover-pulse"
-                            onClick={() => setCurrOpenProject("time")}>
+                        <Link className="d-inline-block btn-square btn-hover-pulse" to="/work/timeui">
                             <div className="icon-arrow-right"></div>
-                        </button>
+                        </Link>
                     </div>
                 </article>
                 <div className="project-item-image">
-                    <button onClick={() => setCurrOpenProject("time")}>
+                    <Link to="/work/timeui">
                         <Image
                             className="image wipeIn ani-1"
                             fluid={timeCover.childImageSharp.fluid}
                             alt="Time UI Homescreen" />
-                    </button>
+                    </Link>
                     <div className="hovering-object right">
                         <div className="triangle">
                             <div className="item"></div>
@@ -295,12 +245,12 @@ const Projects = () => {
 
             <FadeInSection className="project-item item">
                 <div className="project-item-image">
-                    <button onClick={() => setCurrOpenProject("asksimple")}>
+                    <Link to="/work/asksimple">
                         <Image
                             className="image wipeIn ani-1"
                             fluid={askSimpleCover.childImageSharp.fluid}
                             alt="AskSimple app" />
-                    </button>
+                    </Link>
                     <div className="hovering-object left">
                         <div className="circle">
                             <div className="item"></div>
@@ -332,11 +282,9 @@ const Projects = () => {
                         </div>
                     </div>
                     <div className="d-inline-block wipeIn ani-5">
-                        <button
-                            className="btn-square btn-hover-pulse"
-                            onClick={() => setCurrOpenProject("asksimple")}>
+                        <Link className="d-inline-block btn-square btn-hover-pulse" to="/work/asksimple">
                             <div className="icon-arrow-right"></div>
-                        </button>
+                        </Link>
                     </div>
                 </article>
             </FadeInSection>
@@ -372,20 +320,18 @@ const Projects = () => {
                         </div>
                     </div>
                     <div className="d-inline-block wipeIn ani-5">
-                        <button
-                            className="btn-square btn-hover-pulse"
-                            onClick={() => setCurrOpenProject("sutdgradnight")}>
+                        <Link className="d-inline-block btn-square btn-hover-pulse" to="/work/sutdgradnight">
                             <div className="icon-arrow-right"></div>
-                        </button>
+                        </Link>
                     </div>
                 </article>
                 <div className="project-item-image">
-                    <button onClick={() => setCurrOpenProject("sutdgradnight")}>
+                    <Link to="/work/sutdgradnight">
                         <Image
                             className="image wipeIn ani-1"
                             fluid={sutdGradNightCover.childImageSharp.fluid}
                             alt="SUTD Graduation Night 2016" />
-                    </button>
+                    </Link>
                     <div className="hovering-object right">
                         <div className="flower">
                             <div className="item"></div>
@@ -407,12 +353,12 @@ const Projects = () => {
 
             <FadeInSection className="project-item">
                 <div className="project-item-image">
-                    <button onClick={() => setCurrOpenProject("nimbusrun")}>
+                    <Link to="/work/nimbusrun">
                         <Image
                             className="image wipeIn ani-1"
                             fluid={nimbusRunCover.childImageSharp.fluid}
                             alt="Nimbus Run - Android game" />
-                    </button>
+                    </Link>
                     <div className="hovering-object left">
                         <div className="square">
                             <div className="item"></div>
@@ -446,11 +392,9 @@ const Projects = () => {
                         </div>
                     </div>
                     <div className="d-inline-block wipeIn ani-5">
-                        <button
-                            className="btn-square btn-hover-pulse"
-                            onClick={() => setCurrOpenProject("nimbusrun")}>
+                    <Link className="d-inline-block btn-square btn-hover-pulse" to="/work/nimbusrun">
                             <div className="icon-arrow-right"></div>
-                        </button>
+                        </Link>
                     </div>
                 </article>
             </FadeInSection>
@@ -486,20 +430,18 @@ const Projects = () => {
                         </div>
                     </div>
                     <div className="d-inline-block wipeIn ani-5">
-                        <button
-                            className="btn-square btn-hover-pulse"
-                            onClick={() => setCurrOpenProject("sutdring")}>
+                        <Link className="d-inline-block btn-square btn-hover-pulse" to="/work/sutdring">
                             <div className="icon-arrow-right"></div>
-                        </button>
+                        </Link>
                     </div>
                 </article>
                 <div className="project-item-image wipeIn ani-1">
-                    <button onClick={() => setCurrOpenProject("sutdring")}>
+                    <Link to="/work/sutdring">
                         <Image
                             className="image wipeIn ani-1"
                             fluid={sutdRingCover.childImageSharp.fluid}
                             alt="SUTD Ring 4th Production" />
-                    </button>
+                    </Link>
                     <div className="hovering-object right">
                         <div className="cross">
                             <div className="item"></div>

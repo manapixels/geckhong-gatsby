@@ -30,7 +30,7 @@ const About = () => {
                             <div className="wipeIn ani-1">I'm a product designer at Selfi, a platform that empowers people to understand and utilise their personality data. <div className="wipeIn ani-3 d-inline-block text-green">I am a bridger.</div></div>
                         </div>
                         <p className="wipeIn ani-2 font-size-120">Creating products of value to both businesses and users is my goal - I want to make the world a better place for people through great products that people <b><i>actually</i></b> use. And the core to make this happen is bridging design, development and business goals. Users feel happy using the product, businesses profit and allocate more resources to build better stuff. Win-win for all. ✨🍺</p>
-                        <a className="link-highlight mr-5 wipeIn ani-2" href="https://t.me/manapixels" target="_blank" rel="noopener">
+                        <a className="link-highlight mr-5 wipeIn ani-2" href="https://t.me/manapixels" target="_blank" rel="noopener noreferrer">
                             <span>Chat on Telegram</span>
                             <svg className="icon icon-arrow-right"><use xlinkHref="#icon-arrow-right"></use></svg>
                         </a>

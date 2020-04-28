@@ -1,20 +1,19 @@
 import React from "react"
+import { navigate } from "gatsby"
 
 import SEO from "../components/seo"
-import AboutSection from "./sections/about"
-import DesignSection from "./sections/design"
 import './index.scss'
 
 
 const IndexPage = () => {
+
+	navigate("/work")
 
 	return (
 
 		<>
 			<SEO title="Home" />
 			<div className="index-page">
-				<AboutSection />
-				<DesignSection />
 			</div>
 		</>
 	)

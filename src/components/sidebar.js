@@ -6,9 +6,11 @@ import { motion } from "framer-motion"
 
 import "./sidebar.scss"
 
-const event = new Event("pagechange")
+// const event = new Event("pagechange")
 
-const Sidebar = () => {
+const Sidebar = ({ location }) => {
+
+	const locationParts = location.pathname && location.pathname.split('/')
 
 	const [isMobileNavOpen, setIsMobileNavOpen] = useState(false)
 
@@ -27,14 +29,46 @@ const Sidebar = () => {
 			document.body.style.overflow = "unset"
 	}
 
+	const projectLinks = (
+		<>
+			<Link 
+				to="/work/selfi" activeClassName="active" className="sublink"
+				onClick={() => {isMobile && toggleMobileNav()}}>01 • Selfi</Link>
+			<Link 
+				to="/work/threadparadise" activeClassName="active" className="sublink"
+				onClick={() => isMobile ? toggleMobileNav() : {}}>02 • Thread Paradise</Link>
+			<Link 
+				to="/work/timeui" activeClassName="active" className="sublink"
+				onClick={() => isMobile ? toggleMobileNav() : {}}>03 • Time UI</Link>
+			<Link 
+				to="/work/asksimple" activeClassName="active" className="sublink"
+				onClick={() => isMobile ? toggleMobileNav() : {}}>04 • AskSimple</Link>
+			<Link 
+				to="/work/sutdgradnight" activeClassName="active" className="sublink"
+				onClick={() => isMobile ? toggleMobileNav() : {}}>05 • Grad Night</Link>
+			<Link 
+				to="/work/nimbusrun" activeClassName="active" className="sublink"
+				onClick={() => isMobile ? toggleMobileNav() : {}}>06 • Nimbus Run</Link>
+			<Link 
+				to="/work/sutdring" activeClassName="active" className="sublink"
+				onClick={() => isMobile ? toggleMobileNav() : {}}>07 • SUTD Ring</Link>
+		</>
+	)
+
 	const menuLinks = (
 		<>
-			<Link to="/" activeClassName="active" onClick={() => {
-				window.dispatchEvent(event)
-				isMobile && toggleMobileNav()
-			}}>Work</Link>
-			<Link to="/graphics" activeClassName="active" onClick={() => isMobile ? toggleMobileNav() : {}}>Graphics</Link>
-			<Link to="/blog" activeClassName="active" onClick={() => isMobile ? toggleMobileNav() : {}}>Blog</Link>
+			<Link 
+				to="/work" activeClassName="active" className="link"
+				onClick={() => isMobile && toggleMobileNav()}>Work</Link>
+			{typeof locationParts === 'object' && locationParts[1] === 'work' && 
+				<div>{projectLinks}</div>
+			}
+			<Link 
+				to="/graphics" activeClassName="active" className="link" 
+				onClick={() => isMobile ? toggleMobileNav() : {}}>Graphics</Link>
+			<Link 
+				to="/blog" activeClassName="active" className="link" 
+				onClick={() => isMobile ? toggleMobileNav() : {}}>Blog</Link>
 		</>
 	)
 
@@ -72,10 +106,10 @@ const Sidebar = () => {
 						</div>
 						<div className="social-container">
 							<a className="resume" href="documents/resume.pdf" target="_blank" title="Download Résumé">Résumé</a>
-							<a href="mailto:zhenyangg@outlook.com" target="_blank" rel="noopener" role="button">Email</a>
-							<a href="https://t.me/manapixels" target="_blank" rel="noopener" role="button">Telegram</a>
-							<a href="https://github.com/zhenyangg" target="_blank" rel="noopener" role="button">Github</a>
-							<a href="https://sg.linkedin.com/in/zhenyanglim" target="_blank" rel="noopener" role="button">LinkedIn</a>
+							<a href="mailto:zhenyangg@outlook.com" target="_blank" rel="noopener noreferrer" role="button">Email</a>
+							<a href="https://t.me/manapixels" target="_blank" rel="noopener noreferrer" role="button">Telegram</a>
+							<a href="https://github.com/zhenyangg" target="_blank" rel="noopener noreferrer" role="button">Github</a>
+							<a href="https://sg.linkedin.com/in/zhenyanglim" target="_blank" rel="noopener noreferrer" role="button">LinkedIn</a>
 						</div>
 					</menu>
 				</header>
@@ -86,10 +120,10 @@ const Sidebar = () => {
 				<footer className="disable-select">
 					<div className="social-container">
 						<a className="resume" href="documents/resume.pdf" target="_blank" title="Download Résumé">Résumé</a>
-						<a href="mailto:zhenyangg@outlook.com" target="_blank" rel="noopener" role="button">Email</a>
-						<a href="https://t.me/manapixels" target="_blank" rel="noopener" role="button">Telegram</a>
-						<a href="https://github.com/zhenyangg" target="_blank" rel="noopener" role="button">Github</a>
-						<a href="https://sg.linkedin.com/in/zhenyanglim" target="_blank" rel="noopener" role="button">LinkedIn</a>
+						<a href="mailto:zhenyangg@outlook.com" target="_blank" rel="noopener noreferrer" role="button">Email</a>
+						<a href="https://t.me/manapixels" target="_blank" rel="noopener noreferrer" role="button">Telegram</a>
+						<a href="https://github.com/zhenyangg" target="_blank" rel="noopener noreferrer" role="button">Github</a>
+						<a href="https://sg.linkedin.com/in/zhenyanglim" target="_blank" rel="noopener noreferrer" role="button">LinkedIn</a>
 					</div>
 				</footer>
 

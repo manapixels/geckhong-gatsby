@@ -52,9 +52,9 @@ const TimeProject = () => {
     `)
 
     return (
-        <>
+        <div className="work">
 
-            <section className="popupHeader">
+            <section className="header">
                 <div className="row">
                     <div className="col-12 col-md-6">
                         <div className="project-details">
@@ -77,7 +77,7 @@ const TimeProject = () => {
                 </div>
             </section>
 
-            <section className="popupBody">
+            <section className="body">
                 <h1>The Issue</h1>
                 <p>With the increasing number of applications in smartphones today, accessing the desired applications can potentially be time consuming, effortful and result in cognitive load due to visual clutter. This will disperse the user’s attention and hence access to functions may be delayed or even hindered. This projects seeks to enhance access to applications in smartphones which would be especially effective in smartphones containing a high number of applications. By applications, we refer not just to apps, but to things like contacts, documents, images as well.</p>
                 <h1>Progress</h1>
@@ -153,7 +153,7 @@ const TimeProject = () => {
 
                 <p><i>Privacy invasion</i><br /><br />Since apps are pushed to users based on the time and location, it is constantly tracking user’s actions in an implicit manner. Users may feel uncomfortable that they are constantly monitored.</p>
             </section>
-        </>
+        </div>
     )
 }
 export default TimeProject

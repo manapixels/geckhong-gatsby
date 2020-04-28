@@ -1,6 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
+import "./work.scss"
 
 const SelfiProject = () => {
 
@@ -18,19 +19,31 @@ const SelfiProject = () => {
 
     return (
 
-        <>
-            <section className="popupHeader">
+        <div className="work">
+            <section className="header">
                 <div className="row">
                     <div className="col-12 col-md-6">
                         <div className="project-details">
-                            <h1>Selfi</h1>
+                            <h1 className="wipeIn ani-1">Selfi</h1>
                             <div className="description">
                                 <ul>
-                                    <li><p className="name">Period</p><p className="desc">Jan 20 and Ongoing</p></li>
-                                    <li><p className="name">Role</p><p className="desc">Design + Front-end Dev</p></li>
-                                    <li><p className="name">Project Scope</p><p className="desc">Selfi is a self-discovery platform built for everyone, no matter age, race, culture or religion. Users answer personality questions and they get traits for each quiz completed.</p></li>
+                                    <li>
+                                        <p className="name wipeIn ani-2">Period</p>
+                                        <p className="desc wipeIn ani-2">Ongoing since Jan 2020</p>
+                                    </li>
+                                    <li>
+                                        <p className="name wipeIn ani-3">Role</p>
+                                        <p className="desc wipeIn ani-3">Design + Front-end Dev</p>
+                                    </li>
+                                    <li>
+                                        <p className="name wipeIn ani-4">Project Scope</p>
+                                        <p className="desc wipeIn ani-4">Selfi is a self-discovery platform built for everyone, no matter age, race, culture or religion. Users answer personality questions and they get traits for each quiz completed.</p>
+                                    </li>
                                 </ul>
                             </div>
+                            <a href="https://selfi.ai" target="_blank" rel="noopener noreferrer" className="d-inline-block btn-square small btn-hover-pulse">
+                                Visit website
+                            </a>
                         </div>
                     </div>
                     <div className="col-12 col-md-6">
@@ -42,7 +55,7 @@ const SelfiProject = () => {
                 </div>
             </section>
 
-            <section className="popupBody">
+            <section className="body">
                 <h1>What is Selfi</h1>
 
                 <p>Selfi is my baby - I witnessed its birth and its transformation since then. Back in late 2018 our team had an idea of creating a platform for companies to test job candidates' personality for role suitability. There was a need to create a consumer-facing site for candidates to take the quiz, as well as a company-facing site for admins to manage the tests, and so Selfi Personal and Selfi Corporate was born. Selfi was named the way it is because I felt the greatest value it would provide to individuals and the companies we serve was the opportunity to have a look at their own reflection - what they truly are. By understanding their real selfs, I hope it will inspire change for the better.</p>
@@ -59,7 +72,7 @@ const SelfiProject = () => {
 
 
             </section>
-        </>
+        </div>
     )
 }
 

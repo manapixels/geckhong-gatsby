@@ -41,8 +41,8 @@ const ThreadParadiseProject = () => {
 		`)
 
     return (
-        <>
-            <section className="popupHeader">
+        <div className="work">
+            <section className="header">
                 <div className="row">
                     <div className="col-12 col-md-6">
                         <div className="project-details">
@@ -65,7 +65,7 @@ const ThreadParadiseProject = () => {
                 </div>
             </section>
             
-            <section className="popupBody">
+            <section className="body">
                 <h1>The Issue</h1>
                 <p>Based on the issues faced by Singaporean shoppers on Singapore-based eCommerce apps, could we find any major issues that frustrates a shopper enough for him to not purchase an item? We first started the project by conducting multiple needfeeding sessions with 20 young adults. What we found out were issues linked to sizing issues. There were a couple of issues faced by users:</p>
                 <ul>
@@ -130,7 +130,7 @@ const ThreadParadiseProject = () => {
 
             </section>
 
-        </>
+        </div>
     )
 }
 export default ThreadParadiseProject

@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion"
 
 import Sidebar from "./sidebar"
 import Preloader from "./preloader"
-import ContactForm from "./contact"
 import Cursor from "./cursor"
 import debounce from "../helpers/debounce"
 import SmoothScroll from './smoothScroll'
@@ -60,12 +59,10 @@ const Layout = ({ children, location }) => {
 						</motion.main>
 					</AnimatePresence>
 
-					<ContactForm />
-
 				</div>
 				<Cursor />
 			</div>
-			<Sidebar siteTitle={data.site.siteMetadata.title} />
+			<Sidebar siteTitle={data.site.siteMetadata.title} location={location} />
 			<button
 				className={`go-back-up ${showScrollToTopBtn ? '' : 'invisible'}`}
 				onClick={() => window.scroll({
