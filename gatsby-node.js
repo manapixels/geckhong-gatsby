@@ -198,7 +198,6 @@ exports.createPages = async ({ graphql, actions }) => {
         itemsPerPage: postsPerPage,
         component: blogTemplate,
         pathPrefix: ({ pageNumber }) => {
-            console.log(pageNumber)
             if (pageNumber === 0) {
                 return `/blog`
             } else {

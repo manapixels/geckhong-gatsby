@@ -3,16 +3,18 @@ import PropTypes from "prop-types"
 import React, { useState } from "react"
 import { isMobile } from "react-device-detect"
 import { motion } from "framer-motion"
+import { StaticQuery, graphql } from 'gatsby'
 
+import { TagCard } from './'
 import "./sidebar.scss"
 
 // const event = new Event("pagechange")
 
-const Sidebar = ({ location }) => {
+const Sidebar = ({ data, location }) => {
 
 	const locationParts = location.pathname && location.pathname.split('/')
-
 	const [isMobileNavOpen, setIsMobileNavOpen] = useState(false)
+	const tags = data.allGhostTag.edges
 
 	React.useEffect(() => {
 
@@ -69,6 +71,9 @@ const Sidebar = ({ location }) => {
 			<Link 
 				to="/blog" activeClassName="active" className="link" 
 				onClick={() => isMobile ? toggleMobileNav() : {}}>Blog</Link>
+			{tags.map(({ node }) => (
+            	<TagCard key={`tag-${node.id}`} tag={node} />
+          ))}
 		</>
 	)
 
@@ -157,10 +162,30 @@ const Sidebar = ({ location }) => {
 
 Sidebar.propTypes = {
 	siteTitle: PropTypes.string,
+	data: PropTypes.shape({
+		allGhostTag: PropTypes.object.isRequired
+	}).isRequired,
 }
 
 Sidebar.defaultProps = {
 	siteTitle: ``,
 }
 
-export default Sidebar
+const SidebarTagQuery = props => (
+    <StaticQuery
+        query={graphql`
+			query {
+				allGhostTag {
+				edges {
+					node {
+						...GhostTagFields
+					}
+				}
+				}
+			}
+        `}
+        render={data => <Sidebar data={data} {...props} />}
+    />
+)
+
+export default SidebarTagQuery

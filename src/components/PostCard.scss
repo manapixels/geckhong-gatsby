@@ -1,0 +1,23 @@
+.post-card {
+    display: block;
+    margin-bottom: .4rem;
+    border: none;
+
+    .post-card-header {
+        .post-card-date,
+        .post-card-tags {
+            font-size: 85%;
+            color: var(--gray-medium-1);
+        }
+        .post-card-title {
+            font-size: 100%;
+            margin-bottom: 0.2rem;
+        }
+
+    }
+
+    .post-card-footer {
+        font-size: 85%;
+        color: var(--gray-medium-1);
+    }
+}
