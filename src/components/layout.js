@@ -1,28 +1,28 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 import { motion, AnimatePresence } from "framer-motion"
 
-import Sidebar from "./sidebar"
-import Preloader from "./preloader"
-import Cursor from "./cursor"
+import Sidebar from "./Sidebar"
+import Preloader from "./Preloader"
+import Cursor from "./Cursor"
 import debounce from "../helpers/debounce"
-import SmoothScroll from './smoothScroll'
-import "./layout.scss"
+import SmoothScroll from './SmoothScroll'
+
+import "./Layout.scss"
+
+
+/**
+* Main layout component
+*
+* The Layout component wraps around each page and template.
+* It also provides the header, footer as well as the main
+* styles, and meta data for each page.
+*
+*/
 
 const Layout = ({ children, location }) => {
 
 	const [showScrollToTopBtn, setShowScrollToTopBtn] = useState(false)
-
-	const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
 
 	let smoothScroll
 
@@ -40,39 +40,43 @@ const Layout = ({ children, location }) => {
 	}, 250)
 
 	return (
-		<div className="viewport">
-			<div className="scroll-container">
-				<div className="layout-wrapper">
 
-					{/* <Preloader /> */}
-					<AnimatePresence>
-						<motion.main
-							className="main-content"
-							key={location.pathname}
-							variants={mainVariants}
-							initial="initial"
-							animate="enter"
-							exit="exit"
-						>
+		<>
 
-							{children}
-						</motion.main>
-					</AnimatePresence>
+			<div className="viewport">
+				<div className="scroll-container">
+					<div className="layout-wrapper">
 
+						{/* <Preloader /> */}
+						<AnimatePresence>
+							<motion.main
+								className="main-content"
+								key={location.pathname}
+								variants={mainVariants}
+								initial="initial"
+								animate="enter"
+								exit="exit"
+							>
+								{/* All the main content gets inserted here, index.js, post.js */}
+								{children}
+							</motion.main>
+						</AnimatePresence>
+
+					</div>
+					<Cursor />
 				</div>
-				<Cursor />
-			</div>
-			<Sidebar siteTitle={data.site.siteMetadata.title} location={location} />
-			<button
-				className={`go-back-up ${showScrollToTopBtn ? '' : 'invisible'}`}
-				onClick={() => window.scroll({
-					top: 0,
-					behavior: 'smooth'
-				})}>
-				<span className="icon-arrow-up2"></span>
-			</button>
+				<Sidebar location={location} />
+				<button
+					className={`go-back-up ${showScrollToTopBtn ? '' : 'invisible'}`}
+					onClick={() => window.scroll({
+						top: 0,
+						behavior: 'smooth'
+					})}>
+					<span className="icon-arrow-up2"></span>
+				</button>
 
-		</div>
+			</div>
+		</>
 	)
 }
 
@@ -101,6 +105,7 @@ const mainVariants = {
 
 Layout.propTypes = {
 	children: PropTypes.node.isRequired,
+	bodyClass: PropTypes.string,
 }
 
 export default Layout

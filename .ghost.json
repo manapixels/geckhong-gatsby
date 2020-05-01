@@ -1,0 +1,10 @@
+{
+  "development": {
+    "apiUrl": "https://manapixels.herokuapp.com",
+    "contentApiKey": "c3d0c58bb1cdc3e3f365f621c0"
+  },
+  "production": {
+    "apiUrl": "https://manapixels.herokuapp.com",
+    "contentApiKey": "c3d0c58bb1cdc3e3f365f621c0"
+  }
+}

@@ -146,6 +146,11 @@
         padding: 2em;
         margin: 0 auto;
 
+        .image, img {
+            width: 100%;
+            max-width: 100%;
+        }
+
         &>h1 {
             font: 2em Gotham, Helvetica, Arial, sans-serif;
             padding: 5em 0 0;
@@ -173,10 +178,6 @@
             padding: 1em 0;
             margin-left: 1em;
             line-height: 1.3em;
-        }
-
-        img {
-            max-width: 100%;
         }
 
         .mobile-screenshot {
