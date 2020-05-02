@@ -13,16 +13,18 @@ const getMousePos = (e) => {
     let posx = 0
     let posy = 0
     if (!e) e = window.event
+
+    // Use e.pageX and pageY if utilising fixed viewport smooth scrolling
     if (e.screenX || e.screenY) {
         posx = e.screenX
         posy = e.screenY
     }
-    else if (e.clientX || e.clientY)    {
-        posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft
-        posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop
+    if (e.clientX || e.clientY)    {
+        posx = e.clientX
+        posy = e.clientY
     }
     
-    return { x : e.pageX, y : e.pageY }
+    return { x : posx, y : posy }
 }
 
 export { map, lerp, calcWinsize, getMousePos }

@@ -73,9 +73,9 @@ const Sidebar = ({ data, location }) => {
 			{typeof locationParts === 'object' && locationParts[1] === 'work' && 
 				<div>{projectLinks}</div>
 			}
-			<Link 
+			{/* <Link 
 				to="/graphics" activeClassName="active" className="link" 
-				onClick={() => isMobile ? toggleMobileNav() : {}}>Graphics</Link>
+				onClick={() => isMobile ? toggleMobileNav() : {}}>Graphics</Link> */}
 			<Link 
 				to="/blog" activeClassName="active" className="link" 
 				onClick={() => isMobile ? toggleMobileNav() : {}}>Blog</Link>
@@ -116,7 +116,7 @@ const Sidebar = ({ data, location }) => {
 							{menuLinks}
 						</div>
 						<div className="social-container">
-							<a className="resume" href="documents/resume.pdf" target="_blank" title="Download Résumé">Résumé</a>
+							<a className="resume" href="/resume.pdf" target="_blank" title="Download Résumé">Résumé</a>
 							<a href="mailto:zhenyangg@outlook.com" target="_blank" rel="noopener noreferrer" role="button">Email</a>
 							<a href="https://t.me/manapixels" target="_blank" rel="noopener noreferrer" role="button">Telegram</a>
 							<a href="https://github.com/zhenyangg" target="_blank" rel="noopener noreferrer" role="button">Github</a>
@@ -130,7 +130,7 @@ const Sidebar = ({ data, location }) => {
 
 				<footer className="disable-select">
 					<div className="social-container">
-						<a className="resume" href="documents/resume.pdf" target="_blank" title="Download Résumé">Résumé</a>
+						<a className="resume" href="/resume.pdf" target="_blank" title="Download Résumé">Résumé</a>
 						<a href="mailto:zhenyangg@outlook.com" target="_blank" rel="noopener noreferrer" role="button">Email</a>
 						<a href="https://t.me/manapixels" target="_blank" rel="noopener noreferrer" role="button">Telegram</a>
 						<a href="https://github.com/zhenyangg" target="_blank" rel="noopener noreferrer" role="button">Github</a>

@@ -38,7 +38,7 @@ const About = () => {
                             <span>Email me</span>
                             <svg className="icon icon-arrow-right"><use xlinkHref="#icon-arrow-right"></use></svg>
                         </a>
-                        <a className="link-highlight mr-5 wipeIn ani-2" href="documents/resume.pdf" target="_blank" title="Download Résumé">
+                        <a className="link-highlight mr-5 wipeIn ani-2" href="/resume.pdf" target="_blank" title="Download Résumé">
                             <span>View résumé</span>
                             <svg className="icon icon-arrow-right"><use xlinkHref="#icon-arrow-right"></use></svg>
                         </a>
