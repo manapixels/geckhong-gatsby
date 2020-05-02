@@ -1,0 +1,30 @@
+.pagination {
+    position: relative;
+    width: 50rem;
+    max-width: 100%;
+    margin: 2rem auto;
+    padding: 2rem 7rem;
+    text-align: center;
+    border-top: 1px solid var(--gray-light-1);
+
+    .older-posts, .newer-posts {
+        margin: 2rem 0;
+        position: absolute;
+        top: 0;
+        transition: transform .3s ease-in-out;
+    }
+    .older-posts {
+        left: 0;
+
+        &:hover {
+            transform: translateX(-.3rem);
+        }
+    }
+    .newer-posts {
+        right: 0;
+
+        &:hover {
+            transform: translateX(.3rem);
+        }
+    }
+}

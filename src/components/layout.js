@@ -6,7 +6,7 @@ import Sidebar from "./Sidebar"
 import Preloader from "./Preloader"
 import Cursor from "./Cursor"
 import debounce from "../helpers/debounce"
-import SmoothScroll from './SmoothScroll'
+// import SmoothScroll from './SmoothScroll2'
 
 import "./Layout.scss"
 
@@ -24,10 +24,10 @@ const Layout = ({ children, location }) => {
 
 	const [showScrollToTopBtn, setShowScrollToTopBtn] = useState(false)
 
-	let smoothScroll
+	// let smoothScroll
 
 	React.useEffect(() => {
-		smoothScroll = new SmoothScroll()
+		// smoothScroll = new SmoothScroll()
 		window.addEventListener('scroll', handleScroll)
 		return () => window.removeEventListener('scroll', handleScroll)
 	}, [])
@@ -35,36 +35,31 @@ const Layout = ({ children, location }) => {
 	const handleScroll = debounce(() => {
 		if ((window.scrollY > window.innerHeight * 0.3) && !showScrollToTopBtn)
 			setShowScrollToTopBtn(true)
-		else if ((window.scrollY < window.innerHeight * 0.3) && showScrollToTopBtn)
+		else
 			setShowScrollToTopBtn(false)
 	}, 250)
 
 	return (
 
 		<>
+			<div className="layout-wrapper">
 
-			<div className="viewport">
-				<div className="scroll-container">
-					<div className="layout-wrapper">
+				{/* <Preloader /> */}
+				<AnimatePresence>
+					<motion.main
+						className="main-content"
+						key={location.pathname}
+						variants={mainVariants}
+						initial="initial"
+						animate="enter"
+						exit="exit"
+					>
+						{/* All the main content gets inserted here, index.js, post.js */}
+						{children}
+					</motion.main>
+				</AnimatePresence>
 
-						{/* <Preloader /> */}
-						<AnimatePresence>
-							<motion.main
-								className="main-content"
-								key={location.pathname}
-								variants={mainVariants}
-								initial="initial"
-								animate="enter"
-								exit="exit"
-							>
-								{/* All the main content gets inserted here, index.js, post.js */}
-								{children}
-							</motion.main>
-						</AnimatePresence>
 
-					</div>
-					<Cursor />
-				</div>
 				<Sidebar location={location} />
 				<button
 					className={`go-back-up ${showScrollToTopBtn ? '' : 'invisible'}`}
@@ -74,7 +69,7 @@ const Layout = ({ children, location }) => {
 					})}>
 					<span className="icon-arrow-up2"></span>
 				</button>
-
+				<Cursor />
 			</div>
 		</>
 	)

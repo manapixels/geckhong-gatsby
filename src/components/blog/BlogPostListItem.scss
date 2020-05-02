@@ -1,0 +1,43 @@
+.blog-post-list-item {
+    position: relative;
+    width: 50rem;
+    max-width: 100%;
+    margin: 0 auto 4rem;
+
+    &:not(:last-of-type) {
+        border-bottom: 1px solid var(--gray-light-1);
+    }
+
+    .post-full-content {
+        padding: 4rem 4rem;
+
+        .post-tags {
+            
+        }
+
+        .post-title {
+            font-size: 240%;
+            font-weight: 700;
+        }
+
+        .post-feature-image {
+            margin: 1.2rem 0 0;
+            
+
+            img {
+                border: 1px solid var(--white-2);
+                max-width: 100%;
+                border-radius: .5rem;
+            }
+        }
+
+        .post-date {
+            color: var(--gray-medium-2);
+        }
+
+        .post-body {
+            font-size: 130%;
+            line-height: 1.8;
+        }
+    }
+}

@@ -9,7 +9,7 @@ import './PostCard.scss'
 
 const PostCard = ({ post }) => {
 
-    const url = `/${post.slug}/`
+    const url = `/blog/posts/${post.slug}/`
     const readingTime = readingTimeHelper(post)
 
     return (

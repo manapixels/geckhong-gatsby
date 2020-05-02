@@ -25,6 +25,7 @@ Global styles
   --white-2:                #f6f6f6;
   --gray-light-1:           #e3e3e3;
   --gray-light-2:           #b8b8b8;
+  --gray-light-3:           #a5a5a5;
   --gray-medium-1:          #575757;
   --gray-medium-2:          #575757;
   --gray-dark:              #303030;
@@ -59,6 +60,7 @@ body {
   font-weight: 400;
   font-size: $base-font-size;
   line-height: $base-line-height;
+  padding: 1rem;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
@@ -239,6 +241,9 @@ u {
 }
 .text-green {
   color: var(--green);
+}
+.text-blue {
+  color: var(--blue);
 }
 .text-black {
   color: var(--black);

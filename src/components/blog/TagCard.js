@@ -5,16 +5,14 @@ import { Link } from 'gatsby'
 import './TagCard.scss'
 
 
-const TagCard = ({ tag }) => {
+const TagCard = ({ tag, location }) => {
 
     const { slug, name, postCount } = tag
 
-    const url = `/${slug}/`
-
-    
+    const url = `/blog/tag/${slug}`
 
     return (
-        <Link to={url} className="tag-card">
+        <Link to={url} className="tag-card" activeClassName="active">
             {name}
             <span className="post-count">{postCount}</span>
         </Link>

@@ -6,17 +6,18 @@
 --------------------------------------*/
 
 .sidebar {
+    position: fixed;
+    top: 0;
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 10rem;
+    width: 12rem;
     text-align: left;
-    position: relative;
     transition: all 0.3s ease-out;
     z-index: var(--zindex-fixed);
 
     .sidebar-container {
-        width: 10rem;
+        width: 12rem;
         position: fixed;
         height: 100vh;
         text-align: left;
@@ -81,7 +82,7 @@ header {
     }
 
     menu {
-        margin: 1rem 0;
+        margin: 1rem 0 2rem;
         padding-left: 0.5rem;
         padding-right: 0.5rem;
 
@@ -171,8 +172,8 @@ header {
         a {
             display: block;
             position: relative;
-            padding-top: .5rem;
-            padding-bottom: .5rem;
+            padding-top: 1.2rem;
+            padding-bottom: 0;
             text-decoration: none;
             overflow: hidden;
             font-size: .9rem;
@@ -244,13 +245,16 @@ header {
                 }
             }
 
-            a.sublink {
-                font-size: 85%;
-                padding: .3rem 0 .3rem .3rem;
+            a.sub-link {
+                font-size: 88%;
+                color: var(--gray-light-3);
+                padding: .3rem 0 .1rem .3rem;
 
-                &:hover {
+                &:hover, &.active {
                     font-weight: 700;
+                    color: var(--black);
                 }
+
             }
         }
     }

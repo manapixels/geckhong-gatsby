@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
-import { MetaData } from '../components/meta'
+import { MetaData } from '../components/blog/meta'
 
 /**
 * Single page (/:slug)

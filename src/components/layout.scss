@@ -12,28 +12,28 @@
 @import "../styles/gifplayer.scss";
 
 
-.viewport {
-    overflow: hidden;
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+// .viewport {
+//     overflow: hidden;
+//     position: fixed;
+//     height: 100%;
+//     width: 100%;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
 
-    .scroll-container {
-        position: absolute;
-        overflow: hidden;
-        z-index: 10;
-        display: flex;
-        justify-content: center;
-        backface-visibility: hidden;
-        transform-style: preserve-3d;
-        padding: 0.8rem;
-        width: 100%;
-    }
-}
+//     .scroll-container {
+//         position: absolute;
+//         overflow: hidden;
+//         z-index: 10;
+//         display: flex;
+//         justify-content: center;
+//         backface-visibility: hidden;
+//         transform-style: preserve-3d;
+//         padding: 0.8rem;
+//         width: 100%;
+//     }
+// }
 
 .layout-wrapper {
     position: relative;
@@ -47,7 +47,7 @@
 
     .main-content {
         max-width: 100rem;
-        margin-left: 10rem;
+        margin-left: 12rem;
         transition: transform 0.3s ease-out;
 
         .portfolio-section {

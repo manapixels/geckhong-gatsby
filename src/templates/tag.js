@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 
-import { PostCard, Pagination } from '../components'
-import { MetaData } from '../components/meta'
+import { BlogPostListItem, PostCard, Pagination, TagCard } from '../components/blog'
+import { MetaData } from '../components/blog/meta'
+import "./blog.scss"
 
 /**
 * Tag page (/tag/:slug)
@@ -12,7 +13,9 @@ import { MetaData } from '../components/meta'
 *
 */
 const Tag = ({ data, location, pageContext }) => {
+
     const tag = data.ghostTag
+    const tags = data.allGhostTag.edges
     const posts = data.allGhostPost.edges
 
     return (
@@ -22,18 +25,38 @@ const Tag = ({ data, location, pageContext }) => {
                 location={location}
                 type="series"
             />
-            <div className="container">
-                <header className="tag-header">
+            <div className="blog-page">
+
+                <section className="blog-navigation">
                     <h1>{tag.name}</h1>
-                    {tag.description ? <p>{tag.description}</p> : null }
-                </header>
-                <section className="post-feed">
+
+                    {tag.description ? <p>{tag.description}</p> : null}
+                    <h3 className="mt-4">Category</h3>
+                    <div>
+                        {tags.map(({ node }) => (
+                            <TagCard key={`tag-${node.id}`} tag={node} location={location} />
+                        ))}
+                    </div>
+
+                    <div style={{marginTop: '1rem'}}>
+                        <Link to="/blog" style={{fontSize: '95%', color: 'var(--blue)', borderColor: 'var(--blue)'}}>Clear</Link>
+                    </div>
+
+
+                    <h3 className="mt-4">Recent posts in {tag.name}</h3>
                     {posts.map(({ node }) => (
-                        // The tag below includes the markup for each post - components/PostCard.js
-                        <PostCard key={node.id} post={node} />
+                        <PostCard key={`post-${node.id}`} post={node} />
                     ))}
                 </section>
-                <Pagination pageContext={pageContext} />
+
+                <section className="blog-post-list">
+                    {posts.map(({ node }) => (
+                        <BlogPostListItem key={node.id} post={node} />
+                    ))}
+
+                    <Pagination pageContext={pageContext} />
+
+                </section>
             </div>
         </>
     )
@@ -45,6 +68,7 @@ Tag.propTypes = {
             name: PropTypes.string.isRequired,
             description: PropTypes.string,
         }),
+        allGhostTag: PropTypes.object.isRequired,
         allGhostPost: PropTypes.object.isRequired,
     }).isRequired,
     location: PropTypes.shape({
@@ -60,6 +84,13 @@ export const pageQuery = graphql`
         ghostTag(slug: { eq: $slug }) {
             ...GhostTagFields
         }
+        allGhostTag {
+            edges {
+              node {
+                ...GhostTagFields
+              }
+            }
+          }
         allGhostPost(
             sort: { order: DESC, fields: [published_at] },
             filter: {tags: {elemMatch: {slug: {eq: $slug}}}},

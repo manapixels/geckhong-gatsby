@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
-import { PostCard, Pagination } from '../components'
-import { MetaData } from '../components/meta'
+import { PostCard, Pagination } from '../components/blog'
+import { MetaData } from '../components/blog/meta'
 
 /**
 * Author page (/author/:slug)

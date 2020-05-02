@@ -88,7 +88,7 @@ const ContactForm = () => {
             <div className="contact-form-container">
                 <div className="row">
                     <div className="col-12 col-md-5">
-                        <div className="title">Let's chit-chat and connect!</div>
+                        <div className="title">Happy to connect with you!</div>
                         <div className="description">
                             I'm open to collaboration, or just simply talking about design and coding stuff. Find me on <a href="https://t.me/manapixels" target="_blank" rel="noopener noreferrer">Telegram</a> or send me a message with this contact form.
                         </div>

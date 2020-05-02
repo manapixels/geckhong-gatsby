@@ -1,7 +1,7 @@
 module.exports = {
     siteUrl: `https://manapixels.com`, // Site domain. Do not include a trailing slash!
 
-    postsPerPage: 12, // Number of posts shown on paginated pages (changes this requires sometimes to delete the cache)
+    postsPerPage: 2, // Number of posts shown on paginated pages (changes this requires sometimes to delete the cache)
 
     siteTitleMeta: `Lim Zhenyang • UX Design & Dev`, // This allows an alternative site title for meta data for pages.
     siteDescriptionMeta: `Lim Zhenyang • Design and programming portfolio.`, // This allows an alternative site description for meta data for pages.

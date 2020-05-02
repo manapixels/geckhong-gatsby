@@ -5,10 +5,8 @@ import { isMobile } from "react-device-detect"
 import { motion } from "framer-motion"
 import { StaticQuery, graphql } from 'gatsby'
 
-import { TagCard } from './'
 import "./sidebar.scss"
 
-// const event = new Event("pagechange")
 
 const Sidebar = ({ data, location }) => {
 
@@ -34,28 +32,38 @@ const Sidebar = ({ data, location }) => {
 	const projectLinks = (
 		<>
 			<Link 
-				to="/work/selfi" activeClassName="active" className="sublink"
+				to="/work/selfi" activeClassName="active" className="sub-link"
 				onClick={() => {isMobile && toggleMobileNav()}}>01 • Selfi</Link>
 			<Link 
-				to="/work/threadparadise" activeClassName="active" className="sublink"
+				to="/work/threadparadise" activeClassName="active" className="sub-link"
 				onClick={() => isMobile ? toggleMobileNav() : {}}>02 • Thread Paradise</Link>
 			<Link 
-				to="/work/timeui" activeClassName="active" className="sublink"
+				to="/work/timeui" activeClassName="active" className="sub-link"
 				onClick={() => isMobile ? toggleMobileNav() : {}}>03 • Time UI</Link>
 			<Link 
-				to="/work/asksimple" activeClassName="active" className="sublink"
+				to="/work/asksimple" activeClassName="active" className="sub-link"
 				onClick={() => isMobile ? toggleMobileNav() : {}}>04 • AskSimple</Link>
 			<Link 
-				to="/work/sutdgradnight" activeClassName="active" className="sublink"
+				to="/work/sutdgradnight" activeClassName="active" className="sub-link"
 				onClick={() => isMobile ? toggleMobileNav() : {}}>05 • Grad Night</Link>
 			<Link 
-				to="/work/nimbusrun" activeClassName="active" className="sublink"
+				to="/work/nimbusrun" activeClassName="active" className="sub-link"
 				onClick={() => isMobile ? toggleMobileNav() : {}}>06 • Nimbus Run</Link>
 			<Link 
-				to="/work/sutdring" activeClassName="active" className="sublink"
+				to="/work/sutdring" activeClassName="active" className="sub-link"
 				onClick={() => isMobile ? toggleMobileNav() : {}}>07 • SUTD Ring</Link>
 		</>
 	)
+
+	const blogCategoryLinks = tags
+		? tags.map(({ node }) => (
+			<Link 
+				key={`tag-${node.id}`}
+				to={`/blog/tag/${node.slug}`} activeClassName="active" className="sub-link"
+				onClick={() => isMobile ? toggleMobileNav() : {}}>{node.name}</Link>
+		))
+		: null
+	
 
 	const menuLinks = (
 		<>
@@ -71,9 +79,7 @@ const Sidebar = ({ data, location }) => {
 			<Link 
 				to="/blog" activeClassName="active" className="link" 
 				onClick={() => isMobile ? toggleMobileNav() : {}}>Blog</Link>
-			{tags.map(({ node }) => (
-            	<TagCard key={`tag-${node.id}`} tag={node} />
-          ))}
+			{blogCategoryLinks}
 		</>
 	)
 

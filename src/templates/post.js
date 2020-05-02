@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Helmet from 'react-helmet'
 
-import { MetaData } from '../components/meta'
+import { MetaData } from '../components/blog/meta'
+import { BlogPostListItem } from '../components/blog'
 
 /**
 * Single post view (/:slug)
@@ -25,23 +26,7 @@ const Post = ({ data, location }) => {
                 <style type="text/css">{`${post.codeinjection_styles}`}</style>
             </Helmet>
 
-            <div className="container">
-                <article className="content">
-                    {post.feature_image ?
-                        <figure className="post-feature-image">
-                            <img src={post.feature_image} alt={post.title} />
-                        </figure> : null}
-                    <section className="post-full-content">
-                        <h1 className="content-title">{post.title}</h1>
-
-                        {/* The main post content */}
-                        <section
-                            className="content-body load-external-scripts"
-                            dangerouslySetInnerHTML={{ __html: post.html }}
-                        />
-                    </section>
-                </article>
-            </div>
+            <BlogPostListItem post={post} />
 
         </>
     )

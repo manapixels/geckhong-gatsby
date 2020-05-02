@@ -1,9 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Tags } from '@tryghost/helpers-gatsby'
 
-import { PostCard, TagCard, Pagination } from '../components'
-import { MetaData } from '../components/meta'
+import { PostCard, Pagination, TagCard, BlogPostListItem } from '../components/blog'
+import { MetaData } from '../components/blog/meta'
 import { graphql } from 'gatsby'
 
 import './blog.scss'
@@ -21,31 +20,23 @@ const Blog = ({ data, location, pageContext }) => {
       <section className="blog-page" id="bodyContent">
 
         <section className="blog-navigation">
-          <h3 className="mt-4">Latest posts</h3>
-          {posts.map(({ node }) => (
-            <PostCard key={`post-${node.id}`} post={node} />
-          ))}
+          <div className="blog-navigation-section">
+            <h3 className="blog-navigation-section-title">Category</h3>
+            {tags.map(({ node }) => (
+              <TagCard key={`tag-${node.id}`} tag={node} location={location} />
+            ))}
+          </div>
+          <div className="blog-navigation-section">
+            <h3 className="blog-navigation-section-title">Recent posts</h3>
+            {posts.map(({ node }) => (
+              <PostCard key={`post-${node.id}`} post={node} />
+            ))}
+          </div>
         </section>
 
         <section className="blog-post-list">
           {posts.map(({ node }) => (
-            // The tag below includes the markup for each post - components/PostCard.js
-            <article className="blog-post-list-item" key={node.id}>
-              {node.feature_image ?
-                <figure className="post-feature-image">
-                  <img src={node.feature_image} alt={node.title} />
-                </figure> : null}
-              <section className="post-full-content">
-                <div className="post-date">{node.published_at_pretty} <span className="date-tag-separator"></span> {node.tags && <span className="post-card-tags"> <Tags post={node} visibility="public" autolink={false} /></span>}</div>
-                <div className="post-title">{node.title}</div>
-
-                {/* The main post content */}
-                <section
-                  className="post-body load-external-scripts"
-                  dangerouslySetInnerHTML={{ __html: node.html }}
-                />
-              </section>
-            </article>
+            <BlogPostListItem key={node.id} post={node} />
           ))}
 
           <Pagination pageContext={pageContext} />
