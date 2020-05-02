@@ -356,6 +356,10 @@
             border-radius: 1rem;
             padding: 2rem;
             width: 38%;
+            
+            .project-item-image {
+                display: none;
+            }
 
             .numbering {
                 display: inline-block;
@@ -615,6 +619,7 @@
     }
 }
 
+
 @media screen and #{$mq-large} {
     .projects {
         .project-item {
@@ -626,28 +631,30 @@
 @media screen and #{$mq-medium} {
     .projects {
         .project-item {
-            margin: .6rem;
+            margin: .6rem .6rem 6rem;
 
             .project-item-image {
-                width: 100%;
-                padding: 1rem;
-
-                button {
-                    padding: 0;
-                }
-
-                img {
-                    border: none;
-                    padding: 0;
-                }
+                display: none;
             }
 
             .project-item-content {
-                max-width: 100%;
-                padding: 1rem;
+                width: 100%;
+                padding: 0;
+
+                .project-item-image {
+                    display: block;
+                    width: 100%;
+                    padding: 0;
+                }
 
                 .title {
                     margin: 0;
+                }
+                .skills {
+                    margin-bottom: 1rem;
+                }
+                .description {
+                    margin: 2rem 0 0;
                 }
             }
         }

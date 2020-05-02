@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .work {
 
     .wipeIn {
@@ -101,21 +103,11 @@
         }
 
         .skills {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: -webkit-flex;
             display: flex;
-            -ms-flex-flow: row wrap;
             flex-flow: row wrap;
-            -webkit-box-pack: start;
-            -moz-box-pack: start;
-            -ms-box-pack: start;
-            -ms-flex-pack: start;
             justify-content: flex-start;
 
             span {
-                -webkit-box-flex: 0;
-                -ms-flex: 0 1 auto;
                 flex: 0 1 auto;
                 text-align: center;
                 padding: 0.3em 0.5em;
@@ -152,9 +144,9 @@
         }
 
         &>h1 {
-            font: 2em Gotham, Helvetica, Arial, sans-serif;
-            padding: 5em 0 0;
-            padding: 15vh 0 0;
+            font-size: 200%;
+            margin-top: 3rem;
+            text-align: center;
 
             &::after {
                 content: "";
@@ -196,6 +188,56 @@
                 border-top-left-radius: .5rem;
                 border-top-right-radius: .5rem;
                 max-width: 300px;
+            }
+        }
+    }
+}
+
+@media screen and #{$mq-medium} {
+    .work {
+       
+        .header {
+            background: none;
+            border-bottom: 1px solid var(--gray-light-1);
+            border-radius: 0;
+
+            .project-details {
+                padding: 1rem;
+
+                h1 {
+                    font-size: 250%;
+                    margin: 0;
+                }
+                .description {
+                    ul {
+                        li {
+                            display: block;
+                            margin-bottom: 0;
+                            margin-right: 0;
+                        }
+                    }
+                    .desc {
+                        border: none;
+                        padding: 0;
+                        margin: 0.2rem 0 .6rem;
+                    }
+                }
+            }
+        }
+
+        .body {
+            & > h1 {
+                font-size: 150%;
+            }
+            p {
+                font-size: 100%;
+                padding: 0;
+            }
+            ol {
+                padding-left: 1rem;
+                li {
+                    padding-left: .4rem;
+                }
             }
         }
     }

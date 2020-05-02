@@ -193,13 +193,13 @@
     }
 }
 
-@media screen and #{$mq-small} {
+@media #{$mq-small} {
     .layout-wrapper {
         display: block;
         border-radius: 0;
 
         .main-content {
-            margin-top: 3.5rem;
+            margin: 1.5rem;
         }
     }
 }

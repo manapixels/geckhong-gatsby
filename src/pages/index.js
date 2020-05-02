@@ -1,9 +1,6 @@
 import React from "react"
 import { navigate } from "gatsby"
-
 import SEO from "../components/seo"
-import './index.scss'
-
 
 const IndexPage = () => {
 

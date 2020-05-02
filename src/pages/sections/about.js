@@ -23,13 +23,13 @@ const About = () => {
             <div className="about">
 
                 <div className="row mb-5">
-                    <div className="col-12 col-md-6 offset-md-1 align-self-center">
-                        <div className="short-profile-description mb-4">
+                    <div className="col-12 col-md-6 offset-md-1 align-self-center order-2 order-md-1">
+                        <div className="primary-bio mb-4">
                             <span className="quote-symbol">“</span>
 
                             <div className="wipeIn ani-1">I'm a product designer at Selfi, a platform that empowers people to understand and utilise their personality data. <div className="wipeIn ani-3 d-inline-block text-green">I am a bridger.</div></div>
                         </div>
-                        <p className="wipeIn ani-2 font-size-120">Creating products of value to both businesses and users is my goal - I want to make the world a better place for people through great products that people <b><i>actually</i></b> use. And the core to make this happen is bridging design, development and business goals. Users feel happy using the product, businesses profit and allocate more resources to build better stuff. Win-win for all. ✨🍺</p>
+                        <p className="secondary-bio wipeIn ani-2">Creating products of value to both businesses and users is my goal - I want to make the world a better place for people through great products that people <b><i>actually</i></b> use. And the core to make this happen is bridging design, development and business goals. Users feel happy using the product, businesses profit and allocate more resources to build better stuff. Win-win for all. ✨🍺</p>
                         <a className="link-highlight mr-5 wipeIn ani-2" href="https://t.me/manapixels" target="_blank" rel="noopener noreferrer">
                             <span>Chat on Telegram</span>
                             <svg className="icon icon-arrow-right"><use xlinkHref="#icon-arrow-right"></use></svg>
@@ -48,7 +48,7 @@ const About = () => {
                             </symbol>
                         </svg>
                     </div>
-                    <div className="col-12 col-md-5">
+                    <div className="col-12 col-md-5 order-1 order-md-2">
                         <Image
                             className="image wipeIn ani-1"
                             fluid={data.portrait.childImageSharp.fluid}
@@ -60,126 +60,134 @@ const About = () => {
 
                 </div>
 
-                <div className="container">
+                <section className="skills-section">
                     <div className="row mb-5">
-                        <div className="col-lg-3 hidden-md p-4">
+                        <div className="col-lg-2 offset-lg-1 hidden-md p-4 d-none d-md-block">
                             <div className="bg-gray-light h-100 w-100"></div>
                         </div>
                         <div className="col-12 col-md-4 col-lg-3">
-                            <div className="skills-list-container">
-                                <h2 className="title"><i><u>Design skills</u></i></h2>
-                                <ul className="skills-list">
-                                    <li className="skill">
-                                        User journey &amp; testing
-                                </li>
-                                    <li className="skill">
-                                        Wireframing, mock-up, prototyping
-                                </li>
-                                    <li className="skill">
-                                        Interaction design, micro-interactions
-                                </li>
-                                    <li className="skill">
-                                        Mobile UX
-                                </li>
-                                    <li className="skill">
-                                        Branding
-                                </li>
-                                    <li className="skill">
-                                        Illustration
-                                </li>
-                                </ul>
-                            </div>
-                            <div className="skills-list-container">
-                                <i><u><b>Now learning</b></u></i>
-                                <ul className="skills-list">
-                                    <li className="skill">
-                                        Motion design (on Premiere) <span className="icon-arrow-up2 move-up-fade-out"></span>
+                            <div className="skill-category">
+                                <div className="skills-list-container">
+                                    <h2 className="title"><i><u>Design skills</u></i></h2>
+                                    <ul className="skills-list">
+                                        <li className="skill">
+                                            User journey &amp; testing
                                     </li>
-                                    <li className="skill">
-                                        Data visualization <span className="icon-arrow-up2 move-up-fade-out"></span>
+                                        <li className="skill">
+                                            Wireframing, mock-up, prototyping
                                     </li>
-                                    <li className="skill">
-                                        Accessibility <span className="icon-arrow-up2 move-up-fade-out"></span>
+                                        <li className="skill">
+                                            Interaction design, micro-interactions
                                     </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className="col-12 col-md-4 col-lg-3">
-                            <div className="skills-list-container">
-                                <h2 className="title"><i><u>Development skills</u></i></h2>
-                                <ul className="skills-list">
-                                    <li className="skill">
-                                        React, Redux, Angular, decompose components
-                                </li>
-                                    <li className="skill">
-                                        HTML, (S)CSS, responsive design
-                                </li>
-                                    <li className="skill">
-                                        AWS (S3, Cloudfront, Lambda), GCloud, domain management, RESTful API, GraphQL
-                                </li>
-                                    <li className="skill">
-                                        Webpack optimizations, PWA
-                                </li>
-                                    <li className="skill">
-                                        Python, Java, C++, Ruby
-                                </li>
-                                </ul>
-                            </div>
-                            <div className="skills-list-container">
-                                <i><u><b>Now learning</b></u></i>
-                                <ul className="skills-list">
-                                    <li className="skill">
-                                        D3.js <span className="icon-arrow-up2 move-up-fade-out"></span>
+                                        <li className="skill">
+                                            Mobile UX
                                     </li>
-                                    <li className="skill">
-                                        GSAP <span className="icon-arrow-up2 move-up-fade-out"></span>
+                                        <li className="skill">
+                                            Branding
                                     </li>
-                                    <li className="skill">
-                                        Testing <span className="icon-arrow-up2 move-up-fade-out"></span>
+                                        <li className="skill">
+                                            Illustration
                                     </li>
-                                </ul>
+                                    </ul>
+                                </div>
+                                <div className="skills-list-container">
+                                    <i><u><b>Now learning</b></u></i>
+                                    <ul className="skills-list">
+                                        <li className="skill">
+                                            Motion design (on Premiere) <span className="icon-arrow-up2 move-up-fade-out"></span>
+                                        </li>
+                                        <li className="skill">
+                                            Data visualization <span className="icon-arrow-up2 move-up-fade-out"></span>
+                                        </li>
+                                        <li className="skill">
+                                            Accessibility <span className="icon-arrow-up2 move-up-fade-out"></span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                         <div className="col-12 col-md-4 col-lg-3">
-                            <div className="skills-list-container">
-                                <h2 className="title"><i><u>Bridge skills</u></i></h2>
-                                <ul className="skills-list">
-                                    <li className="skill">
-                                        Practical design for coding
+                            <div className="skill-category">
+                                <div className="skills-list-container">
+                                    <h2 className="title"><i><u>Development skills</u></i></h2>
+                                    <ul className="skills-list">
+                                        <li className="skill">
+                                            React, Redux, Angular, decompose components
                                 </li>
-                                    <li className="skill">
-                                        Protoype interactions and animations
+                                        <li className="skill">
+                                            HTML, (S)CSS, responsive design
                                 </li>
-                                    <li className="skill">
-                                        Align design with business objectives
+                                        <li className="skill">
+                                            AWS (S3, Cloudfront, Lambda), GCloud, domain management, RESTful API, GraphQL
                                 </li>
-                                </ul>
+                                        <li className="skill">
+                                            Webpack optimizations, PWA
+                                </li>
+                                        <li className="skill">
+                                            Python, Java, C++, Ruby
+                                </li>
+                                    </ul>
+                                </div>
+                                <div className="skills-list-container">
+                                    <i><u><b>Now learning</b></u></i>
+                                    <ul className="skills-list">
+                                        <li className="skill">
+                                            D3.js <span className="icon-arrow-up2 move-up-fade-out"></span>
+                                        </li>
+                                        <li className="skill">
+                                            GSAP <span className="icon-arrow-up2 move-up-fade-out"></span>
+                                        </li>
+                                        <li className="skill">
+                                            Testing <span className="icon-arrow-up2 move-up-fade-out"></span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div className="skills-list-container">
-                                <i><u><b>Now learning</b></u></i>
-                                <ul className="skills-list">
-                                    <li className="skill">
-                                        Standardize, maintain design system <span className="icon-arrow-up2 move-up-fade-out"></span>
-                                    </li>
-                                </ul>
+                        </div>
+                        <div className="col-12 col-md-4 col-lg-3">
+                            <div className="skill-category">
+                                <div className="skills-list-container">
+                                    <h2 className="title"><i><u>Bridge skills</u></i></h2>
+                                    <ul className="skills-list">
+                                        <li className="skill">
+                                            Practical design for coding
+                                </li>
+                                        <li className="skill">
+                                            Protoype interactions and animations
+                                </li>
+                                        <li className="skill">
+                                            Align design with business objectives
+                                </li>
+                                    </ul>
+                                </div>
+                                <div className="skills-list-container">
+                                    <i><u><b>Now learning</b></u></i>
+                                    <ul className="skills-list">
+                                        <li className="skill">
+                                            Standardize, maintain design system <span className="icon-arrow-up2 move-up-fade-out"></span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div className="skills-list-container">
-                                <h2 className="title"><i><u className="green">My approach</u></i></h2>
-                                <ul className="skills-list">
-                                    <li className="skill">
-                                        Design for emotions and trust
+                            <div className="skill-category">
+                                <div className="skills-list-container">
+                                    <h2 className="title"><i><u className="green">My approach</u></i></h2>
+                                    <ul className="skills-list">
+                                        <li className="skill">
+                                            Design for emotions and trust
                                     </li>
-                                    <li className="skill">
-                                        Business - design synergy
+                                        <li className="skill">
+                                            Business - design synergy
                                     </li>
-                                    <li className="skill">
-                                        Creativity and experimentation are good; better when they are built on top of standards that people are used to.
+                                        <li className="skill">
+                                            Creativity and experimentation are good; better when they are built on top of standards that people are used to.
                                     </li>
-                                </ul>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
             </div>
         </>
     )

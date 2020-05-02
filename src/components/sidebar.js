@@ -91,7 +91,7 @@ const Sidebar = ({ data, location }) => {
 
 				<header>
 					{/* Navigation for Desktop */}
-					<div className="mt-3">
+					<div className="logo-container">
 						<Link to="/" alt="Homepage" className="logo">
 							<motion.svg 
 								whileTap={{ scale: 0.9 }}

@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .contact-form {
     margin: 0 8rem;
 
@@ -41,6 +43,20 @@
         }
         .icon-spinner {
             animation: rotation .7s linear infinite forwards;
+        }
+    }
+}
+
+@media screen and #{$mq-medium} {
+    .contact-form {
+        margin: 0;
+
+        .contact-form-container {
+            margin: 2rem auto;
+
+            .description {
+                margin-bottom: 1.5rem;
+            }
         }
     }
 }

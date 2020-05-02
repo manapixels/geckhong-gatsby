@@ -4,7 +4,7 @@ import SEO from "../components/seo"
 import AboutSection from "./sections/about"
 import DesignSection from "./sections/design"
 import ContactForm from "./sections/contact"
-import './index.scss'
+import "./work.scss"
 
 const WorkPage = () => {
 
@@ -12,7 +12,7 @@ const WorkPage = () => {
 
 		<>
 			<SEO title="Work" />
-			<div className="work-page" style={{marginRight: '10rem'}}>
+			<div className="work-page">
 				<AboutSection />
 				<DesignSection />
 				<ContactForm />

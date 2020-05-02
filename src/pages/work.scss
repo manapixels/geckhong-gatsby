@@ -1,0 +1,10 @@
+@import "../styles/variables.scss";
+
+.work-page {
+    margin-right: 10rem;
+}
+@media screen and #{$mq-small} {
+    .work-page {
+        margin-right: 0;
+    }
+}

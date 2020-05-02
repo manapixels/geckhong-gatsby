@@ -1,10 +1,12 @@
+@import "../../styles/variables.scss";
+
 .about {
   padding-top: 8rem;
 
   .wipeIn {
     &.ani-1 {
       animation-delay: .6s;
-      
+
       &::before {
         animation-delay: .6s;
       }
@@ -12,7 +14,7 @@
 
     &.ani-2 {
       animation-delay: .8s;
-      
+
       &::before {
         animation-delay: .8s;
       }
@@ -20,30 +22,33 @@
 
     &.ani-3 {
       animation-delay: 1s;
-      
+
       &::before {
         animation-delay: 1s;
       }
     }
   }
 
-  .short-profile-description {
-    font-size: 2rem;
+  .primary-bio {
+    font-size: 200%;
     font-weight: 700;
     line-height: 1.4;
 
     .quote-symbol {
       display: block;
-      font-size: 5rem;
+      font-size: 500%;
       line-height: .1;
     }
 
     .cite {
       margin-top: 1rem;
-      font-size: 1rem;
       font-style: italic;
       color: var(--gray-light-2);
     }
+  }
+
+  .secondary-bio {
+    font-size: 120%;
   }
 
   .link-highlight {
@@ -67,20 +72,77 @@
     }
   }
 
-  .skills-list-container {
+  .skills-section {
 
-    .skills-list {
-      padding: 0;
+    .skills-list-container {
 
-      .skill {
-        list-style: none;
-        // text-transform: uppercase;
-        font-size: 90%;
-        // font-weight: 700;
-        letter-spacing: .02rem;
-        padding-bottom: .65rem;
-        margin-bottom: .65rem;
-        border-bottom: 1px solid var(--gray-light-1);
+      .skills-list {
+        padding: 0;
+
+        .skill {
+          list-style: none;
+          // text-transform: uppercase;
+          font-size: 90%;
+          // font-weight: 700;
+          letter-spacing: .02rem;
+          padding-bottom: .65rem;
+          margin-bottom: .65rem;
+          border-bottom: 1px solid var(--gray-light-1);
+        }
+      }
+    }
+  }
+}
+
+@media screen and #{$mq-small} {
+  .about {
+    padding-top: 3rem;
+
+    .primary-bio {
+      margin-top: 2rem;
+      font-size: 150%;
+
+      .quote-symbol {
+        font-size: 280%;
+      }
+    }
+
+    .secondary-bio {
+      font-size: 100%;
+    }
+
+    .link-highlight {
+      display: block;
+      padding: .7rem 0;
+    }
+
+    .skills-section {
+
+      .skill-category {
+        background: var(--white-2);
+        border-radius: var(--border-radius);
+        padding: .5rem 1rem;
+        margin-bottom: 2.5rem;
+
+        .skills-list-container {
+
+          .skills-list {
+            padding: 0;
+
+            .skill {
+              display: inline;
+              text-transform: lowercase;
+              list-style: none;
+              border: none;
+
+              &:not(:last-of-type) {
+                &::after {
+                  content: ', '
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

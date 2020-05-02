@@ -6,7 +6,7 @@ import './design.scss'
 import FadeInSection from '../../components/fadeInSection'
 
 const Projects = () => {
-    
+
     // const event = new Event("pagechange")
 
     const data = useStaticQuery(
@@ -73,7 +73,7 @@ const Projects = () => {
     return (
         <div className="projects">
 
-            <div className="section-title" style={{marginTop: '8rem'}}><span>Projects</span></div>
+            <div className="section-title" style={{ marginTop: '8rem' }}><span>Projects</span></div>
 
             {/* ******
             **********
@@ -86,15 +86,36 @@ const Projects = () => {
                     <div className="numbering wipeIn ani-2">01</div>
                     <h2 className="title wipeIn ani-2">Selfi</h2>
                     <div className="year wipeIn ani-3">January 2020 and Ongoing</div>
+
+                    <div className="project-item-image">
+                        <Link to="/work/selfi">
+                            <Image
+                                className="image wipeIn ani-4"
+                                fluid={selfiCover.childImageSharp.fluid}
+                                alt="Selfi app" />
+                            <div className="moving-line"></div>
+                        </Link>
+                        <div className="hovering-object right">
+                            <div className="three-ellipse">
+                                <div className="item"></div>
+                                <div className="item"></div>
+                                <div className="item"></div>
+                                <div className="item"></div>
+                                <div className="item"></div>
+                                <div className="item"></div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div className="description wipeIn ani-4">
-                        <p>Selfi is a self-discovery platform built for students, job-seekers and people curious to know more about themselves. Users answer personality questions and get traits for each quiz completed. Traits transformed with additional quizzes completed.<br/><br/><a href="https://www.selfi.ai" target="_blank" rel="noopener noreferrer" role="button">Visit Website</a></p>
+                        <p>Selfi is a self-discovery platform built for students, job-seekers and people curious to know more about themselves. Users answer personality questions and get traits for each quiz completed. Traits transformed with additional quizzes completed.<br /><br /><a href="https://www.selfi.ai" target="_blank" rel="noopener noreferrer" role="button">Visit Website</a></p>
                     </div>
                     <div className="row wipeIn ani-4">
-                        <div className="col-12 col-md-5 mb-3">
+                        <div className="col-6 col-md-5 mb-3">
                             <div className="mb-1"><strong>Role</strong></div>
                             Design and Front-end Dev
                         </div>
-                        <div className="col-12 col-md-7 mb-3">
+                        <div className="col-6 col-md-7 mb-3">
                             <div className="mb-1"><strong>Tools</strong></div>
                             XD, Photoshop, Illustrator, Flutter, React, Redux, AWS
                         </div>
@@ -163,15 +184,37 @@ const Projects = () => {
                         <span>Concept</span>
                         <span className="icon-person" title="4 team members">4</span>
                     </section>
+
+                    <div className="project-item-image">
+                        <Link to="/work/threadparadise">
+                            <Image
+                                className="image wipeIn ani-4"
+                                fluid={threadParadiseCover.childImageSharp.fluid}
+                                alt="Thread Paradise app" />
+                        </Link>
+                        <div className="hovering-object right">
+                            <div className="diamond-cross">
+                                <div className="item"></div>
+                                <div className="item"></div>
+                                <div className="item"></div>
+                                <div className="item"></div>
+                                <div className="item"></div>
+                                <div className="item"></div>
+                                <div className="item"></div>
+                                <div className="item"></div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div className="description wipeIn ani-5">
                         <p>Thread Paradise is an eCommerce shopping app concept that seeks to solve multiple issues related to size-fit based on the culture and behaviours of Singaporeans.</p>
                     </div>
                     <div className="row wipeIn ani-4">
-                        <div className="col-12 col-md-5 mb-3">
+                        <div className="col-6 col-md-5 mb-3">
                             <div className="mb-1"><strong>Role</strong></div>
                             Design
                         </div>
-                        <div className="col-12 col-md-7 mb-3">
+                        <div className="col-6 col-md-7 mb-3">
                             <div className="mb-1"><strong>Tools</strong></div>
                             XD
                         </div>
@@ -200,15 +243,32 @@ const Projects = () => {
                         <span>Concept</span>
                         <span className="icon-person" title="4 team members">4</span>
                     </section>
+
+                    <div className="project-item-image">
+                        <Link to="/work/timeui">
+                            <Image
+                                className="image wipeIn ani-4"
+                                fluid={timeCover.childImageSharp.fluid}
+                                alt="Time UI Homescreen" />
+                        </Link>
+                        <div className="hovering-object right">
+                            <div className="triangle">
+                                <div className="item"></div>
+                                <div className="item"></div>
+                                <div className="item"></div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div className="description wipeIn ani-5">
                         <p>The challenge: To redesign the user experience of using a mobile OS interface through appropriate signifiers, while reducing the click distance to access apps. Aside from bringing in familiar elements from iOS and Android, new functions using the concepts of time and voice are brought in to the mix.</p>
                     </div>
                     <div className="row wipeIn ani-4">
-                        <div className="col-12 col-md-5 mb-3">
+                        <div className="col-6 col-md-5 mb-3">
                             <div className="mb-1"><strong>Role</strong></div>
                             Design
                         </div>
-                        <div className="col-12 col-md-7 mb-3">
+                        <div className="col-6 col-md-7 mb-3">
                             <div className="mb-1"><strong>Tools</strong></div>
                             Proto.io, XD
                         </div>
@@ -268,15 +328,32 @@ const Projects = () => {
                         <span>Concept</span>
                         <span className="icon-person" title="5 team members">5</span>
                     </section>
+
+                    <div className="project-item-image">
+                        <Link to="/work/asksimple">
+                            <Image
+                                className="image wipeIn ani-4"
+                                fluid={askSimpleCover.childImageSharp.fluid}
+                                alt="AskSimple app" />
+                        </Link>
+                        <div className="hovering-object right">
+                            <div className="circle">
+                                <div className="item"></div>
+                                <div className="item"></div>
+                                <div className="item"></div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div className="description wipeIn ani-5">
                         <p>AskSimple is a tool that helps learners participate in class anonymously and supports them in getting the answers they need as fast as possible. This app was designed in a Human-Computer Interaction Design <a href="http://mll.csie.ntu.edu.tw/course/hci_f16/" target="_blank" rel="noopener noreferrer">course</a> in National Taiwan University.</p>
                     </div>
                     <div className="row wipeIn ani-4">
-                        <div className="col-12 col-md-5 mb-3">
+                        <div className="col-6 col-md-5 mb-3">
                             <div className="mb-1"><strong>Role</strong></div>
                             Design, Website Dev
                         </div>
-                        <div className="col-12 col-md-7 mb-3">
+                        <div className="col-6 col-md-7 mb-3">
                             <div className="mb-1"><strong>Tools</strong></div>
                             Proto.io
                         </div>
@@ -306,15 +383,34 @@ const Projects = () => {
                         <span>Deployed and used</span>
                         <span className="icon-person" title="8 team members">8</span>
                     </section>
+
+                    <div className="project-item-image">
+                        <Link to="/work/sutdgradnight">
+                            <Image
+                                className="image wipeIn ani-4"
+                                fluid={sutdGradNightCover.childImageSharp.fluid}
+                                alt="SUTD Graduation Night 2016" />
+                        </Link>
+                        <div className="hovering-object right">
+                            <div className="flower">
+                                <div className="item"></div>
+                                <div className="item"></div>
+                                <div className="item"></div>
+                                <div className="item"></div>
+                                <div className="item"></div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div className="description wipeIn ani-5">
                         <p>SUTD Graduation Night is an annual event organised specially for graduating seniors. In this project, our team of 7 planned and distributed materials over 4 months to engage seniors through offline and online platforms.</p>
                     </div>
                     <div className="row wipeIn ani-4">
-                        <div className="col-12 col-md-5 mb-3">
+                        <div className="col-6 col-md-5 mb-3">
                             <div className="mb-1"><strong>Role</strong></div>
                             Design, Illustration, Publicity
                         </div>
-                        <div className="col-12 col-md-7 mb-3">
+                        <div className="col-6 col-md-7 mb-3">
                             <div className="mb-1"><strong>Tools</strong></div>
                             Illustrator, Photoshop, HTML, CSS, JS
                         </div>
@@ -378,21 +474,40 @@ const Projects = () => {
                         <span>Concept</span>
                         <span className="icon-person" title="4 team members">4</span>
                     </section>
+
+                    <div className="project-item-image">
+                        <Link to="/work/nimbusrun">
+                            <Image
+                                className="image wipeIn ani-4"
+                                fluid={nimbusRunCover.childImageSharp.fluid}
+                                alt="Nimbus Run - Android game" />
+                        </Link>
+                        <div className="hovering-object right">
+                            <div className="square">
+                                <div className="item"></div>
+                                <div className="item"></div>
+                                <div className="item"></div>
+                                <div className="item"></div>
+                                <div className="item"></div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div className="description wipeIn ani-5">
                         <p>Nimbus Run is an Android-platform racing game inspired from Fun Run. Created by my group and I as part of our software construction <a href="https://istd.sutd.edu.sg/undergraduate/courses/50003-elements-of-software-construction">course</a>, the game logic was created from scratch in libgdx. We used KryoNet as our the network system, and Photoshop and Illustrator for character design and graphic assets.</p>
                     </div>
                     <div className="row wipeIn ani-4">
-                        <div className="col-12 col-md-5 mb-3">
+                        <div className="col-6 col-md-5 mb-3">
                             <div className="mb-1"><strong>Role</strong></div>
                             Character and game design
                         </div>
-                        <div className="col-12 col-md-7 mb-3">
+                        <div className="col-6 col-md-7 mb-3">
                             <div className="mb-1"><strong>Tools</strong></div>
                             libgdx, Android Studio, Kryonet, Photoshop, Illustrator
                         </div>
                     </div>
                     <div className="d-inline-block wipeIn ani-5">
-                    <Link className="d-inline-block btn-square btn-hover-pulse" to="/work/nimbusrun">
+                        <Link className="d-inline-block btn-square btn-hover-pulse" to="/work/nimbusrun">
                             <div className="icon-arrow-right"></div>
                         </Link>
                     </div>
@@ -416,15 +531,33 @@ const Projects = () => {
                         <span>Deployed and used</span>
                         <span className="icon-person" title="7 team members">7</span>
                     </section>
+
+                    <div className="project-item-image wipeIn ani-1">
+                        <Link to="/work/sutdring">
+                            <Image
+                                className="image wipeIn ani-4"
+                                fluid={sutdRingCover.childImageSharp.fluid}
+                                alt="SUTD Ring 4th Production" />
+                        </Link>
+                        <div className="hovering-object right">
+                            <div className="cross">
+                                <div className="item"></div>
+                                <div className="item"></div>
+                                <div className="item"></div>
+                                <div className="item"></div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div className="description wipeIn ani-5">
                         <p>Started by two SUTD pioneer students, the SUTD RingComm produces the 'SUTD Ring' for each batch of undergraduates on a yearly basis. I was the designer for the ring case, as well as publicity materials for the batch of 2017 students.</p>
                     </div>
                     <div className="row wipeIn ani-4">
-                        <div className="col-12 col-md-5 mb-3">
+                        <div className="col-6 col-md-5 mb-3">
                             <div className="mb-1"><strong>Role</strong></div>
                             Case design and publicity materials
                         </div>
-                        <div className="col-12 col-md-7 mb-3">
+                        <div className="col-6 col-md-7 mb-3">
                             <div className="mb-1"><strong>Tools</strong></div>
                             Photoshop, Illustrator
                         </div>
