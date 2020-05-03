@@ -66,5 +66,6 @@ yarn-error.log
 
 # Docs Custom
 .cache/
+public
 yarn-error.log
 .netlify/
