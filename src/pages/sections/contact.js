@@ -11,8 +11,6 @@ if (typeof RECAPTCHA_KEY === 'undefined') {
   `)
 }
 
-conso
-
 const ContactForm = () => {
 
     const [state, setState] = useState({})
