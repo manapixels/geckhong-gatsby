@@ -3,13 +3,15 @@ import Recaptcha from 'react-google-recaptcha'
 import "./contact.scss"
 import { encode } from "../../helpers/encode"
 
-const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY
+const RECAPTCHA_KEY = `6LdBc-4UAAAAAAHzJWqLA1Eyyfj0NIozps1XeAGw`
 if (typeof RECAPTCHA_KEY === 'undefined') {
     console.log(`
   Env var GATSBY_APP_SITE_RECAPTCHA_KEY is undefined! 
   Make sure to get a Recaptcha key at https://www.netlify.com/docs/form-handling/#custom-recaptcha-2-with-your-own-settings
   `)
 }
+
+conso
 
 const ContactForm = () => {
 
