@@ -1,10 +1,12 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { navigate } from "gatsby"
 import SEO from "../components/seo"
 
 const IndexPage = () => {
 
-	navigate("/work")
+	useEffect(() => {
+		navigate("/work")
+	}, [])
 
 	return (
 
