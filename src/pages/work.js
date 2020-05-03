@@ -1,6 +1,6 @@
 import React from "react"
+import Helmet from "react-helmet"
 
-import SEO from "../components/seo"
 import AboutSection from "./sections/about"
 import DesignSection from "./sections/design"
 import ContactForm from "./sections/contact"
@@ -11,7 +11,9 @@ const WorkPage = () => {
 	return (
 
 		<>
-			<SEO title="Work" />
+			<Helmet>
+                <title>Work</title>
+			</Helmet>
 			<div className="work-page">
 				<AboutSection />
 				<DesignSection />
