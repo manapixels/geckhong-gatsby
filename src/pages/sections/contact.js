@@ -118,13 +118,13 @@ const ContactForm = () => {
                             </div>
                         </div>
 
-                        {apiMessage !== '' && apiMessage}
-
                         <div className="mb-3">
                             <Recaptcha ref={recaptchaRef} sitekey={RECAPTCHA_KEY} />
                         </div>
 
                         <button type="submit" className="btn-square btn-hover-pulse" style={{ fontSize: '110%' }}>{loading ? <svg className="icon icon-spinner"><use xlinkHref="#icon-spinner"></use></svg> : 'Send'}</button>
+
+                        {apiMessage !== '' && apiMessage}
                     </div>
                 </div>
             </div>
