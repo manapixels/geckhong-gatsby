@@ -23,6 +23,11 @@ try {
 }
 
 module.exports = {
+  siteMetadata: {
+    title: config.siteTitleMeta,
+    description: config.siteDescriptionMeta,
+    author: config.author,
+  },
   plugins: [
     /**
      *  Content Plugins
@@ -97,76 +102,76 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-advanced-sitemap`,
-      options: {
-        query: `
-              {
-                  allGhostPost {
-                      edges {
-                          node {
-                              id
-                              slug
-                              updated_at
-                              created_at
-                              feature_image
-                          }
-                      }
-                  }
-                  allGhostPage {
-                      edges {
-                          node {
-                              id
-                              slug
-                              updated_at
-                              created_at
-                              feature_image
-                          }
-                      }
-                  }
-                  allGhostTag {
-                      edges {
-                          node {
-                              id
-                              slug
-                              feature_image
-                          }
-                      }
-                  }
-                  allGhostAuthor {
-                      edges {
-                          node {
-                              id
-                              slug
-                              profile_image
-                          }
-                      }
-                  }
-              }`,
-        mapping: {
-          allGhostPost: {
-            sitemap: `posts`,
-          },
-          allGhostTag: {
-            sitemap: `tags`,
-          },
-          allGhostAuthor: {
-            sitemap: `authors`,
-          },
-          allGhostPage: {
-            sitemap: `pages`,
-          },
-        },
-        exclude: [
-          `/dev-404-page`,
-          `/404`,
-          `/404.html`,
-          `/offline-plugin-app-shell-fallback`,
-        ],
-        createLinkInHead: true,
-        addUncaughtPages: true,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-advanced-sitemap`,
+    //   options: {
+    //     query: `
+    //           {
+    //               allGhostPost {
+    //                   edges {
+    //                       node {
+    //                           id
+    //                           slug
+    //                           updated_at
+    //                           created_at
+    //                           feature_image
+    //                       }
+    //                   }
+    //               }
+    //               allGhostPage {
+    //                   edges {
+    //                       node {
+    //                           id
+    //                           slug
+    //                           updated_at
+    //                           created_at
+    //                           feature_image
+    //                       }
+    //                   }
+    //               }
+    //               allGhostTag {
+    //                   edges {
+    //                       node {
+    //                           id
+    //                           slug
+    //                           feature_image
+    //                       }
+    //                   }
+    //               }
+    //               allGhostAuthor {
+    //                   edges {
+    //                       node {
+    //                           id
+    //                           slug
+    //                           profile_image
+    //                       }
+    //                   }
+    //               }
+    //           }`,
+    //     mapping: {
+    //       allGhostPost: {
+    //         sitemap: `posts`,
+    //       },
+    //       allGhostTag: {
+    //         sitemap: `tags`,
+    //       },
+    //       allGhostAuthor: {
+    //         sitemap: `authors`,
+    //       },
+    //       allGhostPage: {
+    //         sitemap: `pages`,
+    //       },
+    //     },
+    //     exclude: [
+    //       `/dev-404-page`,
+    //       `/404`,
+    //       `/404.html`,
+    //       `/offline-plugin-app-shell-fallback`,
+    //     ],
+    //     createLinkInHead: true,
+    //     addUncaughtPages: true,
+    //   },
+    // },
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-force-trailing-slashes`,
