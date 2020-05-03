@@ -103,7 +103,9 @@ const ThreadParadiseProject = ({ location }) => {
 
                     <div>
                         <h4>Measurement record and size guide</h4>
-                        <div className="text-center"><GifPlayer gif={sizingGif} still={sizingStill} className="gif-image" /></div>
+                        <div className="text-center">
+                            <GifPlayer gif={sizingGif} still={sizingStill} className="gif-image" />
+                        </div>
                         <p>On the homepage, there is a box that encourages users to save their measurements so that the app shows only clothes that fit them. If the user choose not to do so, he can press the 'Don't remind again' checkbox and close the panel. If he chooses to record his measurements, he will be brought through a series of pages to record his size. Each page is used to record just one measurement so as to minimise the clutter and confusion to users. In each page, there is a '?' icon to guide users to measure the respective body part accurately.<br /><br />In each product details page, there is a button that leads to the size guide. This size guide has a zoom-in function to help users focus on different parts of the sizing table. Again, there is a figure to guide users on the proper measurement technique. In addition, there is a short text under 'Recommendation for you' that shows up if the user recorded his measurements. This short auto-generated text informs the user what size he should buy based on his measurements and what people of similar body sizes says about the fit.</p>
                     </div>
                     <div>

@@ -20,6 +20,12 @@ import "./Layout.scss"
 *
 */
 
+
+// Temp fix for SSR on Netlify
+if (typeof window === 'undefined') {
+	global.window = {}
+}
+
 const Layout = ({ children, location }) => {
 
 	const [showScrollToTopBtn, setShowScrollToTopBtn] = useState(false)
