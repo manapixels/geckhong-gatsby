@@ -1,9 +1,16 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 import Helmet from "react-helmet"
 
-const AskSimpleProject = () => {
+import WorkBottomNav from "../../components/WorkBottomNav"
+import "./work.scss"
+
+const AskSimpleProject = ({ location }) => {
+
+    useEffect(() => {
+        document.documentElement.scrollTop = 0
+    }, [])
 
     const data = useStaticQuery(graphql`
 		query {
@@ -35,6 +42,7 @@ const AskSimpleProject = () => {
                                         <li><p className="name">Project Scope</p><p className="desc">AskSimple solves the need of shy students to be able to ask questions in class without the fear of getting embarrassed. Also, the concept fosters class participation in general and might encourage more unmotivated students to participate and be interested in class topics again.</p></li>
                                     </ul>
                                 </div>
+                                <a className="btn-primary btn-hover-pulse" role="button" href="https://www.csie.ntu.edu.tw/~r04922001/hcid_edulearn/" target="_blank" rel="noopener noreferrer">Visit website</a>
                             </div>
                         </div>
                         <div className="col-12 col-md-6 order-1 order-md-2">
@@ -47,7 +55,6 @@ const AskSimpleProject = () => {
                 </section>
 
                 <section className="body">
-                    <a className="btn-primary" role="button" href="https://www.csie.ntu.edu.tw/~r04922001/hcid_edulearn/" target="_blank" rel="noopener noreferrer">Website</a>
                     <h1>Needfinding</h1>
                     <p>We were given the task of finding problems faced in the education sector. Narrowing it down to frustrations faced by students, we decided that these frustrations should be similar across borders. We interviewed 8 students across 5 different countries, cultures, and course specializations.</p>
                     <p>Classes are not only taught in physical classrooms anymore, online alternatives also exist. One might even say that physical classrooms are starting to move towards classes exclusively taught online, due to scalability and convenience. These online classrooms are not fully mature yet and might bring even more frustrations to students and teachers, which is why we also want to explore this part of our studio theme using contextual inquiries.</p>
@@ -101,10 +108,9 @@ const AskSimpleProject = () => {
                     <div class="embed-responsive embed-responsive-16by9">
                         <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pP_nR8pnHXU" allowfullscreen></iframe>
                     </div>
-
-
-
                 </section>
+
+                <WorkBottomNav path={location.pathname} />
             </div>
         </>
     )

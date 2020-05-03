@@ -1,11 +1,43 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
+import { Link, navigate } from "gatsby"
 import onClickOutside from 'react-onclickoutside'
 
 import "./WorkBottomNav.scss"
 
+const PAGES = [
+    {
+        path: '/work/selfi',
+        name: 'Selfi'
+    },
+    {
+        path: '/work/threadparadise',
+        name: 'Thread Paradise'
+    },
+    {
+        path: '/work/timeui',
+        name: 'Time UI'
+    },
+    {
+        path: '/work/asksimple',
+        name: 'AskSimple'
+    },
+    {
+        path: '/work/sutdgradnight',
+        name: 'SUTD Grad Night'
+    },
+    {
+        path: '/work/nimbusrun',
+        name: 'Nimbus Run'
+    },
+    {
+        path: '/work/sutdring',
+        name: 'SUTD Ring'
+    },
+]
 
-const WorkBottomNav = ({ page }) => {
+const WorkBottomNav = ({ path }) => {
+
+    const page = PAGES.findIndex(item => item.path === path) + 1
 
     const [isOpen, setIsOpen] = useState(false)
     const toggle = () => setIsOpen(!isOpen)
@@ -13,44 +45,34 @@ const WorkBottomNav = ({ page }) => {
 
     return (
         <div className="work-bottom-nav">
-            <div className={`left ${page === 1 ? "disabled" : ''}`}>
+            <button 
+                className={`left ${page === 1 ? "disabled" : ''}`}
+                onClick={() => page !== 1 && navigate(PAGES[page-2].path)}
+            >
                 <span className="icon-arrow-left"></span> Previous
-                    </div>
+            </button>
             <div className={`center ${isOpen ? 'open' : ''}`} onClick={() => isOpen ? {} : toggle()}>
 
                 <span className="icon-arrow-up2"></span>
                 <span className="icon-arrow-down"></span>
 
                 <ul>
-                    <li className={page === 1 ? 'active' : ''}>
-                        <Link to="/work/selfi">Selfi</Link>
-                    </li>
-                    <li className={page === 2 ? 'active' : ''}>
-                        <Link to="/work/threadparadise">Thread Paradise</Link>
-                    </li>
-                    <li className={page === 3 ? 'active' : ''}>
-                        <Link to="/work/timeui">Time UI</Link>
-                    </li>
-                    <li className={page === 4 ? 'active' : ''}>
-                        <Link to="/work/asksimple">AskSimple</Link>
-                    </li>
-                    <li className={page === 5 ? 'active' : ''}>
-                        <Link to="/work/sutdgradnight">SUTD Grad Night</Link>
-                    </li>
-                    <li className={page === 6 ? 'active' : ''}>
-                        <Link to="/work/nimbusrun">Nimbus Run</Link>
-                    </li>
-                    <li className={page === 7 ? 'active' : ''}>
-                        <Link to="/work/sutdring">SUTD Ring</Link>
-                    </li>
+                    {PAGES.map( (item, index) => 
+                        <li className={page === (index+1) ? 'active' : ''} key={`page-link-${index}`}>
+                            <Link to={item.path}>{item.name}</Link>
+                        </li>
+                    )}
                     <li>
                         <strong><a href="" onClick={toggle}>Close</a></strong>
                     </li>
                 </ul>
             </div>
-            <div className={`right ${page === 7 ? "disabled" : ''}`}>
+            <button 
+                className={`right ${page === PAGES.length ? "disabled" : ''}`}
+                onClick={() => page !== PAGES>length && navigate(PAGES[page].path)}
+            >
                 Next <span className="icon-arrow-right"></span>
-            </div>
+            </button>
         </div>
     )
 }

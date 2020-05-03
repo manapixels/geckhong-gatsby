@@ -1,13 +1,21 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 import GifPlayer from "react-gif-player"
 import Helmet from "react-helmet"
 
+import WorkBottomNav from "../../components/WorkBottomNav"
+import "./work.scss"
 import sizingGif from "../../images/projects/threadparadise/sizing.gif"
 import sizingStill from "../../images/projects/threadparadise/measurements.png"
 
-const ThreadParadiseProject = () => {
+
+const ThreadParadiseProject = ({ location }) => {
+
+    useEffect(() => {
+        document.documentElement.scrollTop = 0
+    }, [])
+
     const data = useStaticQuery(graphql`
 		query {
 			bg: file(relativePath: { eq: "projects/threadparadise/bg.png" }) {
@@ -125,15 +133,22 @@ const ThreadParadiseProject = () => {
 
                     <h1>Try it out</h1>
 
-                    <iframe width="375" height="667" src="https://xd.adobe.com/embed/fc995aab-b674-40c2-7469-fc533bda0a99-8aa8/?fullscreen" frameborder="0" allowfullscreen></iframe>
-
-                    <h1>See it in action</h1>
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/nTymbZXHhWE" allowfullscreen></iframe>
+                    <div className="embed-responsive embed-responsive-9by16 mobile-screenshot">
+                        <iframe 
+                            className="embed-responsive-item"
+                            src="https://xd.adobe.com/embed/fc995aab-b674-40c2-7469-fc533bda0a99-8aa8/?fullscreen" 
+                            frameBorder="0" 
+                            allowFullScreen></iframe>
                     </div>
 
+                    <h1>See it in action</h1>
+                    <div className="embed-responsive embed-responsive-16by9">
+                        <iframe className="embed-responsive-item" src="https://www.youtube.com/embed/nTymbZXHhWE" allowFullScreen></iframe>
+                    </div>
 
                 </section>
+
+                <WorkBottomNav path={location.pathname} />
 
             </div>
         </>

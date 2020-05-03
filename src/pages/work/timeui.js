@@ -1,9 +1,17 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 import Helmet from "react-helmet"
 
-const TimeProject = () => {
+import WorkBottomNav from "../../components/WorkBottomNav"
+import "./work.scss"
+
+
+const TimeProject = ({ location }) => {
+
+    useEffect(() => {
+        document.documentElement.scrollTop = 0
+    }, [])
 
     const data = useStaticQuery(graphql`
     query {
@@ -83,8 +91,11 @@ const TimeProject = () => {
                 </section>
 
                 <section className="body">
-                    <h1>The Issue</h1>
+                    <h1>Brief</h1>
+                    <p>This series is an experimentation of different home screens in a modern smartphone. There's no final design per se.</p>
+
                     <p>With the increasing number of applications in smartphones today, accessing the desired applications can potentially be time consuming, effortful and result in cognitive load due to visual clutter. This will disperse the user’s attention and hence access to functions may be delayed or even hindered. This projects seeks to enhance access to applications in smartphones which would be especially effective in smartphones containing a high number of applications. By applications, we refer not just to apps, but to things like contacts, documents, images as well.</p>
+
                     <h1>Progress</h1>
                     <p>This project is named 'Time UI' not because we already have a solution in mind. At the beginning, we came up with various ideas, tried ways to make shortcuts more accessible. We explored different ways of categorising apps and presentation, going back and forth between coming up with new ideas and getting feedback from users. After rounds of iteration, we decided to go with the concept of time and voice in our final design. Below are some of the designs that we came up with along the way:</p>
 
@@ -138,7 +149,7 @@ const TimeProject = () => {
             In this design, we re-attempted combining events, images and documents downloaded into one component on the screen, as shown in Section B. The technique was last used in Design 5. Users told us that as a first-time user, it is confusing seeing so many colours and elements in a single screen. Our rationale for colour-coding events as purple, documents as red was to set a constraint in the user’s mind – once they registered that a specific colour refers to a particular type, it will be easier for them to use this design in future. It seems that we shouldn’t have forced this down the user. Perhaps we could come up with something better to visually differentiate images from documents and events.<br /><br />The today button beside the time is not easily registered as a button. Furthermore, what will the button text show when the user has changed the day? The text in the button is unclear. The location shown below the time is not easily noticed at first glance. While we wanted to introduce the location-based app by combining apps filtered by location and time, the relation is once again not clear.<br /><br />Having scrollable apps in Section E increases the click distance. To find a certain app, the user will have to (Step 1) scroll if is not found on the home screen, and (Step 2) click the app.</p>
                     <p><b>Refinement ideas</b><br /><br />Perhaps there could be some sort of hierarchy in the apps as users tend to not use more than 6 apps equally at any time period. There should also be some indicator that the time-based apps do change according to the time. As in this design, the timeline and the circular section are removed, it is even less obvious that the apps being displayed are time-based. We could bring back the timeline and make the relation clearer by some form of grouping. The calendar at the top also does not give any indication that there is an event on that day or not.</p>
 
-                    <h1>Solution</h1>
+                    <h1>Consolidating findings</h1>
                     <a href="websites/timeui/frame.html" target="_blank">
                         <Image
                             className="image"
@@ -158,6 +169,9 @@ const TimeProject = () => {
 
                     <p><i>Privacy invasion</i><br /><br />Since apps are pushed to users based on the time and location, it is constantly tracking user’s actions in an implicit manner. Users may feel uncomfortable that they are constantly monitored.</p>
                 </section>
+
+                <WorkBottomNav path={location.pathname} />
+
             </div>
         </>
     )

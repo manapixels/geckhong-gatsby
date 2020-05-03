@@ -1,3 +1,5 @@
+@import "../styles/variables.scss";
+
 .blog-page {
     position: relative;
     padding: 3rem 1.5rem;
@@ -31,5 +33,20 @@
 
     .blog-post-list {
         margin-left: 12rem;
+    }
+}
+
+@media screen and #{$mq-small} {
+    .blog-page {
+        padding: 0;
+        padding-top: 3rem;
+    
+        .blog-navigation {
+            display: none;
+        }
+
+        .blog-post-list {
+            margin: 0;
+        }
     }
 }

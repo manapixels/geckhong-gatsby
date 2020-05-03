@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .pagination {
     position: relative;
     width: 50rem;
@@ -27,4 +29,7 @@
             transform: translateX(.3rem);
         }
     }
+}
+
+@media screen and #{$mq-small} {
 }

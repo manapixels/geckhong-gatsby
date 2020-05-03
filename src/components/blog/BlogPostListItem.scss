@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .blog-post-list-item {
     position: relative;
     width: 50rem;
@@ -40,4 +42,19 @@
             line-height: 1.8;
         }
     }
+}
+
+@media screen and #{$mq-small} {
+.blog-post-list-item {
+    .post-full-content {
+        padding: 0;
+
+        .post-title {
+            font-size: 180%;
+        }
+        .post-body {
+            font-size: 100%;
+        }
+    }
+}
 }

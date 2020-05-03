@@ -93,6 +93,7 @@ header {
         &.mobile {
             display: none;
             position: fixed;
+            top: 0;
             right: 0;
             left: 0;
             z-index: var(--zindex-modal);
@@ -104,15 +105,23 @@ header {
             overflow-y: auto;
 
             a {
-                font-size: 1rem;
                 font-weight: 700;
                 text-decoration: none;
-                padding: 0.8rem .5rem;
+                padding: 1.2rem .5rem .4rem;
                 color: var(--white);
                 width: 100%;
                 cursor: pointer;
                 transition: transform .7s cubic-bezier(0.19, 1, 0.155, 1.01);
-                transform: translateX(15rem);
+                transform: translateX(100vw);
+
+                &.link {
+                    color: var(--gray-light-3);
+                }
+
+                &.sub-link {
+                    font-size: 88%;
+                    padding: .3rem .5rem;
+                }
             }
 
             .internal-links {
@@ -120,27 +129,37 @@ header {
 
                 a {
                     &:first-child {
-                        transition-delay: .05s;
+                        transition-delay: .03s;
                     }
-
                     &:nth-child(2) {
-                        transition-delay: .15s;
+                        transition-delay: .10s;
                     }
-
                     &:nth-child(3) {
-                        transition-delay: .25s;
+                        transition-delay: .17s;
                     }
-
                     &:nth-child(4) {
-                        transition-delay: .35s;
+                        transition-delay: .24s;
                     }
-
                     &:nth-child(5) {
+                        transition-delay: .31s;
+                    }
+                    &:nth-child(6) {
+                        transition-delay: .38s;
+                    }
+                    &:nth-child(7) {
                         transition-delay: .45s;
                     }
-
-                    &:nth-child(6) {
-                        transition-delay: .55s;
+                    &:nth-child(8) {
+                        transition-delay: .52s;
+                    }
+                    &:nth-child(9) {
+                        transition-delay: .59s;
+                    }
+                    &:nth-child(10) {
+                        transition-delay: .66s;
+                    }
+                    &:nth-child(11) {
+                        transition-delay: .73s;
                     }
 
                     &.active {
@@ -188,7 +207,7 @@ header {
             &:hover,
             &:focus,
             &:visited {
-                color: var(--gray-medium-2);
+                color: var(--gray-medium-1);
                 border: none;
             }
 
@@ -267,7 +286,7 @@ header {
         width: 100%;
         height: 100%;
         display: block;
-        background-color: rgba(0, 0, 0, 0.9);
+        background-color: var(--black);
         position: fixed;
         top: 0;
         left: 0;
@@ -307,10 +326,7 @@ header {
 
         .text {
             color: #fff;
-            font-size: 0.7em;
-            letter-spacing: 0.1em;
             text-transform: lowercase;
-            top: 0;
         }
 
         .icon {
@@ -453,6 +469,7 @@ footer {
         
                 .toggle {
                     display: block;
+                    padding: .2rem 1rem;
                 }
             }
         

@@ -71,7 +71,7 @@ const Sidebar = ({ data, location }) => {
 				to="/work" activeClassName="active" className="link"
 				onClick={() => isMobile && toggleMobileNav()}>Work</Link>
 			{typeof locationParts === 'object' && locationParts[1] === 'work' && 
-				<div>{projectLinks}</div>
+				<>{projectLinks}</>
 			}
 			{/* <Link 
 				to="/graphics" activeClassName="active" className="link" 

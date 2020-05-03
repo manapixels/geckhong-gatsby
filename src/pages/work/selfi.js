@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 import Helmet from "react-helmet"
@@ -6,7 +6,11 @@ import Helmet from "react-helmet"
 import WorkBottomNav from "../../components/WorkBottomNav"
 import "./work.scss"
 
-const SelfiProject = () => {
+const SelfiProject = ({ location }) => {
+
+    useEffect(() => {
+        document.documentElement.scrollTop = 0
+    }, [])
 
     const data = useStaticQuery(graphql`
 		query {
@@ -61,9 +65,7 @@ const SelfiProject = () => {
                                         </li>
                                     </ul>
                                 </div>
-                                <a href="https://selfi.ai" target="_blank" rel="noopener noreferrer" className="d-inline-block btn-square small btn-hover-pulse">
-                                    Visit website
-                            </a>
+                                <a className="btn-primary btn-hover-pulse" role="button" href="https://selfi.ai" target="_blank" rel="noopener noreferrer">Visit website</a>
                             </div>
                         </div>
                         <div className="col-12 col-md-6 order-1 order-md-2">
@@ -134,7 +136,7 @@ const SelfiProject = () => {
 
                 </section>
                 
-                <WorkBottomNav page={1} />
+                <WorkBottomNav path={location.pathname} />
             </div>
         </>
     )
