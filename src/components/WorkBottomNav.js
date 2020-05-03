@@ -81,4 +81,6 @@ const clickOutsideConfig = {
     handleClickOutside: () => WorkBottomNav.handleClickOutside
 }
 
+WorkBottomNav.prototype = {}
+
 export default onClickOutside(WorkBottomNav, clickOutsideConfig);
