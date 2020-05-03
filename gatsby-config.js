@@ -23,11 +23,6 @@ try {
 }
 
 module.exports = {
-  siteMetadata: {
-    title: config.siteTitleMeta,
-    description: config.siteDescriptionMeta,
-    author: config.author,
-  },
   plugins: [
     /**
      *  Content Plugins
