@@ -40,6 +40,16 @@
         .post-body {
             font-size: 130%;
             line-height: 1.8;
+
+            .kg-image {
+                max-width: 100%;
+            }
+
+            figcaption {
+                font-size: 80%;
+                color: var(--gray-medium-2);
+                margin-bottom: 1rem;
+            }
         }
     }
 }

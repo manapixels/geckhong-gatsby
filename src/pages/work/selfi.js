@@ -78,9 +78,9 @@ const SelfiProject = ({ location }) => {
                 </section>
 
                 <section className="body">
-                    <h1>A note before we begin</h1>
+                    <h1>An Ongoing Journey</h1>
 
-                    <p>This post isn't exactly a design portfolio. Working in a startup, I had to take on multiple perspectives to make things work - front-end development, ux design, ui design, branding, illustrations, setting business goals etc. I'm condensing everything that happened so far (29 Apr 2020) in this post, and posting new updates as they come on my <Link to="/blog">blog</Link> under the Selfi tag.</p>
+                    <p>This post isn't exactly a design portfolio. Working in a startup, I had to take on multiple perspectives to make things work - front-end development, ux design, ui design, branding, illustrations, setting business goals etc. I'm condensing everything that happened so far (29 Apr 2020) in this post, and posting new updates as they come into the <Link to="/blog">blog page</Link> tagged with "Selfi". I'm using the blog actively as a way to record what I have done and learnt on a regular basis.</p>
 
                     <h1>The Birth of Selfi</h1>
 
