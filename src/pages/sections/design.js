@@ -3,7 +3,7 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import Image from "gatsby-image"
 
 import './design.scss'
-import FadeInSection from '../../components/fadeInSection'
+import FadeInSection from '../../components/FadeInSection'
 
 const Projects = () => {
 

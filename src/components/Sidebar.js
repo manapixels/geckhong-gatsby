@@ -5,7 +5,7 @@ import { isMobile } from "react-device-detect"
 import { motion } from "framer-motion"
 import { StaticQuery, graphql } from 'gatsby'
 
-import "./sidebar.scss"
+import "./Sidebar.scss"
 
 const Sidebar = ({ data, location }) => {
     const locationParts = location.pathname && location.pathname.split(`/`)
