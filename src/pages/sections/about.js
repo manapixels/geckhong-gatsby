@@ -27,9 +27,9 @@ const About = () => {
                         <div className="primary-bio mb-4">
                             <span className="quote-symbol">“</span>
 
-                            <div className="wipeIn ani-1">I'm a product designer at Selfi, a platform that empowers people to understand and utilise their personality data. <div className="wipeIn ani-3 d-inline-block text-green">I am a bridger.</div></div>
+                            <div className="wipeIn ani-1">I'm a product designer, <div className="wipeIn ani-3 d-inline-block text-green">a bridger</div> and a builder. I work towards bridging Web2 and Web3.</div>
                         </div>
-                        <p className="secondary-bio wipeIn ani-2">Creating products of value to both businesses and users is my goal - I want to make the world a better place for people through great products that people <b><i>actually</i></b> use. And the core to make this happen is bridging design, development and business goals. Users feel happy using the product, businesses profit and allocate more resources to build better stuff. Win-win for all. ✨🍺</p>
+                        <p className="secondary-bio wipeIn ani-2">My interest lies in creating products of value to people, especially through social apps, to make the world a better place. To that end, I meld design, development and business goals, and actively consider perspectives across multiple discipines. I work towards a trustless web through programmable software. 🍺</p>
                         <a className="link-highlight mr-5 wipeIn ani-2" href="https://t.me/manapixels" target="_blank" rel="noopener noreferrer">
                             <span>Chat on Telegram</span>
                             <svg className="icon icon-arrow-right"><use xlinkHref="#icon-arrow-right"></use></svg>
@@ -72,22 +72,25 @@ const About = () => {
                                     <ul className="skills-list">
                                         <li className="skill">
                                             User journey &amp; testing
-                                    </li>
+                                        </li>
                                         <li className="skill">
                                             Wireframing, mock-up, prototyping
-                                    </li>
+                                        </li>
                                         <li className="skill">
                                             Interaction design, micro-interactions
-                                    </li>
+                                        </li>
                                         <li className="skill">
                                             Mobile UX
-                                    </li>
+                                        </li>
                                         <li className="skill">
                                             Branding
-                                    </li>
+                                        </li>
                                         <li className="skill">
                                             Illustration
-                                    </li>
+                                        </li>
+                                        <li className="skill">
+                                            Data Visualisation
+                                        </li>
                                     </ul>
                                 </div>
                                 <div className="skills-list-container">
@@ -95,12 +98,6 @@ const About = () => {
                                     <ul className="skills-list">
                                         <li className="skill">
                                             Motion design (on Premiere) <span className="icon-arrow-up2 move-up-fade-out"></span>
-                                        </li>
-                                        <li className="skill">
-                                            Data visualization <span className="icon-arrow-up2 move-up-fade-out"></span>
-                                        </li>
-                                        <li className="skill">
-                                            Accessibility <span className="icon-arrow-up2 move-up-fade-out"></span>
                                         </li>
                                     </ul>
                                 </div>
@@ -112,33 +109,30 @@ const About = () => {
                                     <h2 className="title"><i><u>Development skills</u></i></h2>
                                     <ul className="skills-list">
                                         <li className="skill">
-                                            React, Redux, Angular, decompose components
-                                </li>
+                                            React, Redux, Angular, reusable components
+                                        </li>
                                         <li className="skill">
                                             HTML, (S)CSS, responsive design
-                                </li>
+                                        </li>
                                         <li className="skill">
                                             AWS (S3, Cloudfront, Lambda), GCloud, domain management, RESTful API, GraphQL
-                                </li>
+                                        </li>
                                         <li className="skill">
                                             Webpack optimizations, PWA
-                                </li>
+                                        </li>
+                                        <li className="skill">
+                                            Express.js + Webhooks = Bot
+                                        </li>
                                         <li className="skill">
                                             Python, Java, C++, Ruby
-                                </li>
+                                        </li>
                                     </ul>
                                 </div>
                                 <div className="skills-list-container">
                                     <i><u><b>Now learning</b></u></i>
                                     <ul className="skills-list">
                                         <li className="skill">
-                                            D3.js <span className="icon-arrow-up2 move-up-fade-out"></span>
-                                        </li>
-                                        <li className="skill">
-                                            GSAP <span className="icon-arrow-up2 move-up-fade-out"></span>
-                                        </li>
-                                        <li className="skill">
-                                            Testing <span className="icon-arrow-up2 move-up-fade-out"></span>
+                                            Solidity <span className="icon-arrow-up2 move-up-fade-out"></span>
                                         </li>
                                     </ul>
                                 </div>
@@ -151,13 +145,16 @@ const About = () => {
                                     <ul className="skills-list">
                                         <li className="skill">
                                             Practical design for coding
-                                </li>
+                                        </li>
                                         <li className="skill">
                                             Protoype interactions and animations
-                                </li>
+                                        </li>
                                         <li className="skill">
-                                            Align design with business objectives
-                                </li>
+                                            Align product design with business objectives
+                                        </li>
+                                        <li className="skill">
+                                            Google Analytics + GTM
+                                        </li>
                                     </ul>
                                 </div>
                                 <div className="skills-list-container">
@@ -174,14 +171,11 @@ const About = () => {
                                     <h2 className="title"><i><u className="green">My approach</u></i></h2>
                                     <ul className="skills-list">
                                         <li className="skill">
-                                            Design for emotions and trust
-                                    </li>
+                                            Consider emotions in Design
+                                        </li>
                                         <li className="skill">
-                                            Business - design synergy
-                                    </li>
-                                        <li className="skill">
-                                            Creativity and experimentation are good; better when they are built on top of standards that people are used to.
-                                    </li>
+                                            Trustless designs
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
