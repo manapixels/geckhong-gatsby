@@ -1,0 +1,7 @@
+# Netlify redirects file, edit with your domain
+# https://www.netlify.com/docs/redirects/
+
+https://manapixels.netlify.com/*      https://manapixels.com    301!
+http://manapixels.netlify.com/*       https://manapixels.com    301!
+
+/ /work
