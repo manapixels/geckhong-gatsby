@@ -6,8 +6,8 @@ import "./WorkBottomNav.scss"
 
 const PAGES = [
     {
-        path: '/work/selfi',
-        name: 'Selfi'
+        path: '/work/selfi-corporate',
+        name: 'Selfi.ai'
     },
     {
         path: '/work/threadparadise',

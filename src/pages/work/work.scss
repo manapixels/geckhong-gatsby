@@ -131,8 +131,20 @@
 
     .body {
         background: var(--white);
-        padding: 2em;
+        padding: 2em 16vw;
         margin: 0 auto;
+        font-size: 1rem;
+        line-height: 1.75;
+
+        @media (max-width: 1170px) {
+            padding: 0 11vw;
+        }
+        @media (max-width: 800px) {
+            padding: 0 5vw;
+        }
+        @media (max-width: 500px) {
+            padding: 0;
+        }
 
         .image, img {
             width: 100%;
@@ -141,8 +153,71 @@
             text-align: center;
         }
 
+        figure {
+            margin: 1.5rem 0;
+
+            figcaption {
+                margin-top: 1rem;
+                text-align: center;
+                font-size: 80%;
+                color: var(--gray-medium-1);
+                font-style: italic;
+            }
+        }
+
+        blockquote {
+            background: var(--white-2);
+            border-left: .7rem solid #ccc;
+            margin: 2.5em .7rem;
+            padding: 2rem .7rem;
+            border-radius: var(--border-radius);
+            quotes: "\201C""\201D""\2018""\2019";
+            font-size: 110%;
+            text-align: center;
+
+
+            &:before {
+                color: var(--gray-light-1);
+                content: open-quote;
+                font-weight: 700;
+                font-size: 4em;
+                line-height: 0.1em;
+                vertical-align: -0.4em;
+            }
+            p {
+                display: inline;
+            }
+        }
+          
+
+        @media (max-width: 1170px) {
+            .full-width-image {
+                margin: 25px -6vw 50px;
+                border-radius: 0;
+            }
+
+            .full-width-image img {
+                max-width: 1170px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .full-width-image {
+                margin: 25px -5vw;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .full-width-image {
+                margin-top: 5px;
+                margin-bottom: 5vw;
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+
         &>h1 {
-            font-size: 200%;
+            font-size: 130%;
             margin-top: 3rem;
             margin-bottom: 1.5rem;
             text-align: center;
@@ -158,18 +233,27 @@
         }
 
         p {
-            font-size: 120%;
-            padding: 0.8em 1.8em;
-            max-width: 650px;
             text-align: justify;
-            margin: 0 auto;
+            margin: 0 0 1.5rem;
         }
 
-        ul {
+        ul, ol {
             padding-top: 1rem;
             padding-bottom: 1rem;
-            max-width: 650px;
-            margin: 0 auto;
+
+            li {
+                &::marker {
+                    font-size: 130%;
+                }
+                &:not(:last-of-type) {
+                    margin-bottom: .6rem;
+                }
+            }
+
+            ul, ol {
+                padding-top: .5rem;
+                padding-bottom: .5rem;
+            }
         }
 
         .mobile-screenshot {
@@ -236,6 +320,15 @@
         }
 
         .body {
+
+            figure {
+                margin: 1.2rem 0;
+    
+                figcaption {
+                    font-size: 90%;
+                }
+            }
+
             & > h1 {
                 font-size: 150%;
             }
@@ -244,7 +337,7 @@
                 padding: 0;
             }
             ol {
-                padding-left: 1rem;
+                padding-left: 1.5rem;
                 li {
                     padding-left: .4rem;
                 }

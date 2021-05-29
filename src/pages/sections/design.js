@@ -12,7 +12,14 @@ const Projects = () => {
     const data = useStaticQuery(
         graphql`
           query {
-            selfiCover: file(relativePath: { eq: "projects/selfi/frontImage.png" }) {
+            selfiCorporateCover: file(relativePath: { eq: "projects/selfi-corporate/frontImage.png" }) {
+				childImageSharp {
+					fluid(maxWidth: 1000, maxHeight: 1000, quality: 100) {
+						...GatsbyImageSharpFluid
+					}
+				}
+            },
+            selfiPersonalCover: file(relativePath: { eq: "projects/selfi-personal/frontImage.png" }) {
 				childImageSharp {
 					fluid(maxWidth: 1000, maxHeight: 1000, quality: 100) {
 						...GatsbyImageSharpFluid
@@ -66,7 +73,7 @@ const Projects = () => {
         `)
 
     const {
-        selfiCover, askSimpleCover, nimbusRunCover, sutdRingCover, sutdGradNightCover, threadParadiseCover, timeCover
+        selfiCorporateCover, selfiPersonalCover, askSimpleCover, nimbusRunCover, sutdRingCover, sutdGradNightCover, threadParadiseCover, timeCover
     } = data
 
 
@@ -77,22 +84,22 @@ const Projects = () => {
 
             {/* ******
             **********
-            Selfi
+            Selfi Corporate
             **********
             ****** */}
 
             <FadeInSection className="project-item item">
                 <article className="project-item-content">
                     <div className="numbering wipeIn ani-2">01</div>
-                    <h2 className="title wipeIn ani-2">Selfi</h2>
-                    <div className="year wipeIn ani-3">January 2020 and Ongoing</div>
+                    <h2 className="title wipeIn ani-2">Selfi.ai</h2>
+                    <div className="year wipeIn ani-3">July 2020 - May 2021</div>
 
                     <div className="project-item-image">
-                        <Link to="/work/selfi">
+                        <Link to="/work/selfi-corporate">
                             <Image
                                 className="image wipeIn ani-4"
-                                fluid={selfiCover.childImageSharp.fluid}
-                                alt="Selfi app" />
+                                fluid={selfiCorporateCover.childImageSharp.fluid}
+                                alt="Selfi.ai" />
                             <div className="moving-line"></div>
                         </Link>
                         <div className="hovering-object right">
@@ -108,30 +115,30 @@ const Projects = () => {
                     </div>
 
                     <div className="description wipeIn ani-4">
-                        <p>Selfi is a self-discovery platform built for students, job-seekers and people curious to know more about themselves. Users answer personality questions and get traits for each quiz completed. Traits transformed with additional quizzes completed.<br /><br /><a href="https://www.selfi.ai" target="_blank" rel="noopener noreferrer" role="button">Visit Website</a></p>
+                        <p>Selfi is a psychometric assessment platform built for HR executives and team leaders in organisations to assess characteristics, potentials and well-being of employees.<br /><br /><a href="https://www.selfi.ai" target="_blank" rel="noopener noreferrer" role="button">Visit Website</a></p>
                     </div>
                     <div className="row wipeIn ani-4">
                         <div className="col-6 col-md-5 mb-3">
                             <div className="mb-1"><strong>Role</strong></div>
-                            Design and Front-end Dev
+                            Product Design, Front-end Dev, Project Planning, Pricing
                         </div>
                         <div className="col-6 col-md-7 mb-3">
                             <div className="mb-1"><strong>Tools</strong></div>
-                            XD, Photoshop, Illustrator, Flutter, React, Redux, AWS
+                            XD, Photoshop, Illustrator, React, Redux, AWS, Discord, Google Analytics &amp; GTM, Sentry
                         </div>
                     </div>
                     <div className="d-inline-block wipeIn ani-5">
-                        <Link className="d-inline-block btn-square btn-hover-pulse" to="/work/selfi">
+                        <Link className="d-inline-block btn-square btn-hover-pulse" to="/work/selfi-corporate">
                             <div className="icon-arrow-right"></div>
                         </Link>
                     </div>
                 </article>
                 <div className="project-item-image">
-                    <Link to="/work/selfi">
+                    <Link to="/work/selfi-corporate">
                         <Image
                             className="image wipeIn ani-1"
-                            fluid={selfiCover.childImageSharp.fluid}
-                            alt="Selfi app" />
+                            fluid={selfiCorporateCover.childImageSharp.fluid}
+                            alt="Selfi.ai app" />
                         <div className="moving-line"></div>
                     </Link>
                     <div className="hovering-object right">
@@ -146,6 +153,79 @@ const Projects = () => {
                     </div>
                 </div>
             </FadeInSection>
+
+
+            {/* ******
+            **********
+            Selfi Personal
+            **********
+            ****** */}
+
+            {/* <FadeInSection className="project-item item">
+                <article className="project-item-content">
+                    <div className="numbering wipeIn ani-2">02</div>
+                    <h2 className="title wipeIn ani-2">Selfi Personal</h2>
+                    <div className="year wipeIn ani-3">January to Jul 2020</div>
+
+                    <div className="project-item-image">
+                        <Link to="/work/selfi-personal">
+                            <Image
+                                className="image wipeIn ani-4"
+                                fluid={selfiPersonalCover.childImageSharp.fluid}
+                                alt="Selfi Personal app" />
+                            <div className="moving-line"></div>
+                        </Link>
+                        <div className="hovering-object right">
+                            <div className="three-ellipse">
+                                <div className="item"></div>
+                                <div className="item"></div>
+                                <div className="item"></div>
+                                <div className="item"></div>
+                                <div className="item"></div>
+                                <div className="item"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="description wipeIn ani-4">
+                        <p>Selfi is a self-discovery platform built for students, job-seekers and people curious to know more about themselves. Users answer personality questions and get traits for each quiz completed. Traits transformed with additional quizzes completed.<br /><br /><a href="https://www.selfipersonal.ai" target="_blank" rel="noopener noreferrer" role="button">Visit Website</a></p>
+                    </div>
+                    <div className="row wipeIn ani-4">
+                        <div className="col-6 col-md-5 mb-3">
+                            <div className="mb-1"><strong>Role</strong></div>
+                            Design, Branding, Front-end Dev
+                        </div>
+                        <div className="col-6 col-md-7 mb-3">
+                            <div className="mb-1"><strong>Tools</strong></div>
+                            XD, Photoshop, Illustrator, Flutter, React, Redux, AWS
+                        </div>
+                    </div>
+                    <div className="d-inline-block wipeIn ani-5">
+                        <Link className="d-inline-block btn-square btn-hover-pulse" to="/work/selfi-personal">
+                            <div className="icon-arrow-right"></div>
+                        </Link>
+                    </div>
+                </article>
+                <div className="project-item-image">
+                    <Link to="/work/selfi-personal">
+                        <Image
+                            className="image wipeIn ani-1"
+                            fluid={selfiPersonalCover.childImageSharp.fluid}
+                            alt="Selfi Personal app" />
+                        <div className="moving-line"></div>
+                    </Link>
+                    <div className="hovering-object right">
+                        <div className="three-ellipse">
+                            <div className="item"></div>
+                            <div className="item"></div>
+                            <div className="item"></div>
+                            <div className="item"></div>
+                            <div className="item"></div>
+                            <div className="item"></div>
+                        </div>
+                    </div>
+                </div>
+            </FadeInSection> */}
 
 
             {/* ******

@@ -7,174 +7,170 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import "./sidebar.scss"
 
-
 const Sidebar = ({ data, location }) => {
+    const locationParts = location.pathname && location.pathname.split(`/`)
+    const [isMobileNavOpen, setIsMobileNavOpen] = useState(false)
+    const tags = data.allGhostTag.edges
 
-	const locationParts = location.pathname && location.pathname.split('/')
-	const [isMobileNavOpen, setIsMobileNavOpen] = useState(false)
-	const tags = data.allGhostTag.edges
+    React.useEffect(() => () => {
+        document.body.style.overflow = `unset`
+    }, [])
 
-	React.useEffect(() => {
+    const toggleMobileNav = () => {
+        setIsMobileNavOpen(!isMobileNavOpen)
+        if (!isMobileNavOpen) {
+            document.body.style.overflow = `hidden`
+        } else {
+            document.body.style.overflow = `unset`
+        }
+    }
 
-		return () => {
-			document.body.style.overflow = "unset"
-		}
-	}, [])
+    const projectLinks = (
+        <>
+            <Link 
+                to="/work/selfi-corporate" activeClassName="active" className="sub-link"
+                onClick={() => (isMobile && toggleMobileNav())}>01 • Selfi.ai</Link>
+            {/* <Link 
+                to="/work/selfi-personal" activeClassName="active" className="sub-link"
+                onClick={() => (isMobile && toggleMobileNav())}>02 • Selfi Personal</Link> */}
+            <Link 
+                to="/work/threadparadise" activeClassName="active" className="sub-link"
+                onClick={() => (isMobile ? toggleMobileNav() : {})}>02 • Thread Paradise</Link>
+            <Link 
+                to="/work/timeui" activeClassName="active" className="sub-link"
+                onClick={() => (isMobile ? toggleMobileNav() : {})}>03 • Time UI</Link>
+            <Link 
+                to="/work/asksimple" activeClassName="active" className="sub-link"
+                onClick={() => (isMobile ? toggleMobileNav() : {})}>04 • AskSimple</Link>
+            <Link 
+                to="/work/sutdgradnight" activeClassName="active" className="sub-link"
+                onClick={() => (isMobile ? toggleMobileNav() : {})}>05 • Grad Night</Link>
+            <Link 
+                to="/work/nimbusrun" activeClassName="active" className="sub-link"
+                onClick={() => (isMobile ? toggleMobileNav() : {})}>06 • Nimbus Run</Link>
+            <Link 
+                to="/work/sutdring" activeClassName="active" className="sub-link"
+                onClick={() => (isMobile ? toggleMobileNav() : {})}>07 • SUTD Ring</Link>
+        </>
+    )
 
-	const toggleMobileNav = () => {
-		setIsMobileNavOpen(!isMobileNavOpen)
-		if (!isMobileNavOpen)
-			document.body.style.overflow = "hidden"
-		else
-			document.body.style.overflow = "unset"
-	}
+    const blogCategoryLinks = tags
+        ? tags.map(({ node }) => (
+            <Link 
+                key={`tag-${node.id}`}
+                to={`/blog/tag/${node.slug}`} activeClassName="active" className="sub-link"
+                onClick={() => (isMobile ? toggleMobileNav() : {})}>{node.name}</Link>
+        ))
+        : null
 
-	const projectLinks = (
-		<>
-			<Link 
-				to="/work/selfi" activeClassName="active" className="sub-link"
-				onClick={() => {isMobile && toggleMobileNav()}}>01 • Selfi</Link>
-			<Link 
-				to="/work/threadparadise" activeClassName="active" className="sub-link"
-				onClick={() => isMobile ? toggleMobileNav() : {}}>02 • Thread Paradise</Link>
-			<Link 
-				to="/work/timeui" activeClassName="active" className="sub-link"
-				onClick={() => isMobile ? toggleMobileNav() : {}}>03 • Time UI</Link>
-			<Link 
-				to="/work/asksimple" activeClassName="active" className="sub-link"
-				onClick={() => isMobile ? toggleMobileNav() : {}}>04 • AskSimple</Link>
-			<Link 
-				to="/work/sutdgradnight" activeClassName="active" className="sub-link"
-				onClick={() => isMobile ? toggleMobileNav() : {}}>05 • Grad Night</Link>
-			<Link 
-				to="/work/nimbusrun" activeClassName="active" className="sub-link"
-				onClick={() => isMobile ? toggleMobileNav() : {}}>06 • Nimbus Run</Link>
-			<Link 
-				to="/work/sutdring" activeClassName="active" className="sub-link"
-				onClick={() => isMobile ? toggleMobileNav() : {}}>07 • SUTD Ring</Link>
-		</>
-	)
-
-	const blogCategoryLinks = tags
-		? tags.map(({ node }) => (
-			<Link 
-				key={`tag-${node.id}`}
-				to={`/blog/tag/${node.slug}`} activeClassName="active" className="sub-link"
-				onClick={() => isMobile ? toggleMobileNav() : {}}>{node.name}</Link>
-		))
-		: null
-	
-
-	const menuLinks = (
-		<>
-			<Link 
-				to="/work" activeClassName="active" className="link"
-				onClick={() => isMobile && toggleMobileNav()}>Work</Link>
-			{typeof locationParts === 'object' && locationParts[1] === 'work' && 
+    const menuLinks = (
+        <>
+            <Link 
+                to="/work" activeClassName="active" className="link"
+                onClick={() => isMobile && toggleMobileNav()}>Work</Link>
+            {typeof locationParts === `object` && locationParts[1] === `work` && 
 				<>{projectLinks}</>
-			}
-			{/* <Link 
+            }
+            {/* <Link 
 				to="/graphics" activeClassName="active" className="link" 
 				onClick={() => isMobile ? toggleMobileNav() : {}}>Graphics</Link> */}
-			<Link 
-				to="/blog" activeClassName="active" className="link" 
-				onClick={() => isMobile ? toggleMobileNav() : {}}>Blog</Link>
-			{blogCategoryLinks}
-		</>
-	)
+            <Link 
+                to="/blog" activeClassName="active" className="link" 
+                onClick={() => (isMobile ? toggleMobileNav() : {})}>Blog</Link>
+            {blogCategoryLinks}
+        </>
+    )
 
-	return (
-		<div className="sidebar">
-			<div className="sidebar-container">
+    return (
+        <div className="sidebar">
+            <div className="sidebar-container">
 
-				{/* Header  */}
+                {/* Header  */}
 
-				<header>
-					{/* Navigation for Desktop */}
-					<div className="logo-container">
-						<Link to="/" alt="Homepage" className="logo">
-							<motion.svg 
-								whileTap={{ scale: 0.9 }}
-								className="icon icon-logo">
-								<use xlinkHref="#icon-logo" />
-							</motion.svg>
-						</Link>
-					</div>
-					<menu className="desktop">
-						{menuLinks}
-					</menu>
-					{/* Navigation for Mobile */}
-					<div className={`bg-black ${isMobileNavOpen ? 'active' : ''}`}></div>
-					<button className={`toggle ${isMobileNavOpen ? 'active' : ''}`} onClick={toggleMobileNav}>
-						<div className="text">
-							{isMobileNavOpen ? 'Close Menu' : 'Menu'}
-						</div>
-						<div className="icon icon-arrow-up2"></div>
-					</button>
-					<menu className={`mobile ${isMobileNavOpen ? 'active' : ''}`}>
-						<div className="internal-links">
-							{menuLinks}
-						</div>
-						<div className="social-container">
-							<a className="resume" href="/resume.pdf" target="_blank" title="Download Résumé">Résumé</a>
-							<a href="mailto:zhenyangg@outlook.com" target="_blank" rel="noopener noreferrer" role="button">Email</a>
-							<a href="https://t.me/manapixels" target="_blank" rel="noopener noreferrer" role="button">Telegram</a>
-							<a href="https://github.com/zhenyangg" target="_blank" rel="noopener noreferrer" role="button">Github</a>
-							<a href="https://sg.linkedin.com/in/zhenyanglim" target="_blank" rel="noopener noreferrer" role="button">LinkedIn</a>
-						</div>
-					</menu>
-				</header>
+                <header>
+                    {/* Navigation for Desktop */}
+                    <div className="logo-container">
+                        <Link to="/" alt="Homepage" className="logo">
+                            <motion.svg 
+                                whileTap={{ scale: 0.9 }}
+                                className="icon icon-logo">
+                                <use xlinkHref="#icon-logo" />
+                            </motion.svg>
+                        </Link>
+                    </div>
+                    <menu className="desktop">
+                        {menuLinks}
+                    </menu>
+                    {/* Navigation for Mobile */}
+                    <div className={`bg-black ${isMobileNavOpen ? `active` : ``}`}></div>
+                    <button className={`toggle ${isMobileNavOpen ? `active` : ``}`} onClick={toggleMobileNav}>
+                        <div className="text">
+                            {isMobileNavOpen ? `Close Menu` : `Menu`}
+                        </div>
+                        <div className="icon icon-arrow-up2"></div>
+                    </button>
+                    <menu className={`mobile ${isMobileNavOpen ? `active` : ``}`}>
+                        <div className="internal-links">
+                            {menuLinks}
+                        </div>
+                        <div className="social-container">
+                            <a className="resume" href="/resume.pdf" target="_blank" title="Download Résumé">Résumé</a>
+                            <a href="mailto:zhenyangg@outlook.com" target="_blank" rel="noopener noreferrer" role="button">Email</a>
+                            <a href="https://t.me/manapixels" target="_blank" rel="noopener noreferrer" role="button">Telegram</a>
+                            <a href="https://github.com/zhenyangg" target="_blank" rel="noopener noreferrer" role="button">Github</a>
+                            <a href="https://sg.linkedin.com/in/zhenyanglim" target="_blank" rel="noopener noreferrer" role="button">LinkedIn</a>
+                        </div>
+                    </menu>
+                </header>
 
+                {/* Footer */}
 
-				{/* Footer */}
+                <footer className="disable-select">
+                    <div className="social-container">
+                        <a className="resume" href="/resume.pdf" target="_blank" title="Download Résumé">Résumé</a>
+                        <a href="mailto:zhenyangg@outlook.com" target="_blank" rel="noopener noreferrer" role="button">Email</a>
+                        <a href="https://t.me/manapixels" target="_blank" rel="noopener noreferrer" role="button">Telegram</a>
+                        <a href="https://github.com/zhenyangg" target="_blank" rel="noopener noreferrer" role="button">Github</a>
+                        <a href="https://sg.linkedin.com/in/zhenyanglim" target="_blank" rel="noopener noreferrer" role="button">LinkedIn</a>
+                    </div>
+                </footer>
 
-				<footer className="disable-select">
-					<div className="social-container">
-						<a className="resume" href="/resume.pdf" target="_blank" title="Download Résumé">Résumé</a>
-						<a href="mailto:zhenyangg@outlook.com" target="_blank" rel="noopener noreferrer" role="button">Email</a>
-						<a href="https://t.me/manapixels" target="_blank" rel="noopener noreferrer" role="button">Telegram</a>
-						<a href="https://github.com/zhenyangg" target="_blank" rel="noopener noreferrer" role="button">Github</a>
-						<a href="https://sg.linkedin.com/in/zhenyanglim" target="_blank" rel="noopener noreferrer" role="button">LinkedIn</a>
-					</div>
-				</footer>
+            </div>
 
-			</div>
-
-			<svg className="hidden">
-				<symbol id="icon-logo" viewBox="0 0 26 32">
-					<path fill="#000" d="M0 0h25.6v32h-25.6v-32z"></path>
-					<path fill="#fff" d="M6.766 8.686h6.4c0.411 0 0.777 0.366 0.777 0.777v0c0 0.411-0.366 0.777-0.777 0.777h-6.4c-0.411 0-0.777-0.366-0.777-0.777v0c0.046-0.411 0.366-0.777 0.777-0.777z"></path>
-					<path fill="#fff" d="M10.697 5.989v14.491c0 0.411-0.32 0.731-0.731 0.731v0c-0.411 0-0.731-0.32-0.731-0.731v-14.491c0-0.411 0.32-0.731 0.731-0.731v0c0.411 0 0.731 0.32 0.731 0.731z"></path>
-					<path fill="#fff" d="M11.109 9.966l2.469 2.469c0.32 0.32 0.32 0.777 0 1.097v0c-0.32 0.32-0.777 0.32-1.097 0l-2.469-2.469c-0.32-0.32-0.32-0.777 0-1.097v0c0.32-0.32 0.777-0.32 1.097 0z"></path>
-					<path fill="#fff" d="M10.011 11.063l-2.469 2.469c-0.32 0.32-0.777 0.32-1.097 0v0c-0.32-0.32-0.32-0.777 0-1.097l2.469-2.469c0.32-0.32 0.777-0.32 1.097 0v0c0.32 0.32 0.32 0.777 0 1.097z"></path>
-					<path fill="#fff" d="M12.983 8.686h6.4c0.411 0 0.777 0.366 0.777 0.777v0c0 0.411-0.366 0.777-0.777 0.777h-6.4c-0.411 0-0.777-0.366-0.777-0.777v0c0-0.411 0.366-0.777 0.777-0.777z"></path>
-					<path fill="#fff" d="M16.914 5.989v14.491c0 0.411-0.32 0.731-0.731 0.731v0c-0.411 0-0.731-0.32-0.731-0.731v-14.491c0-0.411 0.32-0.731 0.731-0.731v0c0.411 0 0.731 0.32 0.731 0.731z"></path>
-					<path fill="#fff" d="M17.326 9.966l2.469 2.469c0.32 0.32 0.32 0.777 0 1.097v0c-0.32 0.32-0.777 0.32-1.097 0l-2.469-2.469c-0.32-0.32-0.32-0.777 0-1.097v0c0.274-0.32 0.777-0.32 1.097 0z"></path>
-					<path fill="#fff" d="M16.229 11.063l-2.469 2.469c-0.32 0.32-0.777 0.32-1.097 0v0c-0.32-0.32-0.32-0.777 0-1.097l2.469-2.469c0.32-0.32 0.777-0.32 1.097 0v0c0.274 0.32 0.274 0.777 0 1.097z"></path>
-					<path fill="#16ffaa" d="M15.314 18.56l-2.194 1.28v2.331l2.194-1.234z"></path>
-					<path fill="#16ffaa" d="M13.12 16.777v2.56l2.194-1.234v-1.92c0-0.229-0.046-0.411-0.091-0.594l-2.103 1.189z"></path>
-					<path fill="#16ffaa" d="M12.663 19.931l-2.149-1.28v2.377l2.149 1.234z"></path>
-					<path fill="#16ffaa" d="M12.663 19.383v-2.56l-2.103-1.234c-0.046 0.183-0.046 0.366-0.046 0.549v2.011l2.149 1.234z"></path>
-					<path fill="#16ffaa" d="M12.663 16.32v-2.56c-0.869 0.091-1.6 0.64-1.966 1.417l1.966 1.143z"></path>
-					<path fill="#16ffaa" d="M13.12 22.72v0 6.034c1.234-0.091 2.194-1.143 2.194-2.377v-4.937l-2.194 1.28z"></path>
-					<path fill="#16ffaa" d="M13.12 16.229l1.966-1.143c-0.366-0.777-1.097-1.28-1.966-1.326v2.469z"></path>
-					<path fill="#16ffaa" d="M12.663 22.811l-2.149-1.28v4.8c0 1.234 0.96 2.24 2.149 2.377v-5.897z"></path>
-				</symbol>
-			</svg>
-		</div>
-	)
+            <svg className="hidden">
+                <symbol id="icon-logo" viewBox="0 0 26 32">
+                    <path fill="#000" d="M0 0h25.6v32h-25.6v-32z"></path>
+                    <path fill="#fff" d="M6.766 8.686h6.4c0.411 0 0.777 0.366 0.777 0.777v0c0 0.411-0.366 0.777-0.777 0.777h-6.4c-0.411 0-0.777-0.366-0.777-0.777v0c0.046-0.411 0.366-0.777 0.777-0.777z"></path>
+                    <path fill="#fff" d="M10.697 5.989v14.491c0 0.411-0.32 0.731-0.731 0.731v0c-0.411 0-0.731-0.32-0.731-0.731v-14.491c0-0.411 0.32-0.731 0.731-0.731v0c0.411 0 0.731 0.32 0.731 0.731z"></path>
+                    <path fill="#fff" d="M11.109 9.966l2.469 2.469c0.32 0.32 0.32 0.777 0 1.097v0c-0.32 0.32-0.777 0.32-1.097 0l-2.469-2.469c-0.32-0.32-0.32-0.777 0-1.097v0c0.32-0.32 0.777-0.32 1.097 0z"></path>
+                    <path fill="#fff" d="M10.011 11.063l-2.469 2.469c-0.32 0.32-0.777 0.32-1.097 0v0c-0.32-0.32-0.32-0.777 0-1.097l2.469-2.469c0.32-0.32 0.777-0.32 1.097 0v0c0.32 0.32 0.32 0.777 0 1.097z"></path>
+                    <path fill="#fff" d="M12.983 8.686h6.4c0.411 0 0.777 0.366 0.777 0.777v0c0 0.411-0.366 0.777-0.777 0.777h-6.4c-0.411 0-0.777-0.366-0.777-0.777v0c0-0.411 0.366-0.777 0.777-0.777z"></path>
+                    <path fill="#fff" d="M16.914 5.989v14.491c0 0.411-0.32 0.731-0.731 0.731v0c-0.411 0-0.731-0.32-0.731-0.731v-14.491c0-0.411 0.32-0.731 0.731-0.731v0c0.411 0 0.731 0.32 0.731 0.731z"></path>
+                    <path fill="#fff" d="M17.326 9.966l2.469 2.469c0.32 0.32 0.32 0.777 0 1.097v0c-0.32 0.32-0.777 0.32-1.097 0l-2.469-2.469c-0.32-0.32-0.32-0.777 0-1.097v0c0.274-0.32 0.777-0.32 1.097 0z"></path>
+                    <path fill="#fff" d="M16.229 11.063l-2.469 2.469c-0.32 0.32-0.777 0.32-1.097 0v0c-0.32-0.32-0.32-0.777 0-1.097l2.469-2.469c0.32-0.32 0.777-0.32 1.097 0v0c0.274 0.32 0.274 0.777 0 1.097z"></path>
+                    <path fill="#16ffaa" d="M15.314 18.56l-2.194 1.28v2.331l2.194-1.234z"></path>
+                    <path fill="#16ffaa" d="M13.12 16.777v2.56l2.194-1.234v-1.92c0-0.229-0.046-0.411-0.091-0.594l-2.103 1.189z"></path>
+                    <path fill="#16ffaa" d="M12.663 19.931l-2.149-1.28v2.377l2.149 1.234z"></path>
+                    <path fill="#16ffaa" d="M12.663 19.383v-2.56l-2.103-1.234c-0.046 0.183-0.046 0.366-0.046 0.549v2.011l2.149 1.234z"></path>
+                    <path fill="#16ffaa" d="M12.663 16.32v-2.56c-0.869 0.091-1.6 0.64-1.966 1.417l1.966 1.143z"></path>
+                    <path fill="#16ffaa" d="M13.12 22.72v0 6.034c1.234-0.091 2.194-1.143 2.194-2.377v-4.937l-2.194 1.28z"></path>
+                    <path fill="#16ffaa" d="M13.12 16.229l1.966-1.143c-0.366-0.777-1.097-1.28-1.966-1.326v2.469z"></path>
+                    <path fill="#16ffaa" d="M12.663 22.811l-2.149-1.28v4.8c0 1.234 0.96 2.24 2.149 2.377v-5.897z"></path>
+                </symbol>
+            </svg>
+        </div>
+    )
 }
 
-
 Sidebar.propTypes = {
-	siteTitle: PropTypes.string,
-	data: PropTypes.shape({
-		allGhostTag: PropTypes.object.isRequired
-	}).isRequired,
+    siteTitle: PropTypes.string,
+    data: PropTypes.shape({
+        allGhostTag: PropTypes.object.isRequired,
+    }).isRequired,
 }
 
 Sidebar.defaultProps = {
-	siteTitle: ``,
+    siteTitle: ``,
 }
 
 const SidebarTagQuery = props => (
