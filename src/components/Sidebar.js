@@ -127,7 +127,7 @@ const Sidebar = ({ data, location }) => {
                 <footer className="disable-select">
                     <div className="social-container">
                         <a className="resume" href="/resume.pdf" target="_blank" title="Download Résumé">Résumé</a>
-                        <a href="mailto:zhenyangg@outlook.com" target="_blank" rel="noopener noreferrer" role="button">Email</a>
+                        {/* <a href="mailto:zhenyangg@outlook.com" target="_blank" rel="noopener noreferrer" role="button">Email</a> */}
                         <a href="https://t.me/manapixels" target="_blank" rel="noopener noreferrer" role="button">Telegram</a>
                         <a href="https://github.com/zhenyangg" target="_blank" rel="noopener noreferrer" role="button">Github</a>
                         <a href="https://sg.linkedin.com/in/zhenyanglim" target="_blank" rel="noopener noreferrer" role="button">LinkedIn</a>
