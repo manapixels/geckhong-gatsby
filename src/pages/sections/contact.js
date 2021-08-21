@@ -81,6 +81,7 @@ const ContactForm = () => {
             data-netlify="true"
             data-netlify-recaptcha="true"
             className="contact-form"
+            name="geckhong-contact-form"
         >
             <noscript>
                 <p>You have to enable Javascript for the form to work.</p>
