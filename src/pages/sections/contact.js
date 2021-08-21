@@ -1,15 +1,15 @@
 import React, { useState, createRef } from "react"
-import Recaptcha from 'react-google-recaptcha'
+// import Recaptcha from 'react-google-recaptcha'
 import "./contact.scss"
 import { encode } from "../../helpers/encode"
 
-const RECAPTCHA_KEY = `6LdBc-4UAAAAAAHzJWqLA1Eyyfj0NIozps1XeAGw`
-if (typeof RECAPTCHA_KEY === 'undefined') {
-    console.log(`
-  Env var GATSBY_APP_SITE_RECAPTCHA_KEY is undefined! 
-  Make sure to get a Recaptcha key at https://www.netlify.com/docs/form-handling/#custom-recaptcha-2-with-your-own-settings
-  `)
-}
+// const RECAPTCHA_KEY = `6LdBc-4UAAAAAAHzJWqLA1Eyyfj0NIozps1XeAGw`
+// if (typeof RECAPTCHA_KEY === 'undefined') {
+//     console.log(`
+//   Env var GATSBY_APP_SITE_RECAPTCHA_KEY is undefined! 
+//   Make sure to get a Recaptcha key at https://www.netlify.com/docs/form-handling/#custom-recaptcha-2-with-your-own-settings
+//   `)
+// }
 
 const ContactForm = () => {
 
@@ -17,7 +17,7 @@ const ContactForm = () => {
     const [fieldErrors, setFieldErrors] = useState({})
     const [apiMessage, setApiMessage] = useState('')
     const [loading, setLoading] = useState(false)
-    const recaptchaRef = createRef()
+    // const recaptchaRef = createRef()
 
     const handleChange = (e) => {
         setState({ ...state, [e.target.name]: e.target.value })
@@ -31,7 +31,7 @@ const ContactForm = () => {
         if (allFieldsAreOkay() === true) {
 
             const form = e.target
-            const recaptchaValue = recaptchaRef.current.getValue()
+            // const recaptchaValue = recaptchaRef.current.getValue()
 
             setLoading(true)
 
@@ -40,7 +40,7 @@ const ContactForm = () => {
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: encode({
                     'form-name': form.getAttribute('name'),
-                    'g-recaptcha-response': recaptchaValue,
+                    // 'g-recaptcha-response': recaptchaValue,
                     ...state
                 })
             })
@@ -79,7 +79,7 @@ const ContactForm = () => {
             method="post"
             onSubmit={handleSubmit}
             data-netlify="true"
-            data-netlify-recaptcha="true"
+            // data-netlify-recaptcha="true"
             // netlify-honeypot="bot-field"
             className="contact-form"
             name="geckhong-contact-form"
@@ -122,9 +122,9 @@ const ContactForm = () => {
                             </div>
                         </div>
 
-                        <div className="mb-3">
+                        {/* <div className="mb-3">
                             <Recaptcha ref={recaptchaRef} sitekey={RECAPTCHA_KEY} />
-                        </div>
+                        </div> */}
 
                         <button type="submit" className="btn-square" style={{ fontSize: '110%' }}>{loading ? <svg className="icon icon-spinner"><use xlinkHref="#icon-spinner"></use></svg> : 'Send'}</button>
 
