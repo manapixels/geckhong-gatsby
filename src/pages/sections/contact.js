@@ -80,9 +80,12 @@ const ContactForm = () => {
             onSubmit={handleSubmit}
             data-netlify="true"
             data-netlify-recaptcha="true"
+            netlify-honeypot="bot-field"
             className="contact-form"
             name="geckhong-contact-form"
         >
+            <input type="hidden" name="bot-field" />
+            <input type="hidden" name="form-name" value="geckhong-contact-form" />
             <noscript>
                 <p>You have to enable Javascript for the form to work.</p>
             </noscript>
