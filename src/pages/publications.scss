@@ -1,0 +1,35 @@
+.publications-page {
+
+    .publication-item {
+        display: flex;
+        margin-bottom: 1.2rem;
+        width: 47rem;
+        max-width: 100%;
+
+        .numbering {
+            
+        }
+        .title {
+            flex: 1;
+            margin-right: 2rem;
+            margin-left: 2rem;
+        }
+        .link {
+            a {
+                display: block;
+                cursor: pointer;
+                border: none;
+                border-radius: 0.25rem;
+                background: #E2EAFF;
+                padding: .2rem;
+                width: 2rem;
+                height: 2rem;
+
+                &:hover {
+                    background: #EEF2FE;
+                }
+            }
+            
+        }
+    }
+}

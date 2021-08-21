@@ -7,9 +7,3 @@ NODE_VERSION="12.22.3"
 
 [template]
   incoming-hooks = ["Ghost"]
-
-[[redirects]]
-  from = "/"
-  to = "/work"
-  status = 301
-  force = false

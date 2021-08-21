@@ -1,190 +1,228 @@
-import React from "react"
+import React, { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
-import './about.scss'
+import { Link } from "gatsby"
+import { isMobile } from "react-device-detect"
+import { motion } from "framer-motion"
+import "./about.scss"
 
 const About = () => {
 
-    const data = useStaticQuery(
-        graphql`
-          query {
-            portrait: file(relativePath: { eq: "portrait.jpg" }) {
-				childImageSharp {
-					fluid(maxWidth: 2100, maxHeight: 2100, quality: 100) {
-						...GatsbyImageSharpFluid
-					}
-				}
-            }
-        }`)
+    const [isMobileNavOpen, setIsMobileNavOpen] = useState(false)
 
-    return (
+    React.useEffect(() => () => {
+        document.body.style.overflow = `unset`
+    }, [])
 
+    const toggleMobileNav = () => {
+        setIsMobileNavOpen(!isMobileNavOpen)
+        if (!isMobileNavOpen) {
+            document.body.style.overflow = `hidden`
+        } else {
+            document.body.style.overflow = `unset`
+        }
+    }
+    const menuLinks = (
         <>
-            <div className="about">
-
-                <div className="row mb-5">
-                    <div className="col-12 col-md-6 offset-md-1 align-self-center order-2 order-md-1">
-                        <div className="primary-bio mb-4">
-                            <span className="quote-symbol">“</span>
-
-                            <div className="wipeIn ani-1">I'm a product designer, <div className="wipeIn ani-3 d-inline-block text-green">a bridger</div> and a builder. I work towards bridging Web2 and Web3.</div>
-                        </div>
-                        <p className="secondary-bio wipeIn ani-2">My interest lies in creating products of value to people, especially through social apps, to make the world a better place. To that end, I meld design, development and business goals, and actively consider perspectives across multiple discipines. I work towards a trustless web through programmable software. 🍺</p>
-                        <a className="link-highlight mr-5 wipeIn ani-2" href="https://t.me/manapixels" target="_blank" rel="noopener noreferrer">
-                            <span>Chat on Telegram</span>
-                            <svg className="icon icon-arrow-right"><use xlinkHref="#icon-arrow-right"></use></svg>
-                        </a>
-                        <a className="link-highlight mr-5 wipeIn ani-2" href="#contact" target="_blank" title="Download Résumé">
-                            <span>Email me</span>
-                            <svg className="icon icon-arrow-right"><use xlinkHref="#icon-arrow-right"></use></svg>
-                        </a>
-                        <a className="link-highlight mr-5 wipeIn ani-2" href="/resume.pdf" target="_blank" title="Download Résumé">
-                            <span>View résumé</span>
-                            <svg className="icon icon-arrow-right"><use xlinkHref="#icon-arrow-right"></use></svg>
-                        </a>
-                        <svg className="hidden">
-                            <symbol id="icon-arrow-right" viewBox="0 0 20 20">
-                                <path d="M16.172 9l-6.071-6.071 1.414-1.414 8.485 8.485-8.485 8.485-1.414-1.414 6.071-6.071h-16.172v-2z"></path>
-                            </symbol>
-                        </svg>
-                    </div>
-                    <div className="col-12 col-md-5 order-1 order-md-2">
-                        <Image
-                            className="image wipeIn ani-1"
-                            fluid={data.portrait.childImageSharp.fluid}
-                            alt="Zhenyang's Portrait" />
-                    </div>
-                </div>
-
-                <div className="animating-lines">
-
-                </div>
-
-                <section className="skills-section">
-                    <div className="row mb-5">
-                        <div className="col-lg-2 offset-lg-1 hidden-md p-4 d-none d-md-block">
-                            <div className="bg-gray-light h-100 w-100"></div>
-                        </div>
-                        <div className="col-12 col-md-4 col-lg-3">
-                            <div className="skill-category">
-                                <div className="skills-list-container">
-                                    <h2 className="title"><i><u>Design skills</u></i></h2>
-                                    <ul className="skills-list">
-                                        <li className="skill">
-                                            User journey &amp; testing
-                                        </li>
-                                        <li className="skill">
-                                            Wireframing, mock-up, prototyping
-                                        </li>
-                                        <li className="skill">
-                                            Interaction design, micro-interactions
-                                        </li>
-                                        <li className="skill">
-                                            Mobile UX
-                                        </li>
-                                        <li className="skill">
-                                            Branding
-                                        </li>
-                                        <li className="skill">
-                                            Illustration
-                                        </li>
-                                        <li className="skill">
-                                            Data Visualisation
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div className="skills-list-container">
-                                    <i><u><b>Now learning</b></u></i>
-                                    <ul className="skills-list">
-                                        <li className="skill">
-                                            Motion design (on Premiere) <span className="icon-arrow-up2 move-up-fade-out"></span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-12 col-md-4 col-lg-3">
-                            <div className="skill-category">
-                                <div className="skills-list-container">
-                                    <h2 className="title"><i><u>Development skills</u></i></h2>
-                                    <ul className="skills-list">
-                                        <li className="skill">
-                                            React, Redux, Angular, reusable components
-                                        </li>
-                                        <li className="skill">
-                                            HTML, (S)CSS, responsive design
-                                        </li>
-                                        <li className="skill">
-                                            AWS (S3, Cloudfront, Lambda), GCloud, domain management, RESTful API, GraphQL
-                                        </li>
-                                        <li className="skill">
-                                            Webpack optimizations, PWA
-                                        </li>
-                                        <li className="skill">
-                                            Express.js + Webhooks = Bot
-                                        </li>
-                                        <li className="skill">
-                                            Python, Java, C++, Ruby
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div className="skills-list-container">
-                                    <i><u><b>Now learning</b></u></i>
-                                    <ul className="skills-list">
-                                        <li className="skill">
-                                            Solidity <span className="icon-arrow-up2 move-up-fade-out"></span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-12 col-md-4 col-lg-3">
-                            <div className="skill-category">
-                                <div className="skills-list-container">
-                                    <h2 className="title"><i><u>Bridge skills</u></i></h2>
-                                    <ul className="skills-list">
-                                        <li className="skill">
-                                            Practical design for coding
-                                        </li>
-                                        <li className="skill">
-                                            Protoype interactions and animations
-                                        </li>
-                                        <li className="skill">
-                                            Align product design with business objectives
-                                        </li>
-                                        <li className="skill">
-                                            Google Analytics + GTM
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div className="skills-list-container">
-                                    <i><u><b>Now learning</b></u></i>
-                                    <ul className="skills-list">
-                                        <li className="skill">
-                                            Standardize, maintain design system <span className="icon-arrow-up2 move-up-fade-out"></span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div className="skill-category">
-                                <div className="skills-list-container">
-                                    <h2 className="title"><i><u className="green">My approach</u></i></h2>
-                                    <ul className="skills-list">
-                                        <li className="skill">
-                                            Consider emotions in Design
-                                        </li>
-                                        <li className="skill">
-                                            Trustless designs
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
+            <Link
+                to="/" activeClassName="active" className="link"
+                onClick={() => isMobile && toggleMobileNav()}
+                name="About Me"
+            >
+                About Me
+            </Link>
+            <Link
+                to="/projects" activeClassName="active" className="link"
+                onClick={() => isMobile && toggleMobileNav()}
+                name="Projects"
+            >
+                Projects
+            </Link>
+            <Link
+                to="/publications" activeClassName="active" className="link"
+                onClick={() => isMobile && toggleMobileNav()}
+                name="Publications"
+            >
+                Publications
+            </Link>
+            {/* <Link
+                to="/teaching" activeClassName="active" className="link"
+                onClick={() => isMobile && toggleMobileNav()}
+                name="Teaching"
+            >
+                Teaching
+            </Link> */}
+            <Link
+                to="/contact" activeClassName="active" className="link"
+                onClick={() => isMobile && toggleMobileNav()}
+                name="Contact Me"
+            >
+                Contact Me
+            </Link>
         </>
     )
+
+    const socialLinks = (
+        <div className="social-container">
+            <span className="mr-4">Find me on</span>
+            <a href="https://scholar.google.com/citations?user=zwW_sHIAAAAJ&hl=en&inst=3212728378801010220" target="_blank" className="social-icons mr-3">
+                <motion.svg
+                    whileTap={{ scale: 0.9 }}
+                    className="icon icon-googlescholar">
+                    <use xlinkHref="#icon-googlescholar" />
+                </motion.svg>
+            </a>
+            <a href="https://www.researchgate.net/profile/Geckhong-Yeo" target="_blank" className="social-icons mr-3">
+                <motion.svg
+                    whileTap={{ scale: 0.9 }}
+                    className="icon icon-researchgate">
+                    <use xlinkHref="#icon-researchgate" />
+                </motion.svg>
+            </a>
+            <a href="https://www.linkedin.com/in/geckhong-y-9b1160b9/" target="_blank" className="social-icons mr-3">
+                <motion.svg
+                    whileTap={{ scale: 0.9 }}
+                    className="icon icon-linkedin">
+                    <use xlinkHref="#icon-linkedin" />
+                </motion.svg>
+            </a>
+        </div>
+    )
+
+  const data = useStaticQuery(
+    graphql`
+      query {
+        avatar: file(relativePath: { eq: "avatar.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 134, maxHeight: 134, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    `
+  )
+
+    const menuIcon = (
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu" width="44" height="44" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#FFF" fill="none" strokeLinecap="round" strokeLinejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <line x1="4" y1="8" x2="20" y2="8" />
+            <line x1="4" y1="16" x2="20" y2="16" />
+        </svg>
+    )
+
+    return (
+        <div className="about">
+                <div className="row text-center mt-5 mb-5">
+                    <div className="logo-container">
+                        <Link to="/" className="logo">
+                            <motion.svg
+                                whileHover={{ scale: 1.05 }}
+                                className="icon icon-logo">
+                                <use xlinkHref="#icon-logo" />
+                            </motion.svg>
+                        </Link>
+                        <div className="logo-subtitle">Researcher, Educator, Practitioner</div>
+                    </div>
+                </div>
+
+                <div className="profile-container row mb-5">
+                    <div className="col-12 col-md-6 align-self-center">
+                        <Image
+                            className="avatar wipeIn ani-1"
+                            fluid={data.avatar.childImageSharp.fluid}
+                            alt="Geckhong"
+                        />
+                        <div className="primary-bio mb-2">
+                            <div>Hello there 👋,</div>
+                            <div>I'm Yeo GeckHong, a Psychologist.</div>
+                        </div>
+                        <p className="secondary-bio wipeIn ani-2">
+                            I study the role of social contexts in adolescents’ development of psychological well-being.
+                        </p>
+                    </div>
+                    <div className="col-12 col-md-6 align-self-center">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td><b>Now</b></td>
+                                    <td>Post-doctoral research fellow, <a href="https://fass.nus.edu.sg/psy/" target="_blank">NUS</a></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><b>'19</b></td>
+                                    <td>Completed Ph.D in Educational Psychology at <a href="https://www.wisc.edu/" target="_blank">University of Wisconsin-Madison (On Wisconsin!)</a></td>
+                                </tr>
+                                <tr>
+                                    <td><b>'14</b></td>
+                                    <td>Graduated NUS (Master, Psychology)</td>
+                                </tr>
+                                <tr>
+                                    <td><b>'08</b></td>
+                                    <td>Graduated NTU (Diploma, Education)</td>
+                                </tr>
+                                <tr>
+                                    <td><b>'07</b></td>
+                                    <td>Graduated NUS (Bachelor's, Psychology)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div className={`menu-container ${isMobileNavOpen ? 'active' : ''}`}>
+
+                    {/* Navigation for Desktop */}
+                    <menu className="desktop">
+                        {menuLinks}
+
+                        {socialLinks}
+                    </menu>
+
+                    {/* Navigation for Mobile */}
+                    <div className={`bg-black ${isMobileNavOpen ? `active` : ``}`}></div>
+                    <button className={`toggle ${isMobileNavOpen ? `active` : ``}`} onClick={toggleMobileNav}>
+                        {isMobileNavOpen ? `Close Menu` : menuIcon}
+                    </button>
+                    <menu className={`mobile ${isMobileNavOpen ? `active` : ``}`}>
+                        <div className="internal-links">
+                            {menuLinks}
+                        </div>
+                        {socialLinks}
+                    </menu>
+
+            <svg className="hidden">
+                <symbol id="icon-researchgate" viewBox="0 0 32 32">
+                    <path fill="#2d2d2d" d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16c-8.837 0-16-7.163-16-16s7.163-16 16-16z"></path>
+                    <path fill="#feffff" d="M16.989 24.012c-0.949-0.257-1.735-0.838-2.248-1.616l-0.009-0.015c-0.564-0.752-1.63-2.445-2.194-3.322l-0.376-0.689h-1.505v2.135c0.063 2.696 0 2.633 1.189 2.822l0.627 0.063v0.502h-5.016v-0.25c0-0.25 0.063-0.25 0.564-0.376 0.627-0.125 0.878-0.314 0.941-0.878 0.063-0.25 0.063-1.944 0.063-4.953 0-4.389-0.063-4.514-0.188-4.827-0.188-0.314-0.439-0.439-1.128-0.502-0.25-0.063-0.314-0.063-0.314-0.314v-0.251l2.696-0.063c3.448-0.063 4.075 0 5.078 0.689 0.776 0.477 1.285 1.321 1.285 2.284 0 0.146-0.012 0.288-0.034 0.428l0.002-0.015c-0.14 1.42-1.046 2.598-2.295 3.126l-0.025 0.009c-0.167 0.044-0.313 0.108-0.445 0.192l0.006-0.004c0.586 1.038 1.166 1.919 1.8 2.758l-0.044-0.061c0.593 0.931 1.347 1.705 2.23 2.302l0.027 0.018c0.182 0.091 0.394 0.157 0.617 0.187l0.011 0.001c0.188 0 0.188 0.063 0.188 0.25s-0.063 0.314-0.125 0.314c-0.245 0.060-0.526 0.094-0.815 0.094s-0.57-0.034-0.839-0.099l0.024 0.005zM13.415 17.178c0.849-0.385 1.431-1.22 1.442-2.193v-0.001c0.016-0.098 0.024-0.211 0.024-0.326 0-0.609-0.249-1.159-0.651-1.555l-0-0q-0.847-0.941-3.009-0.752l-0.627 0.063v2.445c0 2.257 0 2.508 0.125 2.508 0.169 0.017 0.366 0.026 0.564 0.026s0.395-0.010 0.589-0.028l-0.025 0.002c0.086 0.009 0.185 0.014 0.285 0.014 0.442 0 0.861-0.097 1.238-0.272l-0.018 0.008z"></path>
+                    <path fill="#feffff" d="M20.124 14.296c-1.567-0.251-2.131-1.254-2.006-3.824 0.063-1.317 0.188-1.881 0.689-2.383 0.384-0.388 0.917-0.628 1.506-0.628 0.022 0 0.043 0 0.065 0.001l-0.003-0c0.095-0.013 0.204-0.021 0.315-0.021 0.57 0 1.094 0.197 1.509 0.526l-0.005-0.004c0.272 0.197 0.471 0.478 0.562 0.804l0.002 0.010c0 0.063-0.188 0.125-0.376 0.251l-0.376 0.188-0.188-0.188c-0.225-0.301-0.521-0.536-0.864-0.684l-0.014-0.005c-0.109-0.031-0.233-0.049-0.362-0.049-0.523 0-0.977 0.297-1.201 0.731l-0.004 0.008c-0.188 0.314-0.188 0.376-0.188 1.819 0 1.38 0 1.567 0.188 1.819 0.254 0.384 0.684 0.634 1.173 0.634 0.774 0 1.402-0.628 1.402-1.402 0-0.039-0.002-0.077-0.005-0.115l0 0.005v-0.439h-1.253v-0.815h2.257v0.941c0.004 0.064 0.006 0.138 0.006 0.214 0 0.418-0.071 0.819-0.202 1.191l0.008-0.025c-0.405 0.842-1.252 1.413-2.231 1.413-0.142 0-0.281-0.012-0.416-0.035l0.015 0.002z"></path>
+                </symbol>
+                <symbol id="icon-linkedin" viewBox="0 0 32 32">
+                    <path fill="#2d2d2d" d="M32 16c0 8.837-7.163 16-16 16s-16-7.163-16-16c0-8.837 7.163-16 16-16s16 7.163 16 16z"></path>
+                          <path fill="#f1f2f2" d="M25.483 17.263v6.534h-3.789v-6.096c0-1.53-0.549-2.576-1.92-2.576-0.893 0.005-1.652 0.575-1.938 1.371l-0.005 0.014c-0.081 0.24-0.128 0.517-0.128 0.805 0 0.042 0.001 0.083 0.003 0.125l-0-0.006v6.363h-3.787s0.051-10.324 0-11.393h3.789v1.615c-0.007 0.013-0.018 0.026-0.026 0.037h0.026v-0.037c0.662-1.135 1.873-1.885 3.26-1.885 0.054 0 0.108 0.001 0.162 0.003l-0.008-0c2.492 0 4.361 1.628 4.361 5.127zM9.957 6.911c-0.051-0.005-0.11-0.007-0.17-0.007-1.090 0-1.974 0.884-1.974 1.974s0.884 1.974 1.974 1.974c0.042 0 0.084-0.001 0.126-0.004l-0.006 0h0.025c0.051 0.005 0.111 0.007 0.171 0.007 1.091 0 1.975-0.884 1.975-1.975s-0.884-1.975-1.975-1.975c-0.051 0-0.102 0.002-0.153 0.006l0.007-0zM8.037 23.796h3.787v-11.393h-3.786z"></path>
+                      </symbol>
+                      <symbol id="icon-googlescholar" viewBox="0 0 32 32">
+                          <path fill="#2d2d2d" d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16c-8.837 0-16-7.163-16-16s7.163-16 16-16z"></path>
+                          <path fill="#fff" d="M13.401 6.984l-6.732 5.915h4.341c0.315 2.834 2.579 4.023 4.908 4.216-0.156 0.276-0.248 0.606-0.248 0.957 0 0.598 0.266 1.133 0.686 1.495l0.003 0.002c-2.705 0.063-6.48 1.636-6.48 4.216 0.251 2.834 3.963 3.398 5.788 3.398 2.391 0.063 5.096-1.195 5.662-3.398 0.036-0.213 0.056-0.459 0.056-0.71 0-1.559-0.789-2.934-1.99-3.747l-0.016-0.010c-1.447-1.133-1.762-1.762-1.321-2.517 0.944-1.070 2.203-1.699 2.454-3.209 0.012-0.145 0.018-0.314 0.018-0.484 0-0.797-0.145-1.561-0.41-2.265l0.015 0.044 2.834-2.391-0.063 1.006c-0.18 0.129-0.3 0.332-0.314 0.564l-0 0.002v6.48c0.083 0.328 0.375 0.567 0.724 0.567s0.641-0.239 0.723-0.562l0.001-0.005v-6.48c0-0 0-0 0-0 0-0.22-0.127-0.41-0.311-0.502l-0.003-0.001v-1.573l1.006-1.006zM17.050 15.853c-3.84 0.629-5.474-5.474-2.391-6.229 3.524-0.689 5.222 5.413 2.392 6.229zM16.735 20.446c3.775 0.818 3.84 3.963 0.629 4.908-2.768 0.566-5.159-0.251-5.096-1.887 0.001-1.572 2.203-3.019 4.467-3.019z"></path>
+                      </symbol>
+                      <symbol id="icon-logo" viewBox="0 0 148 32">
+                          <path fill="#222121" d="M13.471 7.104l0.897-0.544q0.192-0.99-0.769-0.992-1.376 0-1.375 2.112c0.011 0.686 0.092 1.347 0.236 1.984l-0.012-0.064c1.453 0.852 2.416 2.401 2.431 4.176v0.002c0.004 0.073 0.006 0.159 0.006 0.245 0 1.493-0.685 2.825-1.758 3.701l-0.009 0.007c-1.208 0.887-2.724 1.419-4.364 1.419-0.142 0-0.282-0.004-0.422-0.012l0.019 0.001c-0.919-0.004-1.815-0.097-2.681-0.271l0.088 0.015q-1.409 0.896-1.408 1.343t2.044 0.444h3.265q7.264 0 7.264 5.217c0.002 0.051 0.003 0.111 0.003 0.171 0 1.76-0.859 3.32-2.181 4.282l-0.015 0.011q-2.192 1.646-6.831 1.648-7.904 0-7.904-3.424 0-1.858 2.464-2.561l1.919 0.865c-0.156 0.526-0.249 1.13-0.255 1.756l-0 0.003q0 2.756 4.096 2.756c0.123 0.008 0.266 0.013 0.41 0.013 1.265 0 2.449-0.35 3.459-0.957l-0.030 0.017c0.797-0.476 1.326-1.326 1.345-2.302l0-0.003c0.011-0.076 0.016-0.163 0.016-0.252 0-0.655-0.327-1.235-0.826-1.583l-0.006-0.004c-0.789-0.309-1.703-0.488-2.659-0.488-0.208 0-0.414 0.008-0.617 0.025l0.027-0.002h-3.103c-0.157 0.014-0.34 0.022-0.525 0.022-1.178 0-2.278-0.329-3.215-0.901l0.027 0.015c-0.679-0.475-1.117-1.253-1.119-2.133v-0c-0.001-0.026-0.001-0.057-0.001-0.088 0-0.784 0.305-1.497 0.803-2.026l-0.001 0.002c0.832-0.787 1.764-1.481 2.773-2.058l0.071-0.037c-2.138-0.437-3.724-2.303-3.724-4.539 0-0.114 0.004-0.228 0.012-0.34l-0.001 0.015c-0.002-0.049-0.003-0.106-0.003-0.163 0-1.486 0.67-2.816 1.724-3.703l0.007-0.006q1.728-1.47 5.184-1.472c0.064-0.002 0.139-0.003 0.214-0.003 1.22 0 2.37 0.297 3.382 0.822l-0.041-0.019c-0.115-0.469-0.184-1.008-0.191-1.563l-0-0.005c-0.009-0.089-0.014-0.193-0.014-0.298 0-0.9 0.373-1.714 0.973-2.293l0.001-0.001c0.57-0.497 1.32-0.8 2.141-0.8 0.001 0 0.002 0 0.004 0h-0c0.041-0.002 0.089-0.003 0.138-0.003 0.671 0 1.288 0.236 1.77 0.63l-0.005-0.004c0.444 0.395 0.723 0.969 0.723 1.607 0 0.037-0.001 0.074-0.003 0.11l0-0.005c0.004 0.051 0.007 0.11 0.007 0.17 0 0.562-0.222 1.071-0.584 1.446l0.001-0.001c-0.353 0.328-0.828 0.528-1.349 0.528-0.015 0-0.030-0-0.044-0.001l0.002 0c-0.025 0.001-0.053 0.002-0.082 0.002-0.478 0-0.918-0.163-1.267-0.437l0.004 0.003c-0.343-0.293-0.558-0.726-0.558-1.209 0-0.006 0-0.012 0-0.018v0.001zM6.688 13.088v1.728c-0.011 0.153-0.017 0.332-0.017 0.513 0 0.858 0.141 1.683 0.401 2.453l-0.016-0.054c0.175 0.452 0.606 0.767 1.111 0.767 0.003 0 0.006 0 0.009-0h-0c0.007 0 0.016 0 0.025 0 0.488 0 0.904-0.31 1.062-0.744l0.002-0.008c0.225-0.75 0.354-1.612 0.354-2.503 0-0.205-0.007-0.409-0.020-0.611l0.001 0.027v-1.568c0.012-0.188 0.019-0.407 0.019-0.627 0-0.943-0.123-1.857-0.354-2.727l0.017 0.074c-0.142-0.458-0.561-0.784-1.057-0.784-0.005 0-0.011 0-0.016 0h0.001c-0.523 0.007-0.966 0.341-1.133 0.807l-0.003 0.008c-0.256 0.793-0.404 1.706-0.404 2.653 0 0.209 0.007 0.417 0.021 0.623l-0.002-0.028z"></path>
+                          <path fill="#222121" d="M18.607 22.191c-1.29-1.435-2.078-3.343-2.078-5.435 0-0.171 0.005-0.34 0.016-0.509l-0.001 0.023c-0.009-0.139-0.015-0.302-0.015-0.465 0-2.109 0.897-4.008 2.33-5.338l0.005-0.004c1.495-1.258 3.443-2.022 5.568-2.022 0.118 0 0.236 0.002 0.352 0.007l-0.017-0.001q7.264 0 6.976 7.296h-9.024v1.244c-0.010 0.176-0.016 0.382-0.016 0.589 0 1.495 0.3 2.921 0.843 4.22l-0.027-0.072c0.473 0.96 1.444 1.608 2.566 1.608 0.077 0 0.153-0.003 0.228-0.009l-0.010 0.001q3.712 0 4.864-3.968l0.576 0.095c-0.34 1.447-1.117 2.677-2.182 3.576l-0.010 0.008c-1.177 0.814-2.635 1.301-4.207 1.301-0.192 0-0.382-0.007-0.571-0.022l0.025 0.002q-4.128 0.004-6.192-2.125zM22.751 15.104h3.296v-1.568c0.009-0.185 0.014-0.402 0.014-0.621 0-1.033-0.116-2.039-0.336-3.006l0.017 0.091c-0.121-0.544-0.599-0.945-1.171-0.945-0.016 0-0.032 0-0.047 0.001l0.002-0c-0.631 0.008-1.162 0.425-1.341 0.998l-0.003 0.010c-0.284 0.873-0.448 1.877-0.448 2.92 0 0.194 0.006 0.387 0.017 0.579l-0.001-0.026z"></path>
+                          <path fill="#222121" d="M41.855 9.024c-0 0-0.001 0-0.002 0-0.957 0-1.764 0.643-2.011 1.521l-0.004 0.015c-0.399 1.291-0.629 2.776-0.629 4.314 0 0.272 0.007 0.543 0.021 0.812l-0.002-0.038v1.663c-0.014 0.202-0.021 0.437-0.021 0.675 0 1.392 0.266 2.722 0.751 3.941l-0.025-0.072c0.456 0.834 1.326 1.389 2.327 1.389 0.093 0 0.186-0.005 0.277-0.014l-0.011 0.001c0.049 0.002 0.106 0.003 0.163 0.003 1.131 0 2.147-0.494 2.842-1.279l0.003-0.004c0.708-0.794 1.215-1.782 1.433-2.874l0.007-0.039 0.576 0.065c-0.256 1.604-1.068 2.982-2.23 3.96l-0.010 0.008c-1.166 0.787-2.604 1.257-4.15 1.257-0.15 0-0.298-0.004-0.446-0.013l0.020 0.001c-0.153 0.011-0.332 0.017-0.512 0.017-2.001 0-3.824-0.767-5.189-2.022l0.005 0.005q-1.986-2-1.984-5.856c-0.010-0.146-0.015-0.316-0.015-0.487 0-2.131 0.869-4.058 2.271-5.448l0.001-0.001c1.542-1.304 3.552-2.096 5.748-2.096 0.19 0 0.379 0.006 0.566 0.018l-0.026-0.001c0.142-0.010 0.307-0.015 0.474-0.015 1.439 0 2.781 0.417 3.911 1.137l-0.029-0.018c0.908 0.6 1.5 1.614 1.504 2.767v0.001c0.008 0.090 0.013 0.194 0.013 0.3 0 0.807-0.276 1.55-0.739 2.139l0.006-0.008c-0.47 0.477-1.122 0.772-1.843 0.772-0.049 0-0.099-0.001-0.147-0.004l0.007 0c-0.043 0.002-0.094 0.004-0.146 0.004-0.719 0-1.378-0.255-1.891-0.68l0.005 0.004c-0.477-0.455-0.774-1.096-0.774-1.807 0-0.062 0.002-0.124 0.007-0.185l-0 0.008c0-0 0-0 0-0 0-0.411 0.058-0.809 0.167-1.185l-0.007 0.030h1.056c0.132-0.342 0.213-0.738 0.224-1.151l0-0.005c0.008-0.054 0.012-0.117 0.012-0.181 0-0.75-0.608-1.358-1.358-1.358-0.068 0-0.135 0.005-0.201 0.015l0.007-0.001z"></path>
+                          <path fill="#222121" d="M58.494 24v-0.577h1.473l-3.616-7.423-0.608 0.159v7.264h1.471v0.577h-9.184v-0.577h1.76v-22.844h-1.888v-0.576h7.841v15.52l0.511-0.192 7.2-5.984h-3.007v-0.576h6.303v0.576h-2.236l-3.807 3.232 5.536 10.844h1.156v0.577z"></path>
+                          <path fill="#222121" d="M67.87 0h7.712v11.712c0.314-0.946 0.856-1.746 1.562-2.363l0.006-0.005c0.786-0.569 1.769-0.91 2.831-0.91 0.13 0 0.258 0.005 0.385 0.015l-0.017-0.001q4.96 0 4.96 5.344v9.631h1.792v0.577h-9.056v-0.577h1.312v-10.4c0.011-0.148 0.016-0.32 0.016-0.493 0-0.707-0.1-1.391-0.285-2.039l0.013 0.052c-0.147-0.334-0.475-0.563-0.856-0.563-0.025 0-0.050 0.001-0.075 0.003l0.003-0q-1.024 0-1.808 1.344c-0.495 0.885-0.787 1.943-0.787 3.068 0 0.069 0.001 0.137 0.003 0.206l-0-0.010v8.831h1.376v0.577h-9.088v-0.577h1.76v-22.844h-1.76z"></path>
+                          <path fill="#222121" d="M89.886 22.271q-2.044-2.044-2.044-5.871c-0.010-0.148-0.016-0.32-0.016-0.494 0-2.102 0.843-4.007 2.209-5.395l-0.001 0.001c1.501-1.293 3.469-2.081 5.622-2.081 0.189 0 0.377 0.006 0.564 0.018l-0.025-0.001q3.967 0 5.92 1.904t1.956 5.807q0 8.16-8.129 8.161-4.007 0-6.054-2.049zM97.918 17.696v-2.72c0.006-0.197 0.010-0.429 0.010-0.662 0-1.366-0.126-2.704-0.367-4l0.021 0.134q-0.336-1.422-1.552-1.422c-0.022-0.001-0.048-0.002-0.074-0.002-0.408 0-0.781 0.152-1.064 0.403l0.002-0.001c-0.326 0.356-0.55 0.811-0.621 1.315l-0.001 0.013c-0.187 1.137-0.294 2.448-0.294 3.783 0 0.211 0.003 0.422 0.008 0.632l-0.001-0.031v2.496c-0.013 0.292-0.021 0.634-0.021 0.978 0 1.134 0.083 2.248 0.244 3.337l-0.015-0.123c0.126 0.448 0.273 0.832 0.451 1.198l-0.019-0.042c0.225 0.463 0.691 0.776 1.23 0.776 0.051 0 0.102-0.003 0.152-0.008l-0.006 0.001c0.002 0 0.005 0 0.008 0 0.834 0 1.523-0.625 1.623-1.432l0.001-0.008c0.194-1.102 0.306-2.372 0.306-3.667 0-0.333-0.007-0.664-0.022-0.993l0.002 0.047z"></path>
+                          <path fill="#222121" d="M105.022 8.768h7.712v2.944c0.315-0.946 0.856-1.746 1.562-2.363l0.006-0.005c0.786-0.569 1.768-0.91 2.831-0.91 0.13 0 0.258 0.005 0.386 0.015l-0.017-0.001q4.96 0 4.96 5.344v9.631h1.792v0.577h-9.056v-0.577h1.316v-10.4c0.011-0.148 0.016-0.32 0.016-0.493 0-0.707-0.1-1.391-0.285-2.039l0.013 0.052c-0.147-0.334-0.475-0.563-0.856-0.563-0.025 0-0.050 0.001-0.075 0.003l0.003-0q-1.024 0-1.807 1.344c-0.496 0.885-0.788 1.942-0.788 3.068 0 0.069 0.001 0.138 0.003 0.206l-0-0.010v8.831h1.376v0.577h-9.092v-0.577h1.761v-14.078h-1.761z"></path>
+                          <path fill="#222121" d="M137.502 7.104l0.896-0.544q0.192-0.99-0.768-0.992-1.377 0-1.376 2.112c0.011 0.686 0.092 1.347 0.236 1.985l-0.012-0.065c1.453 0.852 2.417 2.401 2.432 4.176v0.002c0.004 0.073 0.006 0.159 0.006 0.245 0 1.493-0.685 2.825-1.758 3.701l-0.009 0.007c-1.208 0.887-2.725 1.419-4.366 1.419-0.142 0-0.282-0.004-0.422-0.012l0.019 0.001c-0.919-0.004-1.815-0.097-2.681-0.271l0.089 0.015q-1.408 0.896-1.408 1.343t2.044 0.444h3.264q7.264 0 7.264 5.217c0.002 0.051 0.003 0.112 0.003 0.172 0 1.76-0.859 3.319-2.18 4.281l-0.015 0.011q-2.194 1.646-6.832 1.648-7.904 0-7.904-3.424 0-1.858 2.464-2.561l1.919 0.865c-0.156 0.526-0.249 1.13-0.255 1.756l-0 0.003q0 2.756 4.096 2.756c0.123 0.008 0.266 0.012 0.41 0.012 1.266 0 2.45-0.35 3.46-0.957l-0.030 0.017c0.796-0.476 1.325-1.327 1.344-2.302l0-0.003c0.011-0.076 0.016-0.163 0.016-0.252 0-0.655-0.327-1.235-0.826-1.583l-0.006-0.004c-0.789-0.309-1.702-0.488-2.657-0.488-0.208 0-0.414 0.009-0.617 0.025l0.027-0.002h-3.104c-0.157 0.014-0.34 0.022-0.525 0.022-1.177 0-2.278-0.329-3.214-0.901l0.027 0.015c-0.679-0.475-1.118-1.253-1.12-2.133v-0c-0.001-0.026-0.001-0.056-0.001-0.086 0-0.784 0.305-1.498 0.803-2.027l-0.001 0.002c0.832-0.787 1.765-1.481 2.773-2.058l0.071-0.038c-2.138-0.437-3.723-2.303-3.723-4.538 0-0.115 0.004-0.228 0.012-0.341l-0.001 0.015c-0.002-0.049-0.003-0.106-0.003-0.163 0-1.486 0.67-2.815 1.723-3.703l0.007-0.006q1.728-1.47 5.184-1.472c0.064-0.002 0.139-0.003 0.214-0.003 1.22 0 2.37 0.297 3.382 0.822l-0.041-0.019c-0.115-0.468-0.184-1.008-0.192-1.563l-0-0.005c-0.009-0.089-0.014-0.192-0.014-0.297 0-0.901 0.373-1.714 0.973-2.294l0.001-0.001c0.57-0.497 1.32-0.8 2.141-0.8 0.001 0 0.002 0 0.003 0h-0c0.041-0.002 0.089-0.003 0.138-0.003 0.672 0 1.288 0.236 1.771 0.63l-0.005-0.004c0.444 0.395 0.723 0.969 0.723 1.607 0 0.037-0.001 0.074-0.003 0.11l0-0.005c0.004 0.051 0.007 0.11 0.007 0.169 0 0.562-0.222 1.072-0.583 1.447l0.001-0.001c-0.353 0.328-0.828 0.528-1.35 0.528-0.015 0-0.030-0-0.044-0l0.002 0c-0.025 0.001-0.054 0.002-0.083 0.002-0.478 0-0.917-0.163-1.266-0.437l0.004 0.003c-0.342-0.293-0.557-0.726-0.557-1.208 0-0.007 0-0.013 0-0.020v0.001zM130.718 13.088v1.728c-0.011 0.153-0.017 0.331-0.017 0.511 0 0.859 0.141 1.685 0.401 2.456l-0.016-0.054c0.175 0.452 0.607 0.767 1.112 0.767 0.003 0 0.006 0 0.009-0h-0c0.007 0 0.016 0 0.024 0 0.488 0 0.904-0.31 1.061-0.744l0.002-0.008c0.225-0.75 0.355-1.613 0.355-2.505 0-0.205-0.007-0.408-0.020-0.609l0.001 0.027v-1.568c0.012-0.188 0.019-0.407 0.019-0.628 0-0.943-0.124-1.856-0.355-2.726l0.017 0.074c-0.141-0.457-0.561-0.784-1.056-0.784-0.006 0-0.011 0-0.017 0h0.001c-0.523 0.007-0.966 0.341-1.133 0.807l-0.003 0.008c-0.256 0.793-0.404 1.706-0.404 2.653 0 0.209 0.007 0.417 0.021 0.623l-0.002-0.028z"></path>
+                          <path fill="#265fff" d="M145.262 24.32c-0.058 0.005-0.126 0.007-0.195 0.007-0.744 0-1.414-0.316-1.884-0.822l-0.001-0.002c-0.429-0.512-0.69-1.178-0.69-1.904 0-0.028 0-0.056 0.001-0.085l-0 0.004c-0.001-0.023-0.001-0.050-0.001-0.078 0-0.727 0.274-1.39 0.724-1.892l-0.002 0.003c0.473-0.496 1.139-0.805 1.877-0.805 0.054 0 0.108 0.002 0.162 0.005l-0.007-0c0.049-0.003 0.107-0.004 0.165-0.004 0.728 0 1.397 0.255 1.921 0.681l-0.006-0.004c0.478 0.463 0.774 1.11 0.774 1.827 0 0.067-0.003 0.133-0.008 0.199l0.001-0.009c0.003 0.051 0.005 0.11 0.005 0.169 0 0.745-0.274 1.425-0.727 1.946l0.003-0.004c-0.495 0.479-1.171 0.774-1.915 0.774-0.069 0-0.138-0.003-0.206-0.008l0.009 0.001z"></path>
+                      </symbol>
+            </svg>
+
+
+      </div>
+    </div>
+  )
 }
 
 export default About

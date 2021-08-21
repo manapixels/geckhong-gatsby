@@ -1,0 +1,42 @@
+.projects-page {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    
+    .project-list {
+        .project-list-item {
+            margin-bottom: 4rem;
+
+            .title {
+                font-size: 135%;
+                font-weight: bold;
+                margin-bottom: 1rem;
+            }
+            .subject-title {
+                display: inline-block;
+                margin-bottom: .6rem;
+                font-weight: bold;
+                font-size: 85%;
+                letter-spacing: 0.03rem;
+                font-weight: bold;
+                border-radius: .25rem;
+                padding: .2rem .4rem;
+                background: #E2EAFF;
+                text-transform: uppercase;
+            }
+            .subject-description {
+                margin-bottom: 1.5rem;
+            }
+            
+            .badge {
+                font-size: 85%;
+                letter-spacing: 0.03rem;
+                font-weight: bold;
+                border-radius: .25rem;
+                padding: .2rem .4rem;
+                background: #12A830;
+                color: #FFF;
+                text-transform: uppercase;
+            }
+        }
+    }
+}

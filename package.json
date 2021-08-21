@@ -1,10 +1,10 @@
 {
-  "name": "manapixels",
+  "name": "geckhong-gatsby",
   "private": true,
   "description": "",
   "version": "1.0.0",
-  "author": "Zhenyang",
-  "homepage": "https://manapixels.com/",
+  "author": "Zhenyang (github.com/zhenyangg)",
+  "homepage": "https://geckhong.com/",
   "dependencies": {
     "@tryghost/helpers": "^1.1.27",
     "@tryghost/helpers-gatsby": "^1.0.31",
@@ -39,6 +39,7 @@
     "react-helmet": "^5.2.1",
     "react-onclickoutside": "^6.9.0",
     "react-reveal": "^1.2.2",
+    "react-sticky": "^6.0.3",
     "sass": "^1.20.3",
     "sharp": "^0.28.2",
     "smoothscroll-polyfill": "^0.4.4",
@@ -52,15 +53,7 @@
     "eslint-plugin-react": "^7.19.0",
     "prettier": "^1.19.1"
   },
-  "keywords": [
-    "manapixels",
-    "zhenyang",
-    "designer",
-    "developer",
-    "sutd",
-    "gatsby",
-    "ghost"
-  ],
+  "keywords": [],
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
@@ -74,9 +67,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zhenyangg/manapixels"
+    "url": "https://github.com/zhenyangg/geckhong-gatsby"
   },
   "bugs": {
-    "url": "https://github.com/zhenyangg/manapixels/issues"
+    "url": "https://github.com/zhenyangg/geckhong-gatsby/issues"
   }
 }

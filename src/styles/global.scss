@@ -7,7 +7,7 @@ Global styles
 =--==--==--==--==--==--==--==--==--=*/
 
 :root {
-  --primary:                #f9c6ce;
+  --primary:                #265FFF;
   --primary-light:          #ffdce2;
   --primary-medium:         #ffadb9;
 
@@ -56,8 +56,8 @@ html {
 
 body {
   color: var(--black);
-  font-family: -apple-system, BlinkMacSystemFont, "Martel", serif;
-  font-weight: 400;
+  font-family: -apple-system, BlinkMacSystemFont, "Raleway", serif;
+  font-weight: 500;
   font-size: $base-font-size;
   line-height: $base-line-height;
   padding: 1rem;
@@ -65,9 +65,7 @@ body {
   margin-right: auto;
   width: 100%;
   height: auto;
-  background-color: var(--black);
   box-sizing: border-box;
-  overflow: auto;
   scrollbar-width: thin;
   scrollbar-color: var(--gray-medium-1) var(--true-white);
   // cursor: url('../images/leaf-angled.png'), move;
@@ -91,16 +89,16 @@ body {
   }
 
   &::-webkit-scrollbar {
-    width: 13px;
+    width: 10px;
   }
 
   &::-webkit-scrollbar-track {
-    background: var(--true-white);
+    background: var(--gray-light-1);
     border-radius: 10px;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: var(--gray-medium-1);
+    background-color: var(--gray-dark);
     border-radius: 6px;
     border: 3px solid var(--true-white);
   }
@@ -109,6 +107,11 @@ body {
     font-size: 1.1rem;
     background: var(--true-white);
   }
+}
+
+.abril-font {
+  font-family: 'Abril Fatface', cursive;
+  font-weight: 400;
 }
 
 @media (any-pointer: fine) {
@@ -191,6 +194,22 @@ u {
   }
 }
 
+.subtitle {
+  font-style: italic;
+  color: var(--gray-medium-2);
+}
+
+section {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 2rem 2.5rem;
+  border-radius: 1rem;
+
+  @media #{$mq-small} {
+    padding: 0;
+  }
+}
+
 .disable-select {
   user-select: none;
 }
@@ -203,16 +222,7 @@ u {
 }
 
 .container {
-  width: auto;
-  margin: 0 4%;
-
-  @media #{$mq-medium} {
-    margin: 0 8%;
-  }
-
-  @media #{$mq-xlarge} {
-    margin: 0 10%;
-  }
+  margin: 0 auto;
 
   @media (min-width: 576px) {
     max-width: 100%;
@@ -227,7 +237,7 @@ u {
   }
 
   @media (min-width: 1200px) {
-    max-width: 100%;
+    max-width: 1050px;
   }
 }
 
@@ -387,7 +397,6 @@ button {
   &:focus,
   &:not(:disabled):not(.disabled):active,
   &:not(:disabled):not(.disabled):active:focus {
-    color: var(--primary);
     background-color: var(--gray-dark);
   }
 
@@ -679,6 +688,9 @@ a.box3:hover {
   /* IE6-9 */
 }
 
+.tl-edges {
+  // overflow: unset !important;
+}
 .embed-responsive {
   position: relative;
   display: block;

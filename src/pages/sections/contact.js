@@ -63,7 +63,7 @@ const ContactForm = () => {
             errors.name = 'Please enter your name'
         }
         if (!email || !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
-            errors.email = 'Please enter your email address in this format: zhenyang@example.com'
+            errors.email = 'Please enter your email address in this format: geckhong@example.com'
         }
         if (!message || message === "") {
             errors.message = "Please enter a message"
@@ -88,9 +88,9 @@ const ContactForm = () => {
             <div className="contact-form-container">
                 <div className="row">
                     <div className="col-12 col-md-5">
-                        <div className="title">Happy to connect with you!</div>
+                        <div className="title abril-font">Get in touch</div>
                         <div className="description">
-                            I'm open to collaboration, or just simply talking about design and coding stuff. Find me on <a href="https://t.me/manapixels" target="_blank" rel="noopener noreferrer">Telegram</a> or send me a message with this contact form.
+                            Please feel free to send me a message here or contact me at geckhongyeo at gmail dot com. I look forward to hearing from you!
                         </div>
                     </div>
                     <div className="col-12 col-md-6 offset-md-1">
@@ -122,7 +122,7 @@ const ContactForm = () => {
                             <Recaptcha ref={recaptchaRef} sitekey={RECAPTCHA_KEY} />
                         </div>
 
-                        <button type="submit" className="btn-square btn-hover-pulse" style={{ fontSize: '110%' }}>{loading ? <svg className="icon icon-spinner"><use xlinkHref="#icon-spinner"></use></svg> : 'Send'}</button>
+                        <button type="submit" className="btn-square" style={{ fontSize: '110%' }}>{loading ? <svg className="icon icon-spinner"><use xlinkHref="#icon-spinner"></use></svg> : 'Send'}</button>
 
                         {apiMessage !== '' && apiMessage}
                     </div>

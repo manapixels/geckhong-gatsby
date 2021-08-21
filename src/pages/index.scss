@@ -1,0 +1,72 @@
+@import "../styles/variables.scss";
+
+section.personal-side {
+    position: relative;
+    background: #F5F5F5;
+}
+.personal-side-item {
+    display: flex;
+    align-items: center;
+
+    .letter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 85%;
+        font-size: 250%;
+        font-weight: bold;
+        color: #FFF;
+        background: #676767;
+        border-radius: .5rem;
+        padding: 1rem 2rem;
+        z-index: 1;
+    }
+	.text-content {
+        flex: 1;
+        max-width: 26rem;
+        background: #FFF;
+        border-radius: .5rem;
+        padding: 1.4rem 2.5rem;
+        margin-left: -1rem;
+        margin-right: 2rem;
+
+		.title {
+            font-size: 125%;
+            font-weight: bold;
+            font-style: italic;
+            margin-bottom: .2rem;
+        }
+		.description {
+           
+            
+        }
+    }
+    .photo-content {
+        flex: 1;
+
+        .image-container {
+            margin: .5rem;
+
+            img {
+                border-radius: .5rem;
+            }
+        }
+    }
+
+    @media #{$mq-small} {
+        flex-flow: column nowrap;
+        margin-bottom: 3rem;
+
+        .letter {
+            display: none;
+        }
+        .text-content {
+            margin: 0 .5rem;
+            padding: 1.5rem;
+        }
+        .photo-content {
+            width: 100%;
+        }
+    }
+}
+
