@@ -9,10 +9,18 @@
         .numbering {
             
         }
-        .title {
+        .content {
             flex: 1;
             margin-right: 2rem;
             margin-left: 2rem;
+
+            .title {
+                // font-weight: bold;
+            }
+            .author, .journal {
+                // font-size: 90%;
+                color: var(--gray-light-3);
+            }
         }
         .link {
             a {

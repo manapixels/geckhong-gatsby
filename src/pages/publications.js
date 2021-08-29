@@ -15,13 +15,35 @@ const PublicationsPage = () => {
 	return (
 
 		<section className="publications-page">
-			{publications && publications.map((item, i) => (
-				<div className="publication-item" key={i}>
+			<h2>Digital Media &amp; Psychological Well-Being</h2>
+			{digitalMediaPublications && digitalMediaPublications.map((item, i) => (
+				<div className="publication-item" key={item.title}>
 					<div className="numbering">
 						{i+1}
 					</div>
-					<div className="title">
-						{item.title}
+					<div className="content">
+						<div className="title">{item.title}</div>
+						<div className="author">{item.author}</div>
+						<div className="journal">{item.journal}</div>
+					</div>
+					<div className="link">
+						<a href={item.link} target="_blank">
+							{externalLinkIcon}
+						</a>
+					</div>
+				</div>
+			))}
+
+			<h2 className="mt-5">Culture, Adolescents' and College Students' Development</h2>
+			{culturePublications && culturePublications.map((item, i) => (
+				<div className="publication-item" key={item.title}>
+					<div className="numbering">
+						{i+1}
+					</div>
+					<div className="content">
+						<div className="title">{item.title}</div>
+						<div className="author">{item.author}</div>
+						<div className="journal">{item.journal}</div>
 					</div>
 					<div className="link">
 						<a href={item.link} target="_blank">
@@ -34,34 +56,51 @@ const PublicationsPage = () => {
 	)
 }
 
-const publications = [
+const digitalMediaPublications = [
 	{
-		title: "Yeo, G. (2021). Emotional disclosure and secrecy in the development of autonomous-related self among Singaporean adolescents. Journal of Child and Family Studies. Online First.",
+		title: "A comparison of mobile health platforms developed for depression and anxiety available for research or commercial Purposes: A systematic review of the literature and app store review",
+		url: "https://www.researchgate.net/publication/348802280_A_comparison_of_mobile_health_platforms_developed_for_depression_and_anxiety_available_for_research_or_commercial_purposes_A_systematic_review_of_the_literature_and_app_store_review_Preprint",
+		author: "Leong QY, Sridhar S, Blasiak A, Tadeo X, Yeo GH, Remus A, Ho D. (2021)",
+		journal: "Journal of Medical Internet Research. Preprint."
+	},
+	{
+		title: "Does social media use improve or worsen adolescents’ internalizing behaviors? Conclusions from a systematic narrative review",
+		url: "https://dl.acm.org/doi/abs/10.1145/3183654.3183699",
+		author: "Sarmiento, I. G., Olson, C., Yeo, G., Chen, Y. A., Toma, C. L., Brown, B. B., Bellmore, A., & Mares, M-L. (2018)",
+		journal: "Adolescent Research Review, 1-24"
+	},
+	{
+		title: "Does social media use improve or worsen adolescents' internalizing behaviors? Conclusions from a systematic narrative review",
+		url: "https://dl.acm.org/doi/abs/10.1145/3183654.3183699",
+		author: "Sarmiento, I. G., Olson, C., Yeo, G., Chen, Y. A., Toma, C. L., Brown, B. B., ... & Mares, M. L. (2018, April)",
+		journal: "In Proceedings of the Technology, Mind, and Society (p. 36). ACM"
+	},
+	{
+		title: "Education and new technologies: Perils and promises for learners",
+		url: "https://www.tandfonline.com/doi/abs/10.1080/1554480X.2018.1534677?journalCode=hped20",
+		author: "Yeo, G. (2018)",
+		journal: "Pedagogies: An International Journal, 13(4), 377-380"
+	},
+]
+
+const culturePublications = [
+	{
+		title: "Emotional disclosure and secrecy in the development of autonomous-related self among Singaporean adolescents",
 		url: "https://link.springer.com/article/10.1007/s10826-021-01899-2",
+		author: "Yeo, G. (2021)",
+		journal: "Journal of Child and Family Studies. Online First."
 	},
 	{
-		title: "Leong QY, Sridhar S, Blasiak A, Tadeo X, Yeo GH, Remus A, Ho D. (2021). A comparison of mobile health platforms developed for depression and anxiety available for research or commercial Purposes: A systematic review of the literature and app store review. Journal of Medical Internet Research. Preprint.",
-		url: "https://www.researchgate.net/publication/348802280_A_comparison_of_mobile_health_platforms_developed_for_depression_and_anxiety_available_for_research_or_commercial_purposes_A_systematic_review_of_the_literature_and_app_store_review_Preprint"
+		title: "A tale of two countries: Singaporean and Chinese parents’ emotion socialization during childhood and the relation to adolescents’ emotion regulation",
+		url: "https://onlinelibrary.wiley.com/doi/abs/10.1002/ijop.12576",
+		author: "Yeo, G., Cheah, C. S. L., & Sim, T. N. (2020)",
+		journal: "International Journal of Psychology, 55(2), 163-172"
 	},
 	{
-		title: "Yeo, G., Cheah, C. S. L., & Sim, T. N. (2020). A tale of two countries: Singaporean and Chinese parents’ emotion socialization during childhood and the relation to adolescents’ emotion regulation. International Journal of Psychology, 55(2), 163-172. ",
-		url: "https://onlinelibrary.wiley.com/doi/abs/10.1002/ijop.12576"
-	},
-	{
-		title: "Sarmiento, I. G., Olson, C., Yeo, G., Chen, Y. A., Toma, C. L., Brown, B. B., Bellmore, A., & Mares, M-L. (2018). Does social media use improve or worsen adolescents’ internalizing behaviors? Conclusions from a systematic narrative review. Adolescent Research Review, 1-24. ",
-		url: "https://dl.acm.org/doi/abs/10.1145/3183654.3183699"
-	},
-	{
-		title: "Sarmiento, I. G., Olson, C., Yeo, G., Chen, Y. A., Toma, C. L., Brown, B. B., ... & Mares, M. L. (2018, April). Does social media use improve or worsen adolescents' internalizing behaviors? Conclusions from a systematic narrative review. In Proceedings of the Technology, Mind, and Society (p. 36). ACM. ",
-		url: "https://dl.acm.org/doi/abs/10.1145/3183654.3183699"
-	},
-	{
-		title: "Yeo, G. (2018). Education and new technologies: Perils and promises for learners. Pedagogies: An International Journal, 13(4), 377-380. ",
-		url: "https://www.tandfonline.com/doi/abs/10.1080/1554480X.2018.1534677?journalCode=hped20"
-	},
-	{
-		title: "Sim, T. N., & Yeo, G. H. (2012). Peer crowds in Singapore. Youth & Society, 44(2), 201-216. ",
-		url: "https://journals.sagepub.com/doi/abs/10.1177/0044118X10388220"
+		title: "Peer crowds in Singapore",
+		url: "https://journals.sagepub.com/doi/abs/10.1177/0044118X10388220",
+		author: "Sim, T. N., & Yeo, G. H. (2012)",
+		journal: "Youth & Society, 44(2), 201-216"
 	},
 ]
 

@@ -30,6 +30,13 @@ const IndexPage = () => {
 				  }
 				}
 			},
+			image32: file(relativePath: { eq: "Image 3.2.jpg" }) {
+				childImageSharp {
+				  fluid(maxWidth: 2947, maxHeight: 2345, quality: 100) {
+					...GatsbyImageSharpFluid
+				  }
+				}
+			},
 			image4: file(relativePath: { eq: "Image 4.jpg" }) {
 				childImageSharp {
 				  fluid(maxWidth: 960, maxHeight: 716, quality: 100) {
@@ -45,6 +52,13 @@ const IndexPage = () => {
 				}
 			},
 			image6: file(relativePath: { eq: "Image 6.jpg" }) {
+				childImageSharp {
+				  fluid(maxWidth: 960, maxHeight: 716, quality: 100) {
+					...GatsbyImageSharpFluid
+				  }
+				}
+			},
+			image62: file(relativePath: { eq: "Image 6.2.jpg" }) {
 				childImageSharp {
 				  fluid(maxWidth: 960, maxHeight: 716, quality: 100) {
 					...GatsbyImageSharpFluid
@@ -71,12 +85,12 @@ const IndexPage = () => {
 				<div className="subtitle text-center mb-2">My goal is to translate research findings into practical practices and policies.</div>
 				<div className="row">
 					<div className="col-12 col-md-6">
-						<p>Informed by a contextually-rooted developmental model, my research emphasizes the role of contextual factors (e.g., family, peers, school, digital platforms) and the mechanism of change in psychological adjustment among adolescents.</p>
+						<p>Informed by a contextually-rooted developmental model, my research emphasizes the role of contextual factors (e.g., family, peers, school, digital platforms) and the mechanism of change in adolescents' psychological adjustment.</p>
 						
 						<p>By attending to multiple layers of social context, my research offers numerous points of possible intervention. The translational nature of my research program involves community collaborations that impact positively adolescents’ psychological well-being.</p>
 					</div>
 					<div className="col-12 col-md-6">
-						<p>My research has been funded by the Society for Research in Child Development in the U.S., and the National Youth Council, and the Ministry of Social and Family Development in Singapore. I have published in academic journals, including International Journal of Psychology and Journal of Child and Family Studies. I regularly speak at conferences and trainings at the Society for Research on Adolescence Biennial Meeting and the Society for Research in Child Development Biennial Meeting.</p>
+						<p>My research has been funded by the Society for Research in Child Development in the U.S., and the National Youth Council, and the Ministry of Social and Family Development in Singapore. I have published in academic journals, including Journal of Child and Family Studies, and I regularly speak at conferences, such as the Society for Research on Adolescence Biennial Meeting.</p>
 					</div>
 				</div>
 			</section>
@@ -87,7 +101,7 @@ const IndexPage = () => {
 					<div className="letter">R</div>
 					<div className="text-content">
 						<div className="title">Runner</div>
-						<div className="description">I fell in love with long distance running a decade ago. When I travel, I make sure to run on foreign terrains. The discipline in turning up for my run every day regardless of how I feel is what I truly enjoy. The sweat and accomplishment associated with running reminds me of my goal. To many more years of running! </div>
+						<div className="description">I fell in love with long distance running a decade ago. When I travel, I make sure to run on foreign terrains. The discipline in turning up for my run every day regardless of how I feel is what I truly enjoy. The sweat and accomplishment associated with running remind me of my goal. To many more years of running! </div>
 					</div>
 					<div className="photo-content">
 						<div className="row no-gutters">
@@ -107,6 +121,12 @@ const IndexPage = () => {
 								<Image
 									className="image-container wipeIn ani-1"
 									fluid={data['image3'].childImageSharp.fluid}
+								/>
+							</div>
+							<div className="col-6 col-md-6">
+								<Image
+									className="image-container wipeIn ani-1"
+									fluid={data['image32'].childImageSharp.fluid}
 								/>
 							</div>
 						</div>
@@ -136,6 +156,12 @@ const IndexPage = () => {
 								<Image
 									className="image-container wipeIn ani-1"
 									fluid={data['image6'].childImageSharp.fluid}
+								/>
+							</div>
+							<div className="col-6 col-md-6">
+								<Image
+									className="image-container wipeIn ani-1"
+									fluid={data['image62'].childImageSharp.fluid}
 								/>
 							</div>
 						</div>

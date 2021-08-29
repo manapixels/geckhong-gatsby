@@ -10,21 +10,21 @@ const ProjectsPage = () => {
 		  query {
 			image9: file(relativePath: { eq: "Image 9.png" }) {
 			  childImageSharp {
-				fluid(maxWidth: 1733, maxHeight: 912, quality: 100) {
+				fluid(maxWidth: 4000, maxHeight: 4000, quality: 100) {
 				  ...GatsbyImageSharpFluid
 				}
 			  }
 			},
 			image10: file(relativePath: { eq: "Image 10.png" }) {
 				childImageSharp {
-				  fluid(maxWidth: 1048, maxHeight: 513, quality: 100) {
+				  fluid(maxWidth: 4000, maxHeight: 4000, quality: 100) {
 					...GatsbyImageSharpFluid
 				  }
 				}
 			},
 			image11: file(relativePath: { eq: "Image 11.png" }) {
 				childImageSharp {
-				  fluid(maxWidth: 958, maxHeight: 626, quality: 100) {
+				  fluid(maxWidth: 4000, maxHeight: 4000, quality: 100) {
 					...GatsbyImageSharpFluid
 				  }
 				}
@@ -54,13 +54,19 @@ const ProjectsPage = () => {
 							<div className="subject-description">To examine the implementation and clinical effectiveness of digital peer support, and the developmental change linking peer support and adolescents’ psychological well-being, during the COVID-19 pandemic.</div>
 
 							<div className="subject-title">Grant Award</div>
-							<div className="subject-description">2020 Small Grant for Early Career Scholars by the <a href="https://www.srcd.org/news/announcing-2021-recipients-small-grants-program-early-career-scholars" target="_blank">Society for Research in Child Development (SRCD) in the U.S.</a></div>
+							<a href="/Grant award 1.pdf" target="_blank" className="ml-3 text-small">View grant award</a>
+							<div className="subject-description">2020 Small Grant for Early Career Scholars by the <a href="https://www.srcd.org/news/announcing-2021-recipients-small-grants-program-early-career-scholars" target="_blank">Society for Research in Child Development (SRCD)</a> in the U.S.</div>
 
 							<div className="subject-title">Participation{" "}<span className="badge ml-1">ACTIVE</span></div>
-							<div className="subject-description">I am currently recruiting adolescents ages 13 to 16 for this study. Each participant will learn about their state of mental health during COVID-19, and ways to provide peer sharing and support in coping with the conditions of the pandemic. Participants will receive SGD40 reimbursement. Click the button below to find out more and to enroll in the study! Have fun!</div>
+							<div className="subject-description">I am currently recruiting adolescents ages 13 to 16 for this study. Each participant will learn about their state of mental health during COVID-19, and ways to provide peer sharing and support in coping with the conditions of the pandemic.</div>
 
 							<div className="subject-title">Collaborator</div>
-							<div className="subject-description"><a href="https://www.acceset.com/" target="_blank">Acceset</a>, a social enterprise that provides text-based peer support for youth mental well-being.</div>
+							<div className="subject-description">
+								<ol>
+									<li><a href="https://www.acceset.com/" target="_blank">Acceset</a>, a social enterprise that provides text-based peer support for youth mental well-being. The platform encourages students to share their challenges anonymously and empathize with their peers.
+									</li>
+								</ol>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -79,7 +85,7 @@ const ProjectsPage = () => {
 							<div className="subject-title">Objective</div>
 							<div className="subject-description">To examine a contextually-rooted developmental perspective on adolescents’ digital media use (i.e., the role of parents, peers and schools).</div>
 
-							<div className="subject-title">Grant Award</div>
+							<div className="subject-title">Grant Award</div><a href="/Grant award 2.pdf" target="_blank" className="ml-3 text-small">View grant award</a>
 							<div className="subject-description">Graduate School Student Research Grants Competition (SRGC) by University of Wisconsin-Madison</div>
 
 							<div className="subject-title">Participation</div>
@@ -110,7 +116,7 @@ const ProjectsPage = () => {
 								<div className="subject-title">Objective</div>
 								<div className="subject-description">To examine the cultural conceptualization of parental emotion socialization and its association with adolescents' socio-emotional functioning.</div>
 
-								<div className="subject-title">Grant Award</div>
+								<div className="subject-title">Grant Award</div><a href="/Grant award 3.pdf" target="_blank" className="ml-3 text-small">View grant award</a>
 								<div className="subject-description">
 									<ul>
 										<li>National Youth Fund by <a href="https://www.nyc.gov.sg/en" target="_blank">National Youth Council</a></li>
@@ -130,11 +136,9 @@ const ProjectsPage = () => {
 									<ol>
 										<li>Evergreen Secondary School,</li>
 										<li>The Singapore Boys Home</li>
-										<li><a href="https://prsg.education.wisc.edu/" target="_blank">Professor B. Bradford Brown</a>, University of Wisconsin-Madison,</li>
 										<li><a href="https://www.miamioh.edu/cas/academics/departments/psychology/about/faculty-staff/raval-vaishali/care-lab/index.html" target="_blank">Professor Vaishali V. Raval</a>, Miami University</li>
 										<li><a href="https://ccadlab.umbc.edu/" target="_blank">Professor Charissa S. L., Cheah</a>, University of Maryland at Baltimore County</li>
 										<li><a href="https://fass.nus.edu.sg/psy/people/sim-tick-ngee/">Associate Professor Sim Tick Ngee</a>, NUS</li>
-										<li><a href="https://www.researchgate.net/profile/Hsun-Yu-Chan" target="_blank">Assistant Professor Chan Hsun-Yu</a>, National Taiwan Normal University</li>
 									</ol>
 								</div>
 

@@ -152,7 +152,7 @@ const About = () => {
                             <tbody>
                                 <tr>
                                     <td><b>'19</b></td>
-                                    <td>Completed Ph.D in Educational Psychology at <a href="https://www.wisc.edu/" target="_blank">University of Wisconsin-Madison (On Wisconsin!)</a></td>
+                                    <td>Completed Ph.D in Educational Psychology at <a href="https://www.wisc.edu/" target="_blank">University of Wisconsin-Madison</a>{" "}(On Wisconsin!)</td>
                                 </tr>
                                 <tr>
                                     <td><b>'14</b></td>
@@ -160,7 +160,7 @@ const About = () => {
                                 </tr>
                                 <tr>
                                     <td><b>'08</b></td>
-                                    <td>Graduated NTU (Diploma, Education)</td>
+                                    <td>Graduated NTU (Post-Graduate Diploma, Education)</td>
                                 </tr>
                                 <tr>
                                     <td><b>'07</b></td>

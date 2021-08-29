@@ -6,6 +6,7 @@ import { Link } from 'gatsby'
 import debounce from "../helpers/debounce"
 import AboutSection from "../pages/sections/about"
 import "./Layout.scss"
+// import 'tippy.js/dist/tippy.css'
 
 
 /**
