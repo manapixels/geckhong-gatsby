@@ -45,13 +45,13 @@ const About = () => {
             >
                 Publications
             </Link>
-            {/* <Link
+            <Link
                 to="/teaching" activeClassName="active" className="link"
                 onClick={() => isMobile && toggleMobileNav()}
-                name="Teaching"
+                name="Teaching &amp; Mentoring"
             >
-                Teaching
-            </Link> */}
+                Teaching &amp; Mentoring
+            </Link>
             <Link
                 to="/contact" activeClassName="active" className="link"
                 onClick={() => isMobile && toggleMobileNav()}

@@ -1,0 +1,43 @@
+.teaching-page {
+
+    .i-believe {
+        background: rgb(255,255,255);
+        background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(227,227,227,1) 100%);
+        padding: 5vh 10vw;
+        text-align: center;
+        // font-weight: bold;
+        font-size: 120%;
+        max-width: 100%;
+        border-radius: var(--border-radius);
+
+        .text {
+            width: 550px;
+            margin: auto;
+        }
+    }
+
+    .my-objectives {
+        .my-objectives-item {
+            border: 1px solid var(--gray-light-1);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            text-align: center;
+            height: 100%;
+
+            .icon {
+                margin-bottom: 2rem;
+            }
+            .text {
+
+            }
+        }
+    }
+
+    p {
+        width: 620px;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+}
