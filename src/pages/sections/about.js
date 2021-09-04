@@ -146,7 +146,7 @@ const About = () => {
                             <thead>
                                 <tr>
                                     <td><b>Now</b></td>
-                                    <td>Post-doctoral research fellow, <a href="https://fass.nus.edu.sg/psy/" target="_blank">NUS</a></td>
+                                    <td>Post-doctoral research fellow, <a href="https://n1labs.org/" target="_blank">NUS</a></td>
                                 </tr>
                             </thead>
                             <tbody>

@@ -43,7 +43,7 @@ const Layout = ({ children, location }) => {
 		<div className="container">
 
 			<Helmet>
-                <title>geckhong . Researcher, Educator, Practioner</title>
+                <title>geckhong . Researcher, Educator, Practitioner</title>
 				<link rel="icon" type="image/png" href="favicon.png" sizes="16x16" />
 			</Helmet>
 

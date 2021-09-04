@@ -85,12 +85,13 @@ const IndexPage = () => {
 				<div className="subtitle text-center mb-2">My goal is to translate research findings into practical practices and policies.</div>
 				<div className="row">
 					<div className="col-12 col-md-6">
-						<p>Informed by a contextually-rooted developmental model, my research emphasizes the role of contextual factors (e.g., family, peers, school, digital platforms) and the mechanism of change in adolescents' psychological adjustment.</p>
+						<p>My research emphasizes the role of contextual factors (e.g., family, peers, school, digital platforms) and the mechanism of change in psychological adjustment among adolescents.</p>
 						
-						<p>By attending to multiple layers of social context, my research offers numerous points of possible intervention. The translational nature of my research program involves community collaborations that impact positively adolescents’ psychological well-being.</p>
+						<p>The translational nature of my research program involves community collaborations that impact positively adolescents’ psychological well-being.</p>
 					</div>
 					<div className="col-12 col-md-6">
-						<p>My research has been funded by the Society for Research in Child Development in the U.S., and the National Youth Council, and the Ministry of Social and Family Development in Singapore. I have published in academic journals, including Journal of Child and Family Studies, and I regularly speak at conferences, such as the Society for Research on Adolescence Biennial Meeting.</p>
+						<p>I have published in academic journals, including International Journal of Psychology and Journal of Child and Family Studies. </p>
+						<p>I regularly speak at conferences and trainings at the Society for Research on Adolescence Biennial Meeting and the Society for Research in Child Development Biennial Meeting.</p>
 					</div>
 				</div>
 			</section>

@@ -65,6 +65,7 @@ const ProjectsPage = () => {
 								<ol>
 									<li><a href="https://www.acceset.com/" target="_blank">Acceset</a>, a social enterprise that provides text-based peer support for youth mental well-being. The platform encourages students to share their challenges anonymously and empathize with their peers.
 									</li>
+									<li><a href="https://manjusrisec.moe.edu.sg/" target="_blank">Manjusri Secondary School</a></li>
 								</ol>
 							</div>
 						</div>
@@ -127,7 +128,6 @@ const ProjectsPage = () => {
 								<div className="subject-title">Participation</div>
 								<div className="subject-description">
 									<ul>
-										<li>National Youth Fund by <a href="https://www.nyc.gov.sg/en" target="_blank">National Youth Council</a></li>
 										<li>A series of qualitative and quantitative studies were conducted with approximately 500 to 700 parent-adolescent dyads across Asian societies including India, China and Singapore. Findings have been reported in a publication and in a study currently under review.</li>
 									</ul>
 								</div>

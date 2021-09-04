@@ -27,7 +27,7 @@ const PublicationsPage = () => {
 						<div className="journal">{item.journal}</div>
 					</div>
 					<div className="link">
-						<a href={item.link} target="_blank">
+						<a href={item.url} target="_blank">
 							{externalLinkIcon}
 						</a>
 					</div>
@@ -46,7 +46,7 @@ const PublicationsPage = () => {
 						<div className="journal">{item.journal}</div>
 					</div>
 					<div className="link">
-						<a href={item.link} target="_blank">
+						<a href={item.url} target="_blank">
 							{externalLinkIcon}
 						</a>
 					</div>
@@ -59,13 +59,13 @@ const PublicationsPage = () => {
 const digitalMediaPublications = [
 	{
 		title: "A comparison of mobile health platforms developed for depression and anxiety available for research or commercial Purposes: A systematic review of the literature and app store review",
-		url: "https://www.researchgate.net/publication/348802280_A_comparison_of_mobile_health_platforms_developed_for_depression_and_anxiety_available_for_research_or_commercial_purposes_A_systematic_review_of_the_literature_and_app_store_review_Preprint",
+		url: "https://preprints.jmir.org/preprint/27388",
 		author: "Leong QY, Sridhar S, Blasiak A, Tadeo X, Yeo GH, Remus A, Ho D. (2021)",
 		journal: "Journal of Medical Internet Research. Preprint."
 	},
 	{
 		title: "Does social media use improve or worsen adolescents’ internalizing behaviors? Conclusions from a systematic narrative review",
-		url: "https://dl.acm.org/doi/abs/10.1145/3183654.3183699",
+		url: "https://link.springer.com/article/10.1007/s40894-018-0095-2",
 		author: "Sarmiento, I. G., Olson, C., Yeo, G., Chen, Y. A., Toma, C. L., Brown, B. B., Bellmore, A., & Mares, M-L. (2018)",
 		journal: "Adolescent Research Review, 1-24"
 	},
