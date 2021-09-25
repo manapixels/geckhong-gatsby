@@ -97,7 +97,7 @@ const TeachingPage = () => {
 				</div>
 				<div className="experiential-learning">
 					<h1 className="abril-font text-center">Experiential Learning</h1>
-					<p>For a module on Introduction to Trauma Psychology, I created a topic on complex trauma and presented cases from the Singapore Boys’ Home to help students connect their learning to real-world problems. In recognition of my sustained high performance in teaching, I was awarded the Graduate Students’ Teaching Award over three consecutive semesters and was placed on the Honour Roll.</p>
+					<p>I led the Adolescent Psychology Laboratory at NUS, and guided students in experiential learning of the research process through weekly training sessions. Students learned to conduct fieldwork with local communities, such as the Singapore Boys’ Home and secondary schools.</p>
 					<Image
 						className="image-container wipeIn ani-1"
 						fluid={data['image17'].childImageSharp.fluid}
